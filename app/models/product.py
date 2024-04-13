@@ -19,7 +19,7 @@ class Product(db.Model):
     details = db.Column(db.Text)
     stock = db.Column(db.Integer, nullable=False)
 
-    user = db.relationship('User', back_populates='products', cascade='all, delete-orphan')
+    user = db.relationship('User', back_populates='products')
     product_reviews = db.relationship('ProductReview', back_populates='product', cascade='all, delete-orphan')
     product_images = db.relationship('ProductImage', back_populates='product', cascade='all, delete-orphan')
     carts = db.relationship('Cart', secondary=add_prefix_for_prod('carts_items'), back_populates='products')

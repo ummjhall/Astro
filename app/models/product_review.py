@@ -13,8 +13,8 @@ class ProductReview(db.Model):
     rating = db.Column(db.Integer, nullable=False)
     review_text = db.Column(db.Text, nullable=False)
 
-    user = db.relationship('User', back_populates='product_reviews', cascade='all, delete-orphan')
-    product = db.relationship('Product', back_populates='product_reviews', cascade='all, delete-orphan')
+    user = db.relationship('User', back_populates='product_reviews')
+    product = db.relationship('Product', back_populates='product_reviews')
 
     def to_dict(self):
         return {

@@ -6,7 +6,7 @@ def seed_products():
     seeds = [
         Product(
             seller_id=3,
-            upc=1234567890000001,
+            upc="1234567890000001",
             name="Demo Product 1",
             category="Category 1",
             subcategory="Subcategory 1",
@@ -18,7 +18,7 @@ def seed_products():
         ),
         Product(
             seller_id=3,
-            upc=1234567890000002,
+            upc="1234567890000002",
             name="Demo Product 2",
             category="Category 1",
             subcategory="Subcategory 1",
@@ -30,7 +30,7 @@ def seed_products():
         ),
         Product(
             seller_id=3,
-            upc=1234567890000003,
+            upc="1234567890000003",
             name="Demo Product 3",
             category="Category 1",
             subcategory="Subcategory 1",
@@ -42,7 +42,7 @@ def seed_products():
         ),
         Product(
             seller_id=3,
-            upc=1234567890000004,
+            upc="1234567890000004",
             name="Demo Product 4",
             category="Category 1",
             subcategory="Subcategory 2",
@@ -54,7 +54,7 @@ def seed_products():
         ),
         Product(
             seller_id=3,
-            upc=1234567890000005,
+            upc="1234567890000005",
             name="Demo Product 5",
             category="Category 1",
             subcategory="Subcategory 2",
@@ -66,7 +66,7 @@ def seed_products():
         ),
         Product(
             seller_id=4,
-            upc=1234567890000006,
+            upc="1234567890000006",
             name="Demo Product 6",
             category="Category 2",
             subcategory="Subcategory 1",

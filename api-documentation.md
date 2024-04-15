@@ -316,6 +316,18 @@ Adds a product to the current user's cart and returns the product.
     }
     ```
 
+* Error response: Product already in cart
+  * Status Code: 400
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Product already in cart"
+    }
+    ```
+
 * Error response: Insufficient stock
   * Status Code: 400
   * Headers:

@@ -12,7 +12,7 @@ class Cart(db.Model):
 
     user = db.relationship('User', back_populates='cart')
     items = db.relationship('Product', secondary=add_prefix_for_prod('carts_items'), back_populates='carts')
-    cart_items = db.relationship('CartItem', back_populates='cart', cascade='all, delete-orphan')
+    cart_items = db.relationship('CartItem', viewonly=True)
 
     def to_dict(self):
         return {

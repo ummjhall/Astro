@@ -71,3 +71,48 @@ def add_to_cart(product_id):
     added_item['quantity'] = quantity
 
     return added_item, 201
+
+
+@cart_routes.route('/current/<product_id>', methods=['PUT', 'PATCH'])
+@login_required
+def update_quantity(product_id):
+    """
+    Updates the quantity of a product in the current user's cart and returns the product.
+    """
+    cart = current_user.cart
+    quantity = request.json.get('quantity', None)
+
+    # Error response: Body validation errors
+    if not isinstance(quantity, int) or quantity < 1:
+        return {
+            'message': 'Bad Request',
+            'errors': {'quantity': 'Invalid quantity'}
+        }, 400
+
+    # Error response: Product not in user's cart
+    if int(product_id) not in [product.id for product in cart.items]:
+        return {'message': "Product couldn't be found"}, 404
+
+    # Error response: Insufficient stock
+    product = Product.query.get(product_id)
+    if quantity > product.stock:
+        return {
+            'message': 'Bad Request',
+            'errors': {'quantity': 'Quantity exceeds available stock'}
+        }, 400
+
+    # SUCCESS
+    cart_item = CartItem.query.filter(
+        CartItem.product_id == int(product_id), CartItem.cart_id == cart.id
+        ).one()
+    cart_item.quantity = quantity
+
+    db.session.add(cart_item)
+    db.session.commit()
+
+    updated_item = cart_item.item.to_dict()
+    for attribute in ['description', 'details', 'seller_id', 'stock']:
+        del updated_item[attribute]
+    updated_item['quantity'] = quantity
+
+    return updated_item, 200

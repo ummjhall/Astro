@@ -115,4 +115,26 @@ def update_quantity(product_id):
         del updated_item[attribute]
     updated_item['quantity'] = quantity
 
-    return updated_item, 200
+    return updated_item
+
+
+@cart_routes.route('/current/<product_id>', methods=['DELETE'])
+@login_required
+def remove_product(product_id):
+    """
+    Removes a product from the current user's cart.
+    """
+    cart = current_user.cart
+
+    # Error response: Product not in user's cart
+    if int(product_id) not in [product.id for product in cart.items]:
+        return {'message': "Product couldn't be found"}, 404
+
+    # SUCCESS
+    cart_item = CartItem.query.filter(
+        CartItem.product_id == int(product_id), CartItem.cart_id == cart.id
+        ).one()
+    db.session.delete(cart_item)
+    db.session.commit()
+
+    return {'message': 'Successfully deleted'}

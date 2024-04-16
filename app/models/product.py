@@ -23,6 +23,7 @@ class Product(db.Model):
     product_reviews = db.relationship('ProductReview', back_populates='product', cascade='all, delete-orphan')
     product_images = db.relationship('ProductImage', back_populates='product', cascade='all, delete-orphan')
     carts = db.relationship('Cart', secondary=add_prefix_for_prod('carts_items'), back_populates='items')
+    cart_items = db.relationship('CartItem', viewonly=True)
 
     def to_dict(self):
         return {

@@ -1,3 +1,11 @@
+conditions = [
+    'New',
+    'Like New',
+    'Very Good',
+    'Good',
+    'Acceptable'
+]
+
 categories = {
     'space travel': {
         'spacecraft essentials',

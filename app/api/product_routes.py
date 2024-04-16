@@ -18,3 +18,26 @@ def get_all_products():
         product['previewImage'] = thumbnail_url
         products.append(product)
     return {'Products': products}
+
+
+@product_routes.route('/<product_id>')
+def get_product_details(product_id):
+    """
+    Returns the details of a product specified by id.
+    """
+    product = Product.query.get(product_id)
+
+    # Error response: Product couldn't be found
+    if not product:
+        return {'message': "Product couldn't be found"}, 404
+
+    # SUCCESS
+    images = []
+    for image in product.product_images:
+        image = image.to_dict()
+        del image['product_id']
+        images.append(image)
+    product = product.to_dict()
+    product['Images'] = images
+
+    return product

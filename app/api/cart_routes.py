@@ -103,7 +103,7 @@ def update_quantity(product_id):
 
     # SUCCESS
     cart_item = CartItem.query.filter(
-        CartItem.product_id == int(product_id), CartItem.cart_id == cart.id
+        CartItem.product_id==int(product_id), CartItem.cart_id==cart.id
         ).one()
     cart_item.quantity = quantity
 
@@ -132,7 +132,7 @@ def remove_product(product_id):
 
     # SUCCESS
     cart_item = CartItem.query.filter(
-        CartItem.product_id == int(product_id), CartItem.cart_id == cart.id
+        CartItem.product_id==int(product_id), CartItem.cart_id==cart.id
         ).one()
     db.session.delete(cart_item)
     db.session.commit()

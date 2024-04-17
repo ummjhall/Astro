@@ -751,7 +751,7 @@ Returns all reviews for the specified product.
 
 * Request
   * Method: GET
-  * URL: '/api/products/<product_id>/reviews'
+  * URL: '/api/product-reviews/<product_id>'
   * Body: none
 
 * Successful Response
@@ -782,7 +782,7 @@ Creates and returns a new review for the specified product.
 
 * Request
   * Method: POST
-  * URL: '/api/products/<product_id>/reviews'
+  * URL: '/api/product-reviews/<product_id>'
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -859,7 +859,7 @@ Updates and returns a user's existing product review.
 
 * Request
   * Method: PUT/PATCH
-  * URL: '/api/reviews/<review_id>'
+  * URL: '/api/product-reviews/<product_id>'
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -923,7 +923,7 @@ Deletes a review belonging to the current user.
 
 * Request
   * Method: DELETE
-  * URL: '/api/reviews/<review_id>'
+  * URL: '/api/product-reviews/<product_id>'
   * Body: none
 
 * Successful Response

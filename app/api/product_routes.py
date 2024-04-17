@@ -95,7 +95,7 @@ def edit_product(product_id):
 
     # Error response: Product does not belong to the current user
     if product.seller_id != current_user.id:
-        return {'message': "Forbidden"}, 403
+        return {'message': 'Forbidden'}, 403
 
     # Error response: Body validation errors
     errors = validate_request(req)
@@ -128,7 +128,7 @@ def remove_product(product_id):
 
     # Error response: Product does not belong to the current user
     if product.seller_id != current_user.id:
-        return {'message': "Forbidden"}, 403
+        return {'message': 'Forbidden'}, 403
 
     # SUCCESS
     db.session.delete(product)

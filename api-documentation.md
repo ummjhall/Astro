@@ -961,7 +961,7 @@ Creates and returns a new image for a product specified by id.
 
 * Request
   * Method: POST
-  * URL: '/api/products/<product_id>/images'
+  * URL: '/api/product-images/<product_id>'
   * Body:
 
     ```json
@@ -1034,7 +1034,7 @@ Deletes a product image specified by id.
 
 * Request
   * Method: DELETE
-  * URL: '/api/images/<image_id>'
+  * URL: '/api/product-images/<product_id>'
   * Body: none
 
 * Successful Response

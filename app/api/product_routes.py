@@ -114,6 +114,29 @@ def edit_product(product_id):
     return product.to_dict()
 
 
+@product_routes.route('/<product_id>', methods=['DELETE'])
+@login_required
+def remove_product(product_id):
+    """
+    Removes a product belonging to the current user from the store.
+    """
+    product = Product.query.get(product_id)
+
+    # Error response: Product couldn't be found
+    if not product:
+        return {'message': "Product couldn't be found"}, 404
+
+    # Error response: Product does not belong to the current user
+    if product.seller_id != current_user.id:
+        return {'message': "Forbidden"}, 403
+
+    # SUCCESS
+    db.session.delete(product)
+    db.session.commit()
+
+    return {'message': 'Successfully deleted'}
+
+
 def validate_request(req, required_attributes=False):
     """
     Validates the body of request to add or edit a product.

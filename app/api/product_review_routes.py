@@ -127,4 +127,30 @@ def edit_product_review(product_id):
     db.session.add(review)
     db.session.commit()
 
-    return review.to_dict(), 200
+    return review.to_dict()
+
+
+@product_review_routes.route('/<product_id>', methods=['DELETE'])
+@login_required
+def delete_product_review(product_id):
+    """
+    Deletes a review belonging to the current user.
+    """
+    product = Product.query.get(product_id)
+
+    # Error response: Product (and review) couldn't be found
+    if not product:
+        return {'message': "Review couldn't be found"}, 404
+
+    # Error response: User does not have existing review for specified product
+    review = ProductReview.query.filter(
+        ProductReview.product_upc==product.upc, ProductReview.user_id==current_user.id
+    ).one_or_none()
+    if not review:
+        return {'message': "Review couldn't be found"}, 404
+
+    # SUCCESS
+    db.session.delete(review)
+    db.session.commit()
+
+    return {'message': 'Successfully deleted'}

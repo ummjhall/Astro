@@ -255,8 +255,8 @@ Returns all items in the current user's cart.
           "product_id": 17,
           "upc": 1234567890000000,
           "name": "FTL Booster A7 Series",
-          "category": "Space Flight",
-          "subcategory": "Boosters",
+          "category": "space travel",
+          "subcategory": "spacecraft essentials",
           "price": 12000000,
           "condition": "New",
           "quantity": 1
@@ -293,8 +293,8 @@ Adds a product to the current user's cart and returns the product.
       "product_id": 17,
       "upc": 1234567890000000,
       "name": "FTL Booster A7 Series",
-      "category": "Space Flight",
-      "subcategory": "Boosters",
+      "category": "space travel",
+      "subcategory": "spacecraft essentials",
       "price": 12000000,
       "condition": "New",
       "quantity": 1
@@ -383,8 +383,8 @@ Updates the quantity of a product in the current user's cart and returns the pro
       "product_id": 17,
       "upc": 1234567890000000,
       "name": "FTL Booster A7 Series",
-      "category": "Space Flight",
-      "subcategory": "Boosters",
+      "category": "space travel",
+      "subcategory": "spacecraft essentials",
       "price": 12000000,
       "condition": "New",
       "quantity": 2
@@ -495,8 +495,8 @@ Returns all products in the store.
           "seller_id": 2,
           "upc": 1234567890000000,
           "name": "FTL Booster A7 Series",
-          "category": "Space Flight",
-          "subcategory": "Boosters",
+          "category": "space travel",
+          "subcategory": "spacecraft essentials",
           "price": 12000000,
           "condition": "New",
           "description": "<<Product description>>",
@@ -531,8 +531,8 @@ Returns the details of a product specified by id.
       "seller_id": 2,
       "upc": 1234567890000000,
       "name": "FTL Booster A7 Series",
-      "category": "Space Flight",
-      "subcategory": "Boosters",
+      "category": "space travel",
+      "subcategory": "spacecraft essentials",
       "price": 12000000,
       "condition": "New",
       "description": "<<Product description>>",
@@ -545,6 +545,18 @@ Returns the details of a product specified by id.
           "thumbnail": true
         }
       ]
+    }
+    ```
+
+* Error response: Product couldn't be found
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Product couldn't be found"
     }
     ```
 
@@ -565,8 +577,8 @@ Adds a new product for sale to the store and returns it.
     {
       "upc": 1234567890000000,
       "name": "FTL Booster A7 Series",
-      "category": "Space Flight",
-      "subcategory": "Boosters",
+      "category": "space travel",
+      "subcategory": "spacecraft essentials",
       "price": 12000000,
       "condition": "New",
       "description": "<<Product description>>",
@@ -587,8 +599,8 @@ Adds a new product for sale to the store and returns it.
       "seller_id": 2,
       "upc": 1234567890000000,
       "name": "FTL Booster A7 Series",
-      "category": "Space Flight",
-      "subcategory": "Boosters",
+      "category": "space travel",
+      "subcategory": "spacecraft essentials",
       "price": 12000000,
       "condition": "New",
       "description": "<<Product description>>",
@@ -613,7 +625,7 @@ Adds a new product for sale to the store and returns it.
         "price": "Invalid price",
         "condition": "Condition is required",
         "description": "Description is required",
-        "stock": "Invalid stock amount"
+        "stock": "Invalid stock quantity"
       }
     }
     ```
@@ -653,8 +665,8 @@ Updates and returns a product belonging to the current user.
       "seller_id": 2,
       "upc": 1234567890000000,
       "name": "FTL Booster A7 Series",
-      "category": "Space Flight",
-      "subcategory": "Boosters",
+      "category": "space travel",
+      "subcategory": "spacecraft essentials",
       "price": 11000000,
       "condition": "New",
       "description": "<<New product description>>",
@@ -676,7 +688,7 @@ Updates and returns a product belonging to the current user.
         "category": "Category not found",
         "subcategory": "Subcategory not found",
         "price": "Invalid price",
-        "stock": "Invalid stock amount"
+        "stock": "Invalid stock quantity"
       }
     }
     ```

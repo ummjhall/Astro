@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, db
+from app.models import db, User, Cart
 from app.forms import LoginForm
 from app.forms import SignUpForm
 
@@ -23,6 +23,11 @@ def sign_up():
             password=form.data['password']
         )
         db.session.add(user)
+        db.session.commit()
+        cart = Cart(
+            user_id=user.id
+        )
+        db.session.add(cart)
         db.session.commit()
         login_user(user)
         return user.to_dict(), 201

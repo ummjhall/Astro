@@ -16,7 +16,9 @@ def get_all_products():
     for product in all_products:
         thumbnail_url = None
         if product.product_images:
-            thumbnail_url = list(filter(lambda x: x.thumbnail==True, product.product_images))[0].url
+            wrapped_image = list(filter(lambda x: x.thumbnail==True, product.product_images))
+            if wrapped_image:
+              thumbnail_url = list(filter(lambda x: x.thumbnail==True, product.product_images))[0].url
         product = product.to_dict()
         product['previewImage'] = thumbnail_url
         products.append(product)

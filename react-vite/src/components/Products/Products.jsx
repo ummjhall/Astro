@@ -6,7 +6,7 @@ import ProductTile from './ProductTile';
 import './products.css';
 
 function Products() {
-  const { category } = useParams();
+  const { category/*, productId */} = useParams();
   const allProducts = useSelector(state => state.products);
   const dispatch = useDispatch();
 
@@ -14,7 +14,10 @@ function Products() {
 
   useEffect(() => {
     dispatch(getAllProductsThunk());
-  }, [dispatch]);
+    // console.log('***************');
+    // console.log(category)
+    // console.log(productId);
+  }, [dispatch, productId]);
 
   return (
     <div className='products-wrapper'>

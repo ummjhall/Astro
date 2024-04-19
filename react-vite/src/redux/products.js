@@ -1,11 +1,19 @@
 import { csrfFetch } from './csrf';
 
 const LOAD_PRODUCTS = 'products/loadProducts';
+const LOAD_PRODUCT_DETAILS = 'products/loadProductDetails';
 
 const loadProducts = (productsData) => {
   return {
     type: LOAD_PRODUCTS,
     productsData
+  };
+};
+
+const loadProductDetails = (productData) => {
+  return {
+    type: LOAD_PRODUCT_DETAILS,
+    productData
   };
 };
 
@@ -18,16 +26,28 @@ export const getAllProductsThunk = () => async dispatch => {
   return productsData;
 };
 
+export const getProductDetailsThunk = (productId) => async dispatch => {
+  const res = await csrfFetch(`/api/products/${productId}`);
+
+  const productData = await res.json();
+  if (res.ok)
+    dispatch(loadProductDetails(productData));
+  return productData;
+};
+
 const initialState = {};
 
 function productsReducer(state = initialState, action) {
   switch(action.type) {
     case LOAD_PRODUCTS: {
-      const products = {}
+      const products = {};
       action.productsData.Products.forEach(product => {
         products[product.product_id] = product;
       });
       return {...products};
+    }
+    case LOAD_PRODUCT_DETAILS: {
+      return {...state, [action.productData.product_id]: action.productData};
     }
     default:
       return state;

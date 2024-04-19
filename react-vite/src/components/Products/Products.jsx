@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getAllProductsThunk } from '../../redux/products';
+import ProductTile from './ProductTile';
 import './products.css';
 
 function Products() {
@@ -17,12 +18,14 @@ function Products() {
 
   return (
     <div className='products-wrapper'>
-      <div>{category}</div>
-      {allProductsArray.map(product => (
-        <div key={product.product_id}>
-          <div>{product.name}</div>
-        </div>
-      ))}
+      <div className='products-sidenav'>
+        Here's the sidenav
+      </div>
+      <div className='products-main'>
+        {allProductsArray.map(product => (
+          <ProductTile key={product.product_id} product={product} />
+        ))}
+      </div>
     </div>
   );
 }

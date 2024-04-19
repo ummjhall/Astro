@@ -1,9 +1,10 @@
 /* ***** NAVBAR ******************************************************************************** */
 
 .nav-wrapper {
+  /* border: 1px solid red; */
+  height: 35px;
   padding: 10px 20px;
-  border: 1px solid red;
-  background-color: cyan;
+  background-color: indigo;
   display: flex;
   justify-content: space-between;
   align-items: center;

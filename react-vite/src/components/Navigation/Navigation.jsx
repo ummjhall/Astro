@@ -1,5 +1,5 @@
 // import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import ProfileButton from './ProfileButton';
 import './navigation.css';
 
@@ -8,8 +8,19 @@ function Navigation() {
 
   return (
     <div className='nav-wrapper'>
-      <NavLink to='/'>Astro</NavLink>
-      <ProfileButton />
+      <div className='nav-upper-wrapper'>
+        <div>Astro</div>
+        <ProfileButton />
+      </div>
+      <div className='nav-lower-wrapper'>
+        <div>Space Travel</div>
+        <div>Tech</div>
+        <div>Decor</div>
+        <div>Food</div>
+        <div>Health</div>
+        <div>Pet</div>
+        <div>Collectibles</div>
+      </div>
     </div>
   );
 }

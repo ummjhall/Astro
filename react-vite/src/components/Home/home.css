@@ -1,14 +1,14 @@
 .home-wrapper {
   /* border: 1px solid red; */
   padding: 0 50px;
-  height: calc(100vh - 55px); /* - navbar */
+  height: calc(100vh - 55px - 25px - 2px); /* - navbars */
   background-color: black;
 }
 
 .home-container {
   /* border: 1px solid red; */
   padding: 20px 0 0;
-  height: calc(100vh - 55px - 40px);
+  height: calc(100vh - 55px - 25px - 2px - 40px);
   display: grid;
   grid-template-areas:
     'box1 box2 box2 box2 box3'
@@ -50,6 +50,7 @@
 }
 
 .home-box {
+  border-radius: 5px;
   background-color: cyan;
   text-align: center;
 }

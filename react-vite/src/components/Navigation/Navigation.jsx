@@ -1,10 +1,13 @@
 // import { useSelector } from 'react-redux';
 // import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ProfileButton from './ProfileButton';
 import './navigation.css';
 
 function Navigation() {
   // const user = useSelector(state => state.session.user);
+  const navigate = useNavigate();
+  const categories = ['Space Travel', 'Tech', 'Decor', 'Food', 'Health', 'Pet', 'Collectibles'];
 
   return (
     <div className='nav-wrapper'>
@@ -13,13 +16,15 @@ function Navigation() {
         <ProfileButton />
       </div>
       <div className='nav-lower-wrapper'>
-        <div>Space Travel</div>
-        <div>Tech</div>
-        <div>Decor</div>
-        <div>Food</div>
-        <div>Health</div>
-        <div>Pet</div>
-        <div>Collectibles</div>
+        {categories.map((category, i) => (
+          <div
+            key={i}
+            className='nav-link'
+            onClick={() => navigate(`/products/${category.toLowerCase().replace(' ', '-')}`)}
+          >
+            {category}
+          </div>
+        ))}
       </div>
     </div>
   );

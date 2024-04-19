@@ -7,8 +7,8 @@ conditions = [
 ]
 
 categories = {
-    'space travel': {
-        'spacecraft essentials',
+    'space-travel': {
+        'spacecraft-essentials',
         'navigation',
         'gear',
         'hobby'
@@ -33,8 +33,8 @@ categories = {
     },
     'pet': {
         'pets',
-        'pet care',
-        'pet toys'
+        'pet-care',
+        'pet-toys'
     },
     'collectibles': {
         'artifacts',

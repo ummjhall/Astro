@@ -12,14 +12,21 @@
 .products-sidenav {
   border-right: 3px solid white;
   width: 20%;
+  height: calc(100vh - 55px - 25px - 2px);
+  position: sticky;
+  top: calc(55px + 25px + 2px);
 }
 
-.products-main {
+.products-tiles {
   /* margin: 0 20px; */
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.products-details {
+  width: 100%;
 }
 
 
@@ -40,4 +47,14 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   object-fit: cover;
+}
+
+
+
+/* ***** PRODUCT DETAILS *********************************************************************** */
+
+.productdetails-wrapper {
+  border: 1px solid red;
+  min-height: calc(100vh - 55px - 25px - 2px);
+  background-color: black;
 }

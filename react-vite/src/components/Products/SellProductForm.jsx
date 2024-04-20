@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import categories from '../../utils/categories';
 import './sell-product.css';
 
 function SellProductForm() {
@@ -47,7 +48,6 @@ function SellProductForm() {
 
     return;
   }
-
 
   if (!user) return <Navigate to='/' replace={true} />;
 

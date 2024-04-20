@@ -12,10 +12,13 @@ function Navigation() {
   return (
     <div className='nav-wrapper'>
       <div className='nav-upper-wrapper'>
-        <div>Astro</div>
+        <div onClick={() => navigate('/')}>Astro</div>
         <ProfileButton />
       </div>
       <div className='nav-lower-wrapper'>
+        <div className='nav-link' onClick={() => navigate('/products')}>
+          All
+        </div>
         {categories.map((category, i) => (
           <div
             key={i}

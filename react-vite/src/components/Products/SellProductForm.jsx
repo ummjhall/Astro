@@ -9,10 +9,10 @@ function SellProductForm() {
 
   const [ upc, setUpc ] = useState('');
   const [ name, setName ] = useState('');
-  const [ category, setCategory ] = useState('');
+  const [ category, setCategory ] = useState('space-travel');
   const [ subcategory, setSubcategory ] = useState('');
   const [ price, setPrice ] = useState('');
-  const [ condition, setCondition ] = useState('');
+  const [ condition, setCondition ] = useState('New');
   const [ description, setDescription ] = useState('');
   const [ details, setDetails ] = useState('');
   const [ stock, setStock ] = useState('');
@@ -28,8 +28,29 @@ function SellProductForm() {
   useEffect(() => {
     const errors = {};
 
+    if (upc.length) {
+      if (upc.length != 16)
+        errors.upc = 'UPC must be exactly 16 characters';
+      for (const char of upc) {
+        if (!'0123456789ABCDEF'.includes(char))
+          errors.upc = 'Invalid UPC. Valid characters: 0123456789ABCDEF';
+      }
+    }
+    if (!name.length)
+      errors.name = 'Product name is required';
+    if (!price)
+      errors.price = 'Price is required';
+    if (!description)
+      errors.description = 'Description is required';
+    if (!stock)
+      errors.stock = 'Stock is required';
+    if (!previewImage.length)
+      errors.previewImage = 'Preview image is required';
+    else if (!previewImage.endsWith('.png') && !previewImage.endsWith('.jpg') && !previewImage.endsWith('.jpeg'))
+      errors.previewImage = 'Image URL must be .png, .jpg, or .jpeg';
+
     setValidationErrors(errors);
-  }, []);
+  }, [upc, name, price, description, stock, previewImage]);
 
   useEffect(() => {
     if (hasSubmitted && Object.values(validationErrors).length)
@@ -58,9 +79,9 @@ function SellProductForm() {
       <form onSubmit={handleSubmit}>
         <div>
           <label>UPC{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.upc && `${validationErrors.upc}`}
-            </span>
+            </div>
             <input
               className='sell-product-upc'
               type='text'
@@ -73,13 +94,14 @@ function SellProductForm() {
 
         <div>
           <label>Name{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.name && `${validationErrors.name}`}
-            </span>
+            </div>
             <input
               className='sell-product-name'
               type='text'
               placeholder='Product Name'
+              maxLength={100}
               value={name}
               onChange={e => setName(e.target.value)}
             />
@@ -88,43 +110,43 @@ function SellProductForm() {
 
         <div>
           <label>Category{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.category && `${validationErrors.category}`}
-            </span>
+            </div>
             <select
               className='sell-product-category'
               value={category}
               onChange={e => setCategory(e.target.value)}
             >
-              <option value='category1'>category1</option>
-              <option value='category2'>category2</option>
-              <option value='category3'>category3</option>
+              {Object.keys(categories).map((category, i) => (
+                <option key={i} value={category}>{category}</option>
+              ))}
             </select>
           </label>
         </div>
 
         <div>
           <label>Subcategory{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.subcategory && `${validationErrors.subcategory}`}
-            </span>
+            </div>
             <select
               className='sell-product-subcategory'
               value={subcategory}
               onChange={e => setSubcategory(e.target.value)}
             >
-              <option value='subcategory1'>subcategory1</option>
-              <option value='subcategory2'>subcategory2</option>
-              <option value='subcategory3'>subcategory3</option>
+              {categories[category].map((subcategory, i) => (
+                <option key={i} value={subcategory}>{subcategory}</option>
+              ))}
             </select>
           </label>
         </div>
 
         <div>
           <label>Price{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.price && `${validationErrors.price}`}
-            </span>
+            </div>
             <div className='sell-product-price-container'>
               <span>ঋ</span>
               <span>
@@ -132,8 +154,13 @@ function SellProductForm() {
                   className='sell-product-price'
                   type='number'
                   placeholder='Price (USC)'
+                  min={1}
+                  max={9999999999}
                   value={price}
-                  onChange={e => setPrice(e.target.value)}
+                  onChange={
+                    e => e.target.value > 0 && e.target.value <= 9999999999 || e.target.value == '' ?
+                    setPrice(e.target.value) :
+                    ''}
                 />
               </span>
             </div>
@@ -142,9 +169,9 @@ function SellProductForm() {
 
         <div>
           <label>Condition{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.condition && `${validationErrors.condition}`}
-            </span>
+            </div>
             <select
               className='sell-product-condition'
               value={condition}
@@ -161,12 +188,13 @@ function SellProductForm() {
 
         <div>
           <label>Description{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.description && `${validationErrors.description}`}
-            </span>
+            </div>
             <textarea
               className='sell-product-description'
-              placeholder='Please write at least 30 characters'
+              placeholder='Please give a general description of your product'
+              maxLength={255}
               value={description}
               onChange={e => setDescription(e.target.value)}
             />
@@ -175,12 +203,13 @@ function SellProductForm() {
 
         <div>
           <label>Details{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.details && `${validationErrors.details}`}
-            </span>
+            </div>
             <textarea
               className='sell-product-details'
               placeholder='Please describe your item in detail'
+              maxLength={5000}
               value={details}
               onChange={e => setDetails(e.target.value)}
             />
@@ -189,15 +218,20 @@ function SellProductForm() {
 
         <div>
           <label>Stock{' '}
-            <span className='error'>
+            <div className='error'>
               {hasSubmitted && validationErrors.stock && `${validationErrors.stock}`}
-            </span>
+            </div>
             <input
               className='sell-product-stock'
               type='number'
               placeholder='Stock'
+              min={1}
+              max={999999}
               value={stock}
-              onChange={e => setStock(e.target.value)}
+              onChange={
+                e => e.target.value > 0 && e.target.value <= 999999 || e.target.value == '' ?
+                setStock(e.target.value) :
+                ''}
             />
           </label>
         </div>

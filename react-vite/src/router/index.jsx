@@ -6,6 +6,7 @@ import Home from '../components/Home/Home';
 import Products from '../components/Products/Products';
 import ProductCategory from '../components/Products/ProductCategory';
 import ProductDetails from '../components/Products/ProductDetails';
+import SellProductForm from '../components/Products/SellProductForm';
 
 export const router = createBrowserRouter([
   {
@@ -13,15 +14,15 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <Home />
       },
       {
         path: 'login',
-        element: <LoginFormPage />,
+        element: <LoginFormPage />
       },
       {
         path: 'signup',
-        element: <SignupFormPage />,
+        element: <SignupFormPage />
       },
       {
         path: 'products',
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: 'products/:category/:productId',
         element: <ProductDetails />
+      },
+      {
+        path: 'sell',
+        element: <SellProductForm />
       }
     ]
   }

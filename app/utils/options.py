@@ -28,8 +28,8 @@ categories = {
         'cooking'
     },
     'health': {
-        'fitness'
-        'medicine',
+        'fitness',
+        'medicine'
     },
     'pet': {
         'pets',

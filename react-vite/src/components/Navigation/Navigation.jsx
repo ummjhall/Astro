@@ -1,11 +1,10 @@
-// import { useSelector } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ProfileButton from './ProfileButton';
 import './navigation.css';
 
 function Navigation() {
-  // const user = useSelector(state => state.session.user);
+  const user = useSelector(state => state.session.user);
   const navigate = useNavigate();
   const categories = ['Space Travel', 'Tech', 'Decor', 'Food', 'Health', 'Pet', 'Collectibles'];
 
@@ -13,7 +12,19 @@ function Navigation() {
     <div className='nav-wrapper'>
       <div className='nav-upper-wrapper'>
         <div onClick={() => navigate('/')}>Astro</div>
-        <ProfileButton />
+        <div className='nav-user-menu'>
+          {user &&
+            <div onClick={() => navigate('sell')}>
+              SELL
+            </div>
+          }
+          {user &&
+            <div>
+              CART
+            </div>
+          }
+          <ProfileButton />
+        </div>
       </div>
       <div className='nav-lower-wrapper'>
         <div className='nav-link' onClick={() => navigate('/products')}>

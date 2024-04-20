@@ -11,7 +11,7 @@ function ProductDetails() {
 
   useEffect(() => {
     dispatch(getProductDetailsThunk(productId));
-  }, [dispatch]);
+  }, [dispatch, productId]);
 
   return (
     <div className='productdetails-wrapper'>

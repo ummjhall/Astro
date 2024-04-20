@@ -16,7 +16,7 @@ function Products() {
   return (
     <div className='products-wrapper'>
       <div className='products-sidenav'>
-        Here's the sidenav
+        Here&apos;s the sidenav
       </div>
       <div className='products-tiles'>
         {allProductsArray.map(product => (

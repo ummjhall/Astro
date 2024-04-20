@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const LOAD_PRODUCTS = 'products/loadProducts';
 const LOAD_PRODUCT_DETAILS = 'products/loadProductDetails';
+// const LIST_PRODUCT = 'products/listProduct';
 
 const loadProducts = (productsData) => {
   return {
@@ -16,6 +17,10 @@ const loadProductDetails = (productData) => {
     productData
   };
 };
+
+// const listProduct = (formData) => {
+
+// }
 
 export const getAllProductsThunk = () => async dispatch => {
   const res = await csrfFetch(`/api/products`);
@@ -32,6 +37,16 @@ export const getProductDetailsThunk = (productId) => async dispatch => {
   const productData = await res.json();
   if (res.ok)
     dispatch(loadProductDetails(productData));
+  return productData;
+};
+
+export const listProductThunk = (formData) => async dispatch => {
+  const res = await csrfFetch(`/api/products/`, {
+    method: 'POST',
+    body: JSON.stringify(formData)
+  });
+
+  const productData = await res.json();
   return productData;
 };
 

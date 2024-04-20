@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { listProductThunk } from '../../redux/products';
 import categories from '../../utils/categories';
 import './sell-product.css';
 
 function SellProductForm() {
   const user = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [ upc, setUpc ] = useState('');
   const [ name, setName ] = useState('');
   const [ category, setCategory ] = useState('space-travel');
-  const [ subcategory, setSubcategory ] = useState('');
+  const [ subcategory, setSubcategory ] = useState(categories[category][0]);
   const [ price, setPrice ] = useState('');
   const [ condition, setCondition ] = useState('New');
   const [ description, setDescription ] = useState('');
@@ -66,8 +69,23 @@ function SellProductForm() {
     if (Object.values(validationErrors).length)
       return;
 
+    const formData = {
+      upc: upc || null,
+      name,
+      category,
+      subcategory,
+      price: +price,
+      condition,
+      description,
+      details,
+      stock: +stock
+    };
 
-    return;
+    const listed = await dispatch(listProductThunk(formData));
+
+    if (listed) {
+      navigate('/')
+    }
   }
 
   if (!user) return <Navigate to='/' replace={true} />;

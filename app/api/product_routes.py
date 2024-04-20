@@ -151,7 +151,7 @@ def validate_request(req, required_attributes=False):
             if attribute not in req:
                 errors[attribute] = f'{attribute.title()} is required'
 
-    if 'upc' in req and (not isinstance(req['upc'], str) or len(req['upc']) != 16):
+    if 'upc' in req and req['upc'] is not None and (not isinstance(req['upc'], str) or len(req['upc']) not in [0, 16]):
         errors['upc'] = 'Invalid UPC'
     if 'name' in req and (not isinstance(req['name'], str) or len(req['name']) > 100):
         errors['name'] = 'Invalid name'

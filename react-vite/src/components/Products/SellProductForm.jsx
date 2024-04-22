@@ -1,36 +1,44 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
-import { listProductThunk } from '../../redux/products';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { getAllProductsThunk, getProductDetailsThunk, listProductThunk, updateProductThunk } from '../../redux/products';
 import categories from '../../utils/categories';
 import './sell-product.css';
 
-function SellProductForm() {
+function SellProductForm({ type }) {
+  const { productId } = useParams();
+  const product = useSelector(state => state.products[productId]);
   const user = useSelector(state => state.session.user);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [ upc, setUpc ] = useState('');
-  const [ name, setName ] = useState('');
-  const [ category, setCategory ] = useState('space-travel');
-  const [ subcategory, setSubcategory ] = useState(categories[category][0]);
-  const [ price, setPrice ] = useState('');
-  const [ condition, setCondition ] = useState('New');
-  const [ description, setDescription ] = useState('');
-  const [ details, setDetails ] = useState('');
-  const [ stock, setStock ] = useState('');
-  const [ previewImage, setPreviewImage ] = useState('');
-  const [ image2, setImage2 ] = useState('');
-  const [ image3, setImage3 ] = useState('');
-  const [ image4, setImage4 ] = useState('');
-  const [ image5, setImage5 ] = useState('');
+  useEffect(() => {
+    dispatch(getAllProductsThunk());
+    if (productId)
+      dispatch(getProductDetailsThunk(productId));
+  }, [dispatch, productId]);
+
+  const [ upc, setUpc ] = useState(product?.upc || '');
+  const [ name, setName ] = useState(product?.name || '');
+  const [ category, setCategory ] = useState(product?.category || 'space-travel');
+  const [ subcategory, setSubcategory ] = useState(product?.subcategory || categories[category][0]);
+  const [ price, setPrice ] = useState(product?.price || '');
+  const [ condition, setCondition ] = useState(product?.condition || 'New');
+  const [ description, setDescription ] = useState(product?.description || '');
+  const [ details, setDetails ] = useState(product?.details || '');
+  const [ stock, setStock ] = useState(product?.stock || '');
+  const [ previewImage, setPreviewImage ] = useState(product?.previewImage || '');
+  const [ image2, setImage2 ] = useState(product?.image2 || '');
+  const [ image3, setImage3 ] = useState(product?.image3 || '');
+  const [ image4, setImage4 ] = useState(product?.image4 || '');
+  const [ image5, setImage5 ] = useState(product?.image5 || '');
   const [ validationErrors, setValidationErrors ] = useState({});
   const [ hasSubmitted, setHasSubmitted ] = useState(false);
   const [ disabled, setDisabled ] = useState(false);
 
   useEffect(() => {
     setSubcategory(categories[category][0]);
-  }, [category])
+  }, [category]);
 
   useEffect(() => {
     const errors = {};
@@ -85,19 +93,23 @@ function SellProductForm() {
       stock: +stock
     };
 
-    const listed = await listProductThunk(formData);
+    if (type == 'update') {
+      updateProductThunk(formData, productId);
+      navigate(`/products/${product.category}`);
+      return;
+    }
 
-    if (listed) {
+    const newProduct = await listProductThunk(formData);
+    if (newProduct) {
       navigate('/')
     }
-  }
+  };
 
   if (!user) return <Navigate to='/' replace={true} />;
 
   return (
     <div className='sell-product-wrapper'>
-      {/* <h1>{type === 'update' ? 'Edit Your Item' : 'Sell Your Item'}</h1> */}
-      <h1>Sell Your Item</h1>
+      <h1>{type == 'update' ? 'Edit Your Item' : 'Sell Your Item'}</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>UPC{' '}
@@ -317,7 +329,7 @@ function SellProductForm() {
             type='submit'
             disabled={disabled}
           >
-            Sell
+            {type == 'update' ? 'Update' : 'Sell'}
           </button>
         </div>
       </form>

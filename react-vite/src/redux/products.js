@@ -50,6 +50,16 @@ export const listProductThunk = async (formData) => {
   return productData;
 };
 
+export const updateProductThunk = async (formData, productId) => {
+  const res = await csrfFetch(`/api/products/${productId}`, {
+    method: 'PATCH',
+    body: JSON.stringify(formData)
+  });
+
+  const productData = await res.json();
+  return productData;
+};
+
 const initialState = {};
 
 function productsReducer(state = initialState, action) {

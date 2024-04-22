@@ -39,6 +39,14 @@ export const router = createBrowserRouter([
       {
         path: 'sell',
         element: <SellProductForm />
+      },
+      {
+        path: 'sell/:productId/update',
+        element: <SellProductForm type={'update'} />
+      },
+      {
+        path: '*',
+        element: <h1 style={{color: 'white'}}>Page not found</h1>
       }
     ]
   }

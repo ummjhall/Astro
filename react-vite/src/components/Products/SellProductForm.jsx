@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { listProductThunk } from '../../redux/products';
 import categories from '../../utils/categories';
@@ -7,7 +7,7 @@ import './sell-product.css';
 
 function SellProductForm() {
   const user = useSelector(state => state.session.user);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [ upc, setUpc ] = useState('');
@@ -27,6 +27,10 @@ function SellProductForm() {
   const [ validationErrors, setValidationErrors ] = useState({});
   const [ hasSubmitted, setHasSubmitted ] = useState(false);
   const [ disabled, setDisabled ] = useState(false);
+
+  useEffect(() => {
+    setSubcategory(categories[category][0]);
+  }, [category])
 
   useEffect(() => {
     const errors = {};
@@ -81,7 +85,7 @@ function SellProductForm() {
       stock: +stock
     };
 
-    const listed = await dispatch(listProductThunk(formData));
+    const listed = await listProductThunk(formData);
 
     if (listed) {
       navigate('/')

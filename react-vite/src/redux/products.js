@@ -40,7 +40,7 @@ export const getProductDetailsThunk = (productId) => async dispatch => {
   return productData;
 };
 
-export const listProductThunk = (formData) => async dispatch => {
+export const listProductThunk = async (formData) => {
   const res = await csrfFetch(`/api/products/`, {
     method: 'POST',
     body: JSON.stringify(formData)

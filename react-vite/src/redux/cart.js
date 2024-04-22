@@ -18,6 +18,16 @@ export const getCartThunk = () => async dispatch => {
   return cartData;
 };
 
+export const addToCartThunk = async (productId, data) => {
+  const res = await csrfFetch(`/api/carts/current/${productId}`, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  });
+
+  const itemData = await res.json();
+  return itemData;
+};
+
 const initialState = {};
 
 function cartReducer(state = initialState, action) {

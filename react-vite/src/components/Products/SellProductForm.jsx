@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { /*useDispatch,*/ useSelector } from 'react-redux';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { getAllProductsThunk, getProductDetailsThunk, listProductThunk, updateProductThunk } from '../../redux/products';
+import { /*getProductDetailsThunk,*/ listProductThunk, updateProductThunk } from '../../redux/products';
 import categories from '../../utils/categories';
 import './sell-product.css';
 
@@ -9,14 +9,13 @@ function SellProductForm({ type }) {
   const { productId } = useParams();
   const product = useSelector(state => state.products[productId]);
   const user = useSelector(state => state.session.user);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    dispatch(getAllProductsThunk());
-    if (productId)
-      dispatch(getProductDetailsThunk(productId));
-  }, [dispatch, productId]);
+  // useEffect(() => {
+  //   if (productId)
+  //     dispatch(getProductDetailsThunk(productId));
+  // }, [dispatch, productId]);
 
   const [ upc, setUpc ] = useState(product?.upc || '');
   const [ name, setName ] = useState(product?.name || '');
@@ -36,10 +35,12 @@ function SellProductForm({ type }) {
   const [ hasSubmitted, setHasSubmitted ] = useState(false);
   const [ disabled, setDisabled ] = useState(false);
 
+  // Set the value of subcategory to the first option if not selected
   useEffect(() => {
     setSubcategory(categories[category][0]);
   }, [category]);
 
+  // Run form validations
   useEffect(() => {
     const errors = {};
 
@@ -67,6 +68,7 @@ function SellProductForm({ type }) {
     setValidationErrors(errors);
   }, [upc, name, price, description, stock, previewImage]);
 
+  // Disable submit if there are errors
   useEffect(() => {
     if (hasSubmitted && Object.values(validationErrors).length)
       setDisabled(true);

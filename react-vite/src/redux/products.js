@@ -60,6 +60,15 @@ export const updateProductThunk = async (formData, productId) => {
   return productData;
 };
 
+export const deleteProductThunk = async (productId) => {
+  const res = await csrfFetch(`/api/products/${productId}`, {
+    method: 'DELETE'
+  });
+
+  const message = await res.json();
+  return message;
+};
+
 const initialState = {};
 
 function productsReducer(state = initialState, action) {

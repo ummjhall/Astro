@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getProductDetailsThunk } from '../../redux/products';
+import { deleteProductThunk, getProductDetailsThunk } from '../../redux/products';
 import './products.css';
 
 function ProductDetails() {
@@ -16,6 +16,12 @@ function ProductDetails() {
     dispatch(getProductDetailsThunk(productId));
   }, [dispatch, productId]);
 
+  const handleDelete = async () => {
+    const res = await deleteProductThunk(productId);
+    if (res.message = 'Successfully deleted')
+      navigate('/');
+  };
+
   return product ?
     (
       <div className='productdetails-wrapper'>
@@ -23,6 +29,9 @@ function ProductDetails() {
           <div>
             <button onClick={() => navigate(`/sell/${product.product_id}/update`)}>
               Edit Listing
+            </button>
+            <button onClick={handleDelete}>
+              Delete Listing
             </button>
           </div>
         )}

@@ -1,11 +1,19 @@
 import { csrfFetch } from "./csrf";
 
 const LOAD_CART = 'cart/loadCart';
+const REMOVE_ITEM = 'cart/removeItem';
 
 const loadCart = (cartData) => {
   return {
     type: LOAD_CART,
     cartData
+  };
+};
+
+const removeItem = (productId) => {
+  return {
+    type: REMOVE_ITEM,
+    productId
   };
 };
 
@@ -28,6 +36,17 @@ export const addToCartThunk = async (productId, data) => {
   return itemData;
 };
 
+export const removeFromCartThunk = (productId) => async dispatch => {
+  const res = await csrfFetch(`/api/carts/current/${productId}`, {
+    method: 'DELETE'
+  });
+
+  const message = await res.json();
+  if (res.ok)
+    dispatch(removeItem(productId));
+  return message;
+};
+
 const initialState = {};
 
 function cartReducer(state = initialState, action) {
@@ -38,6 +57,11 @@ function cartReducer(state = initialState, action) {
         cart[item.product_id] = item;
       });
       return {...state, ...cart};
+    }
+    case REMOVE_ITEM: {
+      const nextState = {...state};
+      delete nextState[action.productId];
+      return nextState;
     }
     default:
       return state;

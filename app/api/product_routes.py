@@ -16,7 +16,9 @@ def get_all_products():
     for product in all_products:
         thumbnail_url = None
         if product.product_images:
-            thumbnail_url = list(filter(lambda x: x.thumbnail==True, product.product_images))[0].url
+            wrapped_image = list(filter(lambda x: x.thumbnail==True, product.product_images))
+            if wrapped_image:
+              thumbnail_url = list(filter(lambda x: x.thumbnail==True, product.product_images))[0].url
         product = product.to_dict()
         product['previewImage'] = thumbnail_url
         products.append(product)
@@ -149,7 +151,7 @@ def validate_request(req, required_attributes=False):
             if attribute not in req:
                 errors[attribute] = f'{attribute.title()} is required'
 
-    if 'upc' in req and (not isinstance(req['upc'], str) or len(req['upc']) != 16):
+    if 'upc' in req and req['upc'] is not None and (not isinstance(req['upc'], str) or len(req['upc']) not in [0, 16]):
         errors['upc'] = 'Invalid UPC'
     if 'name' in req and (not isinstance(req['name'], str) or len(req['name']) > 100):
         errors['name'] = 'Invalid name'

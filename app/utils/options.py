@@ -7,39 +7,39 @@ conditions = [
 ]
 
 categories = {
-    'space travel': {
-        'spacecraft essentials',
+    'space-travel': [
+        'spacecraft-essentials',
         'navigation',
         'gear',
         'hobby'
-    },
-    'tech': {
+    ],
+    'tech': [
         'gadgets',
         'appliances',
         'entertainment'
-    },
-    'decor': {
+    ],
+    'decor': [
         'furniture',
         'art'
-    },
-    'food': {
+    ],
+    'food': [
         'food',
         'drinks',
         'cooking'
-    },
-    'health': {
-        'fitness'
-        'medicine',
-    },
-    'pet': {
+    ],
+    'health': [
+        'fitness',
+        'medicine'
+    ],
+    'pet': [
         'pets',
-        'pet care',
-        'pet toys'
-    },
-    'collectibles': {
+        'pet-care',
+        'pet-toys'
+    ],
+    'collectibles': [
         'artifacts',
         'memorabilia',
         'minerals',
         'hobby'
-    }
+    ]
 }

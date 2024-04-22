@@ -7,6 +7,24 @@ from app.forms import SignUpForm
 auth_routes = Blueprint('auth', __name__)
 
 
+@auth_routes.route('/')
+def authenticate():
+    """
+    Authenticates a user.
+    """
+    if current_user.is_authenticated:
+        return current_user.to_dict()
+    return {'errors': {'message': 'Authentication required'}}, 401
+
+
+@auth_routes.route('/unauthorized')
+def unauthorized():
+    """
+    Returns unauthorized JSON when flask-login authentication fails.
+    """
+    return {'errors': {'message': 'Authentication required'}}, 401
+
+
 @auth_routes.route('/signup', methods=['POST'])
 def sign_up():
     """
@@ -111,21 +129,3 @@ def logout():
     """
     logout_user()
     return {'message': 'Success'}
-
-
-@auth_routes.route('/unauthorized')
-def unauthorized():
-    """
-    Returns unauthorized JSON when flask-login authentication fails.
-    """
-    return {'errors': {'message': 'Authentication required'}}, 401
-
-
-# @auth_routes.route('/')
-# def authenticate():
-#     """
-#     Authenticates a user.
-#     """
-#     if current_user.is_authenticated:
-#         return current_user.to_dict()
-#     return {'errors': {'message': 'Authentication required'}}, 401

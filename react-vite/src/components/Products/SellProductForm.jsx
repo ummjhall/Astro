@@ -95,13 +95,13 @@ function SellProductForm({ type }) {
 
     if (type == 'update') {
       updateProductThunk(formData, productId);
-      navigate(`/products/${product.category}`);
+      navigate(`/products/${product.category}/${product.product_id}`);
       return;
     }
 
     const newProduct = await listProductThunk(formData);
     if (newProduct) {
-      navigate('/')
+      navigate(`/products/${newProduct.category}/${newProduct.product_id}`);
     }
   };
 

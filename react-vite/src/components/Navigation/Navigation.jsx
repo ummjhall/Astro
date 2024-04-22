@@ -14,12 +14,12 @@ function Navigation() {
         <div onClick={() => navigate('/')}>Astro</div>
         <div className='nav-user-menu'>
           {user &&
-            <div onClick={() => navigate('sell')}>
+            <div onClick={() => navigate('/sell')}>
               SELL
             </div>
           }
           {user &&
-            <div>
+            <div onClick={() => navigate('/cart')}>
               CART
             </div>
           }

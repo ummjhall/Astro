@@ -78,6 +78,7 @@ function productsReducer(state = initialState, action) {
       action.productsData.Products.forEach(product => {
         products[product.product_id] = product;
       });
+      // should probably also spread previous state here
       return {...products};
     }
     case LOAD_PRODUCT_DETAILS: {

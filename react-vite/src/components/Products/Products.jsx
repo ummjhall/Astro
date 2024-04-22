@@ -6,8 +6,8 @@ import './products.css';
 
 function Products() {
   const allProducts = useSelector(state => state.products);
-  const dispatch = useDispatch();
   const allProductsArray = Object.values(allProducts);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllProductsThunk());

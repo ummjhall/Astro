@@ -9,9 +9,11 @@ function Products() {
   const allProductsArray = Object.values(allProducts);
   const dispatch = useDispatch();
 
+
   useEffect(() => {
     dispatch(getAllProductsThunk());
   }, [dispatch]);
+
 
   return (
     <div className='products-wrapper'>

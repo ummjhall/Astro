@@ -8,6 +8,7 @@ function Navigation() {
   const navigate = useNavigate();
   const categories = ['Space Travel', 'Tech', 'Decor', 'Food', 'Health', 'Pet', 'Collectibles'];
 
+
   return (
     <div className='nav-wrapper'>
       <div className='nav-upper-wrapper'>

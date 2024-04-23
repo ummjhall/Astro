@@ -14,13 +14,16 @@ function ProductDetails() {
   const navigate = useNavigate();
   const [ disabled, setDisabled ] = useState(true);
 
+
   useEffect(() => {
     dispatch(getProductDetailsThunk(productId));
   }, [dispatch, productId]);
 
+
   useEffect(() => {
     dispatch(getCartThunk());
   }, [dispatch]);
+
 
   useEffect(() => {
     if (productId in cart)
@@ -29,6 +32,7 @@ function ProductDetails() {
       setDisabled(false);
   }, [productId, cart]);
 
+
   const handleAdd = async () => {
     const data = {quantity: 1};
     const res = await addToCartThunk(productId, data);
@@ -36,11 +40,13 @@ function ProductDetails() {
       return navigate('/cart');
   };
 
+
   const handleDelete = async () => {
     const res = await deleteProductThunk(productId);
     if (res)
       return navigate('/');
   };
+
 
   return product ?
     (

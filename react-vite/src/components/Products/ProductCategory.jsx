@@ -11,9 +11,11 @@ function ProductCategory() {
   const { category } = useParams();
   const productsArray = Object.values(allProducts).filter(product => product.category == category);
 
+
   useEffect(() => {
     dispatch(getAllProductsThunk());
   }, [dispatch])
+
 
   return (
     <div className='products-wrapper'>

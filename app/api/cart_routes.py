@@ -20,7 +20,7 @@ def get_cart():
         cart_item = cart.cart_items[i]
         item['quantity'] = cart_item.quantity
 
-        for attribute in ['description', 'details', 'seller_id', 'stock']:
+        for attribute in ['description', 'details', 'seller_id']:
             del item[attribute]
 
         items.append(item)
@@ -111,7 +111,7 @@ def update_quantity(product_id):
     db.session.commit()
 
     updated_item = cart_item.item.to_dict()
-    for attribute in ['description', 'details', 'seller_id', 'stock']:
+    for attribute in ['description', 'details', 'seller_id']:
         del updated_item[attribute]
     updated_item['quantity'] = quantity
 

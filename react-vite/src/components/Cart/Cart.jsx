@@ -9,9 +9,11 @@ function Cart() {
   const cartItemsArray = Object.values(cartItems);
   const dispatch = useDispatch();
 
+
   useEffect(() => {
     dispatch(getCartThunk());
   }, [dispatch]);
+
 
   return (
     <div className='cart-wrapper'>

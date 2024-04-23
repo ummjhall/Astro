@@ -1,12 +1,20 @@
 import { csrfFetch } from "./csrf";
 
 const LOAD_CART = 'cart/loadCart';
+const UPDATE_QUANTITY = 'cart/updateQuantity';
 const REMOVE_ITEM = 'cart/removeItem';
 
 const loadCart = (cartData) => {
   return {
     type: LOAD_CART,
     cartData
+  };
+};
+
+const updateQuantity = (itemData) => {
+  return {
+    type: UPDATE_QUANTITY,
+    itemData
   };
 };
 
@@ -36,6 +44,18 @@ export const addToCartThunk = async (productId, data) => {
   return itemData;
 };
 
+export const updateQuantityThunk = (productId, formData) => async dispatch => {
+  const res = await csrfFetch(`/api/carts/current/${productId}`, {
+    method: 'PATCH',
+    body: JSON.stringify(formData)
+  });
+
+  const itemData = await res.json();
+  if (res.ok)
+    dispatch(updateQuantity(itemData));
+  return itemData;
+};
+
 export const removeFromCartThunk = (productId) => async dispatch => {
   const res = await csrfFetch(`/api/carts/current/${productId}`, {
     method: 'DELETE'
@@ -57,6 +77,9 @@ function cartReducer(state = initialState, action) {
         cart[item.product_id] = item;
       });
       return {...state, ...cart};
+    }
+    case UPDATE_QUANTITY: {
+      return {...state, [action.itemData.product_id]: action.itemData}
     }
     case REMOVE_ITEM: {
       const nextState = {...state};

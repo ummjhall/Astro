@@ -3,6 +3,7 @@ import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import Layout from './Layout';
 import Home from '../components/Home/Home';
+import Cart from '../components/Cart/Cart';
 import Products from '../components/Products/Products';
 import ProductCategory from '../components/Products/ProductCategory';
 import ProductDetails from '../components/Products/ProductDetails';
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: 'signup',
         element: <SignupFormPage />
+      },
+      {
+        path: 'cart',
+        element: <Cart />
       },
       {
         path: 'products',

@@ -12,10 +12,12 @@ function ProfileButton() {
   const user = useSelector((store) => store.session.user);
   const ulRef = useRef();
 
+
   const toggleMenu = (e) => {
     e.stopPropagation(); // Keep from bubbling up to document and triggering closeMenu
     setShowMenu(!showMenu);
   };
+
 
   useEffect(() => {
     if (!showMenu) return;
@@ -31,13 +33,16 @@ function ProfileButton() {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
+
   const closeMenu = () => setShowMenu(false);
+
 
   const logout = (e) => {
     e.preventDefault();
     dispatch(thunkLogout());
     closeMenu();
   };
+
 
   return (
     <>

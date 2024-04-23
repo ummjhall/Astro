@@ -12,10 +12,12 @@ function SellProductForm({ type }) {
   // const dispatch = useDispatch();
   const navigate = useNavigate();
 
+
   // useEffect(() => {
   //   if (productId)
   //     dispatch(getProductDetailsThunk(productId));
   // }, [dispatch, productId]);
+
 
   const [ upc, setUpc ] = useState(product?.upc || '');
   const [ name, setName ] = useState(product?.name || '');
@@ -35,10 +37,12 @@ function SellProductForm({ type }) {
   const [ hasSubmitted, setHasSubmitted ] = useState(false);
   const [ disabled, setDisabled ] = useState(false);
 
+
   // Set the value of subcategory to the first option if not selected
   useEffect(() => {
     setSubcategory(categories[category][0]);
   }, [category]);
+
 
   // Run form validations
   useEffect(() => {
@@ -68,6 +72,7 @@ function SellProductForm({ type }) {
     setValidationErrors(errors);
   }, [upc, name, price, description, stock, previewImage]);
 
+
   // Disable submit if there are errors
   useEffect(() => {
     if (hasSubmitted && Object.values(validationErrors).length)
@@ -75,6 +80,7 @@ function SellProductForm({ type }) {
     else
       setDisabled(false);
   }, [hasSubmitted, validationErrors]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -106,6 +112,7 @@ function SellProductForm({ type }) {
       navigate(`/products/${newProduct.category}/${newProduct.product_id}`);
     }
   };
+
 
   if (!user) return <Navigate to='/' replace={true} />;
 

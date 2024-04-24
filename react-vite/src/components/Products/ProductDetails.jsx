@@ -42,9 +42,10 @@ function ProductDetails() {
 
 
   const handleDelete = async () => {
+    const category = product.category;
     const res = await deleteProductThunk(productId);
     if (res)
-      return navigate('/');
+      return navigate(`/products/${category}`);
   };
 
 

@@ -68,9 +68,15 @@ function SellProductForm({ type }) {
       errors.previewImage = 'Preview image is required';
     else if (!previewImage.endsWith('.png') && !previewImage.endsWith('.jpg') && !previewImage.endsWith('.jpeg'))
       errors.previewImage = 'Image URL must be .png, .jpg, or .jpeg';
+    const imageUrls = {2: image2, 3: image3, 4: image4, 5: image5};
+    for (const key in imageUrls) {
+      const url = imageUrls[key];
+      if (url && !url.endsWith('.png') && !url.endsWith('.jpg') && !url.endsWith('.jpeg'))
+        errors['image'+key] = 'Image URL must be .png, .jpg, or .jpeg';
+    }
 
     setValidationErrors(errors);
-  }, [upc, name, price, description, stock, previewImage]);
+  }, [upc, name, price, description, stock, previewImage, image2, image3, image4, image5]);
 
 
   // Disable submit if there are errors

@@ -50,7 +50,7 @@ export const listProductThunk = async (formData) => {
   return productData;
 };
 
-export const updateProductThunk = async (formData, productId) => {
+export const updateProductThunk = async (productId, formData) => {
   const res = await csrfFetch(`/api/products/${productId}`, {
     method: 'PATCH',
     body: JSON.stringify(formData)
@@ -69,6 +69,16 @@ export const deleteProductThunk = async (productId) => {
   return message;
 };
 
+export const addImageThunk = async (productId, data) => {
+  const res = await csrfFetch(`/api/product-images/${productId}`, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  });
+
+  const image_data = await res.json();
+  return image_data;
+};
+
 const initialState = {};
 
 function productsReducer(state = initialState, action) {
@@ -78,7 +88,6 @@ function productsReducer(state = initialState, action) {
       action.productsData.Products.forEach(product => {
         products[product.product_id] = product;
       });
-      // should probably also spread previous state here
       return {...products};
     }
     case LOAD_PRODUCT_DETAILS: {

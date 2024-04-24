@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { /*useDispatch,*/ useSelector } from 'react-redux';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { /*getProductDetailsThunk,*/ listProductThunk, updateProductThunk } from '../../redux/products';
+import { /*getProductDetailsThunk,*/ addImageThunk, listProductThunk, updateProductThunk } from '../../redux/products';
 import categories from '../../utils/categories';
 import './sell-product.css';
 
@@ -82,9 +82,11 @@ function SellProductForm({ type }) {
   }, [hasSubmitted, validationErrors]);
 
 
+  // Create the listing
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);
+    setDisabled(true);
 
     if (Object.values(validationErrors).length)
       return;
@@ -102,14 +104,31 @@ function SellProductForm({ type }) {
     };
 
     if (type == 'update') {
-      updateProductThunk(formData, productId);
+      updateProductThunk(productId, formData);
       navigate(`/products/${product.category}/${product.product_id}`);
       return;
     }
 
     const newProduct = await listProductThunk(formData);
     if (newProduct) {
+      await addImages(newProduct.product_id);
       navigate(`/products/${newProduct.category}/${newProduct.product_id}`);
+    }
+  };
+
+
+  const addImages = async (productId) => {
+    const imageData = {
+      url: previewImage,
+      thumbnail: true
+    };
+    await addImageThunk(productId, imageData);
+
+    for (const image of [image2, image3, image4, image5]) {
+      if (image) {
+        const imageData = {url: image};
+        await addImageThunk(productId, imageData);
+      }
     }
   };
 

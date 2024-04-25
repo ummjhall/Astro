@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { BsRocketFill } from 'react-icons/bs';
 import { thunkLogout } from '../../redux/session';
 import OpenModalMenuItem from './OpenModalMenuItem';
@@ -9,27 +10,24 @@ import SignupFormModal from '../SignupFormModal';
 function ProfileButton() {
   const user = useSelector((store) => store.session.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const ulRef = useRef();
   const [showMenu, setShowMenu] = useState(false);
 
 
   const toggleMenu = (e) => {
-    e.stopPropagation(); // Keep from bubbling up to document and triggering closeMenu
+    e.stopPropagation();
     setShowMenu(!showMenu);
   };
 
 
   useEffect(() => {
     if (!showMenu) return;
-
     const closeMenu = (e) => {
-      if (ulRef.current && !ulRef.current.contains(e.target)) {
+      if (ulRef.current && !ulRef.current.contains(e.target))
         setShowMenu(false);
-      }
     };
-
     document.addEventListener('click', closeMenu);
-
     return () => document.removeEventListener('click', closeMenu);
   }, [showMenu]);
 
@@ -40,6 +38,7 @@ function ProfileButton() {
   const logout = (e) => {
     e.preventDefault();
     dispatch(thunkLogout());
+    navigate('/');
     closeMenu();
   };
 

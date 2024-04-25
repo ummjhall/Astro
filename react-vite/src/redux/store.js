@@ -4,7 +4,13 @@ import sessionReducer from './session';
 import productsReducer from './products';
 import cartReducer from './cart';
 
-const rootReducer = combineReducers({
+const rootReducer = (state, action) => {
+  if (action.type == 'USER_LOGOUT')
+    return appReducer(undefined, action);
+  return appReducer(state, action);
+};
+
+const appReducer = combineReducers({
   session: sessionReducer,
   products: productsReducer,
   cart: cartReducer

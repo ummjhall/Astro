@@ -7,9 +7,9 @@ import ProductTile from './ProductTile';
 import './products.css';
 
 function ProductCategory() {
+  const { category } = useParams();
   const allProducts = useSelector(state => state.products);
   const dispatch = useDispatch();
-  const { category } = useParams();
   const productsArray = Object.values(allProducts).filter(product => product.category == category);
 
 

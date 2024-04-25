@@ -15,6 +15,13 @@
   align-items: center;
 }
 
+.nav-astro {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 40px;
+  color: gold;
+  cursor: pointer;
+}
+
 .nav-user-menu {
   display: flex;
   justify-content: space-between;

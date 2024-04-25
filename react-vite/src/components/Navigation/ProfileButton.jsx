@@ -6,6 +6,7 @@ import { thunkLogout } from '../../redux/session';
 import OpenModalMenuItem from './OpenModalMenuItem';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import './profile-button.css';
 
 function ProfileButton() {
   const user = useSelector((store) => store.session.user);

@@ -1,0 +1,28 @@
+.signup-wrapper {
+  margin: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.signup-title {
+  font-size: 34px;
+}
+
+.signup-form {
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.signup-submit {
+  margin-top: 5px;
+  width: 75px;
+  height: 30px;
+  cursor: pointer;
+}

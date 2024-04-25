@@ -15,11 +15,10 @@ function LoginFormModal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await dispatch(thunkLogin({credential, password}));
-    if (res.message == 'Invalid credentials') {
+    if (res.message == 'Invalid credentials')
       setErrors({credentials: res.message});
-      return;
-    }
-    closeModal();
+    else
+      closeModal();
   };
 
 

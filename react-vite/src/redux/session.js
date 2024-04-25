@@ -3,7 +3,7 @@ const REMOVE_USER = 'session/removeUser';
 
 const setUser = (user) => ({
   type: SET_USER,
-  payload: user
+  user
 });
 
 const removeUser = () => ({
@@ -11,18 +11,20 @@ const removeUser = () => ({
 });
 
 export const thunkAuthenticate = () => async (dispatch) => {
-	const res = await fetch("/api/auth/");
-	if (res.ok) {
-		const data = await res.json();
-		if (data.errors) return;
+	const res = await fetch(`/api/auth/`);
+
+  const data = await res.json();
+  if (data.errors) return;
+
+	if (res.ok)
 		dispatch(setUser(data));
-	}
+  return data;
 };
 
 export const thunkLogin = (credentials) => async dispatch => {
-  const res = await fetch("/api/auth/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+  const res = await fetch(`/api/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(credentials)
   });
 
@@ -33,36 +35,31 @@ export const thunkLogin = (credentials) => async dispatch => {
 };
 
 export const thunkSignup = (user) => async (dispatch) => {
-  const response = await fetch("/api/auth/signup", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+  const res = await fetch(`/api/auth/signup`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(user)
   });
 
-  if(response.ok) {
-    const data = await response.json();
-    dispatch(setUser(data));
-  } else if (response.status < 500) {
-    const errorMessages = await response.json();
-    return errorMessages
-  } else {
-    return { server: "Something went wrong. Please try again" }
-  }
+  const resData = await res.json();
+  if (res.ok)
+    dispatch(setUser(resData));
+  return resData;
 };
 
 export const thunkLogout = () => async (dispatch) => {
-  await fetch("/api/auth/logout");
+  await fetch(`/api/auth/logout`);
   dispatch(removeUser());
 };
 
-const initialState = { user: null };
+const initialState = {user: null};
 
 function sessionReducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER:
-      return { ...state, user: action.payload };
+      return {...state, user: action.user};
     case REMOVE_USER:
-      return { ...state, user: null };
+      return {...state, user: null};
     default:
       return state;
   }

@@ -7,10 +7,10 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 
 function ProfileButton() {
-  const dispatch = useDispatch();
-  const [showMenu, setShowMenu] = useState(false);
   const user = useSelector((store) => store.session.user);
+  const dispatch = useDispatch();
   const ulRef = useRef();
+  const [showMenu, setShowMenu] = useState(false);
 
 
   const toggleMenu = (e) => {

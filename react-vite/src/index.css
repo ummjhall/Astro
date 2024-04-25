@@ -22,3 +22,7 @@ body {
 
   --font-main: 'Audiowide', sans-serif;
 }
+
+.error {
+  color: red;
+}

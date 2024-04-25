@@ -11,33 +11,25 @@ const removeUser = () => ({
 });
 
 export const thunkAuthenticate = () => async (dispatch) => {
-	const response = await fetch("/api/auth/");
-	if (response.ok) {
-		const data = await response.json();
-		if (data.errors) {
-			return;
-		}
-
+	const res = await fetch("/api/auth/");
+	if (res.ok) {
+		const data = await res.json();
+		if (data.errors) return;
 		dispatch(setUser(data));
 	}
 };
 
 export const thunkLogin = (credentials) => async dispatch => {
-  const response = await fetch("/api/auth/login", {
+  const res = await fetch("/api/auth/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(credentials)
   });
 
-  if(response.ok) {
-    const data = await response.json();
-    dispatch(setUser(data));
-  } else if (response.status < 500) {
-    const errorMessages = await response.json();
-    return errorMessages
-  } else {
-    return { server: "Something went wrong. Please try again" }
-  }
+  const userData = await res.json();
+  if (res.ok)
+    dispatch(setUser(userData));
+  return userData;
 };
 
 export const thunkSignup = (user) => async (dispatch) => {

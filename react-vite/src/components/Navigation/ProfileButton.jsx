@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { FaUserCircle } from 'react-icons/fa';
-import { thunkLogout } from "../../redux/session";
-import OpenModalMenuItem from "./OpenModalMenuItem";
-import LoginFormModal from "../LoginFormModal";
-import SignupFormModal from "../SignupFormModal";
+import { useState, useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { BsRocketFill } from 'react-icons/bs';
+import { thunkLogout } from '../../redux/session';
+import OpenModalMenuItem from './OpenModalMenuItem';
+import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from '../SignupFormModal';
 
 function ProfileButton() {
   const dispatch = useDispatch();
@@ -28,9 +28,9 @@ function ProfileButton() {
       }
     };
 
-    document.addEventListener("click", closeMenu);
+    document.addEventListener('click', closeMenu);
 
-    return () => document.removeEventListener("click", closeMenu);
+    return () => document.removeEventListener('click', closeMenu);
   }, [showMenu]);
 
 
@@ -45,37 +45,37 @@ function ProfileButton() {
 
 
   return (
-    <>
-      <button className='profile-button' onClick={toggleMenu}>
-        <FaUserCircle />
-      </button>
+    <div>
+      <BsRocketFill className='profile-button' onClick={toggleMenu} />
       {showMenu && (
-        <div className={"profile-dropdown"} ref={ulRef}>
+        <div className={'profile-dropdown'} ref={ulRef}>
           {user ? (
-            <>
-              <div>{user.username}</div>
-              <div>{user.email}</div>
+            <div>
+              <div className='profile-dropdown_username'>{user.username}</div>
+              <div className='profile-dropdown_email'>{user.email}</div>
               <div>
-                <div onClick={logout}>Log Out</div>
+                <div className='profile-dropdown_button' onClick={logout}>Log Out</div>
               </div>
-            </>
+            </div>
           ) : (
-            <>
+            <div>
               <OpenModalMenuItem
-                itemText="Log In"
+                className='profile-dropdown_button'
+                itemText='Log In'
                 onItemClick={closeMenu}
                 modalComponent={<LoginFormModal />}
               />
               <OpenModalMenuItem
-                itemText="Sign Up"
+                className='profile-dropdown_button'
+                itemText='Sign Up'
                 onItemClick={closeMenu}
                 modalComponent={<SignupFormModal />}
               />
-            </>
+            </div>
           )}
         </div>
       )}
-    </>
+    </div>
   );
 }
 

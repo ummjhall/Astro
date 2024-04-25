@@ -5,3 +5,20 @@ body {
   margin: 0;
   background-color: black;
 }
+
+:root {
+  --color-indigo: rgb(75,0,130);
+  --color-darkpurple: rgb(38,28,113);
+  --color-gold: rgb(255, 213, 0);
+  --color-greenblue: rgb(13,83,119);
+  --color-lightblue: rgb(4,149,212);
+  --color-cyan: rgb(0,255,255);
+  --color-blue: rgb(13,75,162);
+  --color-darkblue: rgb(25,46,125);
+  --color-darkdarkblue: rgb(14,29,84);
+  --color-silver: rgb(165,172,190);
+  --color-silverdark: rgb(47,79,79);
+  --color-red: rgb(162, 17, 44);
+
+  --font-main: 'Audiowide', sans-serif;
+}

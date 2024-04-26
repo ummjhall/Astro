@@ -121,7 +121,7 @@ def get_user():
     return current_user.to_dict()
 
 
-@auth_routes.route('/logout', methods=['DELETE'])
+@auth_routes.route('/logout')
 @login_required
 def logout():
     """

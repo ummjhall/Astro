@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-// import { thunkAuthenticate } from '../../redux/session';
 import { getCartThunk } from '../../redux/cart';
 import CartTile from './CartTile';
 import './cart.css';
@@ -14,7 +13,6 @@ function Cart() {
 
 
   useEffect(() => {
-    // dispatch(thunkAuthenticate());
     dispatch(getCartThunk());
   }, [dispatch]);
 

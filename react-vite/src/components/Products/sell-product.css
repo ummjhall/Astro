@@ -1,4 +1,64 @@
 .sell-product-wrapper {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  border: 2px solid white;
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 15px;
+  width: 40%;
   color: white;
+}
+
+.sell-title {
+  margin-bottom: 15px;
+  font-size: 34px;
+  color: var(--color-gold);
+}
+
+form > div {
+  margin-bottom: 10px;
+}
+
+form label {
+  color: var(--color-lightblue);
+}
+
+.sell-name {
+  width: 60%;
+}
+
+.sell-upc {
+  width: 60%;
+}
+
+.sell-upc-small {
+  font-size: 12px;
+}
+
+.sell-description {
+  width: calc(100% - 6px);
+  height: 5em;
+  scrollbar-width: thin;
+  scrollbar-color: white black;
+}
+
+.sell-details {
+  width: calc(100% - 6px);
+  height: 10em;
+  scrollbar-width: thin;
+  scrollbar-color: white black;
+}
+
+.sell-image {
+  width: calc(100% - 6px);
+}
+
+.sell-submit {
+  margin-top: 15px;
+  min-width: 70px;
+  height: 32px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.sell-submit:disabled {
+  cursor: default;
 }

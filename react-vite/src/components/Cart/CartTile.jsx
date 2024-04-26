@@ -19,6 +19,7 @@ function CartTile({ item }) {
     <div className='cart-tile-wrapper'>
       <div className='cart-tile-info'>
         <div className='ct-name'>{item.name}</div>
+        <div>Sold by: {item.seller}</div>
         <div>{item.condition}</div>
         <div>{item.category}</div>
         <div>{item.subcategory}</div>
@@ -28,7 +29,8 @@ function CartTile({ item }) {
         <div><button><OpenModalMenuItem modalComponent={<QuantityModal item={item}/>} itemText='Update Quantity'/></button></div>
         <div><button onClick={handleRemove} disabled={disabled}>Remove from Cart</button></div>
       </div>
-      <div className='cart-tile-image'>
+      <div>
+        <img className='ct-image' src={item.previewImage} style={{width: '285px', height: '285px'}} />
       </div>
     </div>
   );

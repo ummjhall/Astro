@@ -14,6 +14,12 @@
   margin-bottom: 15px;
   padding: 10px;
   width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-tile-info {
+  margin-top: -5px;
 }
 
 .cart-tile-info > div {
@@ -37,4 +43,9 @@
 .ct-subtotal {
   font-size: 18px;
   color: var(--color-red);
+}
+
+.ct-image {
+  border-radius: 5px;
+  object-fit: cover;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateQuantityThunk } from "../../redux/cart";
+import { getCartThunk, updateQuantityThunk } from "../../redux/cart";
 import { useModal } from "../../context/Modal";
 import './quantity-modal.css';
 
@@ -42,7 +42,8 @@ function QuantityModal({ item }) {
     setDisabled(true);
 
     const formData = {quantity: +quantity};
-    dispatch(updateQuantityThunk(item.product_id, formData));
+    await dispatch(updateQuantityThunk(item.product_id, formData));
+    dispatch(getCartThunk());
 
     closeModal();
   };

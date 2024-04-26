@@ -30,7 +30,7 @@ function CartTile({ item }) {
         <div><button onClick={handleRemove} disabled={disabled}>Remove from Cart</button></div>
       </div>
       <div>
-        <img className='ct-image' src={item.previewImage} style={{width: '285px', height: '285px'}} />
+        <img className='ct-image' src={item.previewImage} alt='Preview Image' style={{width: '285px', height: '285px'}} />
       </div>
     </div>
   );

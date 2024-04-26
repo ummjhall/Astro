@@ -5,6 +5,18 @@
   color: white;
 }
 
+.cart-checkout {
+  margin: 15px 0 20px;
+  height: 40px;
+  font-size: 22px;
+}
+
+.cart-total {
+  margin-top: 30px;
+  font-size: 22px;
+  color: var(--color-red);
+}
+
 
 /* ***** CART TILE ***************************************************************************** */
 
@@ -42,7 +54,7 @@
 
 .ct-subtotal {
   font-size: 18px;
-  color: var(--color-red);
+  color: var(--color-green);
 }
 
 .ct-image {

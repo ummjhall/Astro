@@ -13,8 +13,13 @@ function ProductTile({ product }) {
   return (
     <div className='producttile-wrapper' onClick={handleClick}>
       <img className='producttile-image' src={product.previewImage} />
-      <div>{product.name}</div>
-      <div>ঋ{product.price}</div>
+      <div className='producttile-info-container'>
+        <div className='producttile-name'>{product.name}</div>
+        <div className='producttile-soldby'>Sold by:{' '}
+          <span className='producttile-seller'>{product.seller}</span>
+        </div>
+        <div className='producttile-price'>ঋ{product.price.toLocaleString()}</div>
+      </div>
     </div>
   );
 }

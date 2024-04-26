@@ -52,7 +52,7 @@ function ProductDetails() {
   return product ?
     (
       <div className='productdetails-wrapper'>
-        {product.seller_id == user.id && (
+        {product.seller_id == user?.id && (
           <div>
             <button onClick={() => navigate(`/sell/${product.product_id}/update`)}>
               Edit Listing
@@ -63,7 +63,7 @@ function ProductDetails() {
           </div>
         )}
         {product.name}
-        {product.seller_id != user.id && (
+        {user && product.seller_id != user?.id && (
           <div>
             <button onClick={handleAdd} disabled={disabled}>
               Add to Cart

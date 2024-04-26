@@ -26,11 +26,13 @@
 /* ***** PRODUCT TILE ************************************************************************** */
 
 .producttile-wrapper {
-  margin: 20px;
-  width: 20%;
-  height: 200px;
   border: 1px solid white;
   border-radius: 5px;
+  margin: 20px;
+  width: 20%;
+  /* height: 225px; */
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 
@@ -42,6 +44,18 @@
   object-fit: cover;
 }
 
+.producttile-info-container {
+  margin: 5px 0 5px 10px;
+}
+
+.producttile-name,
+.producttile-seller {
+  color: var(--color-gold);
+}
+
+.producttile-price {
+  color: lime;
+}
 
 
 /* ***** PRODUCT DETAILS *********************************************************************** */

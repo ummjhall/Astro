@@ -5,8 +5,10 @@ function Home() {
 
   return (
     <div className='home-wrapper'>
+      <div className='temp'>New Home page coming soon</div>
+      <div className='temp'>Click a link in the NavBar above</div>
       <div className='home-container'>
-        <div className='home-box home-box1'>
+        {/* <div className='home-box home-box1'>
           Featured Item
         </div>
         <div className='home-box home-box2'>
@@ -26,7 +28,7 @@ function Home() {
         </div>
         <div className='home-box home-box7'>
           Best Sellers
-        </div>
+        </div> */}
       </div>
     </div>
   );

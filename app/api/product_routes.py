@@ -46,6 +46,8 @@ def get_product_details(product_id):
         images.append(image)
     product = product.to_dict()
     product['Images'] = images
+    seller = User.query.get(product['seller_id'])
+    product['seller'] = seller.username
 
     return product
 

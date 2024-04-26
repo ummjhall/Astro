@@ -19,6 +19,7 @@ body {
   --color-silver: rgb(165,172,190);
   --color-silverdark: rgb(47,79,79);
   --color-red: rgb(162, 17, 44);
+  --color-green: rgb(0,255,0);
 
   --font-main: 'Audiowide', sans-serif;
 }

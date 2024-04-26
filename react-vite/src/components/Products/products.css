@@ -58,15 +58,5 @@
 }
 
 .producttile-price {
-  color: lime;
-}
-
-
-/* ***** PRODUCT DETAILS *********************************************************************** */
-
-.productdetails-wrapper {
-  border: 1px solid red;
-  /* min-height: calc(100vh - 55px - 25px - 2px); */
-  /* background-color: black; */
-  color: white;
+  color: var(--color-green);
 }

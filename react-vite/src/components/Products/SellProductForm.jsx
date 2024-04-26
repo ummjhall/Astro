@@ -111,14 +111,14 @@ function SellProductForm({ type }) {
 
     if (type == 'update') {
       updateProductThunk(productId, formData);
-      navigate(`/products/${product.category}/${product.product_id}`);
+      navigate(`/products/${product.category}/${product.subcategory}/${product.product_id}`);
       return;
     }
 
     const newProduct = await listProductThunk(formData);
     if (newProduct) {
       await addImages(newProduct.product_id);
-      navigate(`/products/${newProduct.category}/${newProduct.product_id}`);
+      navigate(`/products/${newProduct.category}/${newProduct.subcategory}/${newProduct.product_id}`);
     }
   };
 

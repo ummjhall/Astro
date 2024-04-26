@@ -18,7 +18,7 @@ def get_all_products():
         if product.product_images:
             wrapped_image = list(filter(lambda x: x.thumbnail==True, product.product_images))
             if wrapped_image:
-              thumbnail_url = list(filter(lambda x: x.thumbnail==True, product.product_images))[0].url
+                thumbnail_url = list(filter(lambda x: x.thumbnail==True, product.product_images))[0].url
         product = product.to_dict()
         product['previewImage'] = thumbnail_url
         seller = User.query.get(product['seller_id'])

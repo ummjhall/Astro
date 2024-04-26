@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateQuantityThunk } from "../../redux/cart";
 import { useModal } from "../../context/Modal";
+import './quantity-modal.css';
 
 function QuantityModal({ item }) {
   const dispatch = useDispatch();
@@ -55,7 +56,7 @@ function QuantityModal({ item }) {
             {hasSubmitted && validationErrors.quantity && `${validationErrors.quantity}`}
           </div>
           <input
-            className='cart-quantity-input'
+            className='cq-input'
             type='number'
             placeholder='Quantity'
             min={1}
@@ -67,9 +68,9 @@ function QuantityModal({ item }) {
               ''}
           />
         </label>
-        <div className='cart-quantity-submit-container'>
+        <div className='cq-submit-container'>
           <button
-            className={`cart-quantity-submit ${disabled ? '' : 'enabled'}`}
+            className={`cq-submit ${disabled ? '' : 'enabled'}`}
             type='submit'
             disabled={disabled}
           >

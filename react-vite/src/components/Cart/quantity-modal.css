@@ -1,0 +1,12 @@
+.cart-quantity-wrapper {
+  padding: 15px 20px;
+}
+
+.cq-input {
+  margin: 10px 0;
+}
+
+.cq-submit {
+  min-height: 30px;
+  cursor: pointer;
+}

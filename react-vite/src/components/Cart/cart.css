@@ -1,6 +1,7 @@
 /* ***** CART ********************************************************************************** */
 
 .cart-wrapper {
+  padding-left: 20px;
   color: white;
 }
 
@@ -8,5 +9,32 @@
 /* ***** CART TILE ***************************************************************************** */
 
 .cart-tile-wrapper {
-  border: 1px solid white;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 50%;
+}
+
+.cart-tile-info > div {
+  margin-top: 5px;
+}
+
+.cart-tile-info button {
+  min-height: 30px;
+  cursor: pointer;
+}
+
+.ct-name {
+  font-size: 22px;
+  color: var(--color-gold);
+}
+
+/* .ct-price {
+  color: var(--color-green);
+} */
+
+.ct-subtotal {
+  font-size: 18px;
+  color: var(--color-red);
 }

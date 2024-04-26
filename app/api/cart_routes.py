@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_login import current_user, login_required
-from app.models import db, CartItem, Product
+from app.models import db, CartItem, Product, User
 
 cart_routes = Blueprint('carts', __name__,  url_prefix='/api/carts')
 
@@ -15,7 +15,18 @@ def get_cart():
 
     items = []
     for i in range(len(cart.items)):
+        product = cart.items[i]
         item = cart.items[i].to_dict()
+
+        thumbnail_url = None
+        if product.product_images:
+            wrapped_image = list(filter(lambda x: x.thumbnail==True, product.product_images))
+            if wrapped_image:
+                thumbnail_url = list(filter(lambda x: x.thumbnail==True, product.product_images))[0].url
+        item['previewImage'] = thumbnail_url
+
+        seller = User.query.get(item['seller_id'])
+        item['seller'] = seller.username
 
         cart_item = cart.cart_items[i]
         item['quantity'] = cart_item.quantity

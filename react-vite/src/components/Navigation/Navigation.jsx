@@ -12,15 +12,15 @@ function Navigation() {
   return (
     <div className='nav-wrapper'>
       <div className='nav-upper-wrapper'>
-        <div onClick={() => navigate('/')}>Astro</div>
+        <div className='nav-astro' onClick={() => navigate('/')}>Astro</div>
         <div className='nav-user-menu'>
           {user &&
-            <div onClick={() => navigate('/sell')}>
+            <div className='nav-user-menu_button' onClick={() => navigate('/sell')}>
               SELL
             </div>
           }
           {user &&
-            <div onClick={() => navigate('/cart')}>
+            <div className='nav-user-menu_button' onClick={() => navigate('/cart')}>
               CART
             </div>
           }

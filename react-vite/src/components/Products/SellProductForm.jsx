@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { /*useDispatch,*/ useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { /*getProductDetailsThunk,*/ addImageThunk, listProductThunk, updateProductThunk } from '../../redux/products';
+import { getProductDetailsThunk, addImageThunk, listProductThunk, updateProductThunk } from '../../redux/products';
 import categories from '../../utils/categories';
 import './sell-product.css';
 
@@ -9,7 +9,7 @@ function SellProductForm({ type }) {
   const { productId } = useParams();
   const product = useSelector(state => state.products[productId]);
   const user = useSelector(state => state.session.user);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
 
@@ -21,14 +21,15 @@ function SellProductForm({ type }) {
 
   const [ upc, setUpc ] = useState(product?.upc || '');
   const [ name, setName ] = useState(product?.name || '');
-  const [ category, setCategory ] = useState(product?.category || 'space-travel');
+  const [ category, setCategory ] = useState(product?.category || Object.keys(categories)[0]);
   const [ subcategory, setSubcategory ] = useState(product?.subcategory || categories[category][0]);
   const [ price, setPrice ] = useState(product?.price || '');
   const [ condition, setCondition ] = useState(product?.condition || 'New');
   const [ description, setDescription ] = useState(product?.description || '');
   const [ details, setDetails ] = useState(product?.details || '');
   const [ stock, setStock ] = useState(product?.stock || '');
-  const [ previewImage, setPreviewImage ] = useState('');
+  const [ previewImage, setPreviewImage ] =
+    useState('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1713932203/Astro/astro-logo2_jsnmd5.jpg');
   const [ image2, setImage2 ] = useState('');
   const [ image3, setImage3 ] = useState('');
   const [ image4, setImage4 ] = useState('');
@@ -36,12 +37,6 @@ function SellProductForm({ type }) {
   const [ validationErrors, setValidationErrors ] = useState({});
   const [ hasSubmitted, setHasSubmitted ] = useState(false);
   const [ disabled, setDisabled ] = useState(false);
-
-
-  // Set the value of subcategory to the first option if not selected
-  useEffect(() => {
-    setSubcategory(categories[category][0]);
-  }, [category]);
 
 
   // Run form validations
@@ -110,15 +105,16 @@ function SellProductForm({ type }) {
     };
 
     if (type == 'update') {
-      updateProductThunk(productId, formData);
-      navigate(`/products/${product.category}/${product.product_id}`);
+      await dispatch(updateProductThunk(productId, formData));
+      await dispatch(getProductDetailsThunk(productId));
+      navigate(`/products/${category}/${subcategory}/${productId}`);
       return;
     }
 
     const newProduct = await listProductThunk(formData);
     if (newProduct) {
       await addImages(newProduct.product_id);
-      navigate(`/products/${newProduct.category}/${newProduct.product_id}`);
+      navigate(`/products/${newProduct.category}/${newProduct.subcategory}/${newProduct.product_id}`);
     }
   };
 
@@ -143,32 +139,17 @@ function SellProductForm({ type }) {
 
   return (
     <div className='sell-product-wrapper'>
-      <h1>{type == 'update' ? 'Edit Your Item' : 'Sell Your Item'}</h1>
+      <div className='sell-title'>{type == 'update' ? 'Edit Your Item' : 'Sell Your Item'}</div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>UPC{' '}
-            <div className='error'>
-              {hasSubmitted && validationErrors.upc && `${validationErrors.upc}`}
-            </div>
-            <input
-              className='sell-product-upc'
-              type='text'
-              placeholder='UPC'
-              value={upc}
-              onChange={e => setUpc(e.target.value)}
-            />
-          </label>
-        </div>
-
-        <div>
-          <label>Name{' '}
+          <label>Name *{' '}
             <div className='error'>
               {hasSubmitted && validationErrors.name && `${validationErrors.name}`}
             </div>
             <input
-              className='sell-product-name'
+              className='sell-name'
               type='text'
-              placeholder='Product Name'
+              // placeholder='Product Name'
               maxLength={100}
               value={name}
               onChange={e => setName(e.target.value)}
@@ -177,12 +158,27 @@ function SellProductForm({ type }) {
         </div>
 
         <div>
-          <label>Category{' '}
+          <label>UPC <span className='sell-upc-small'>(if ITF-registered item)</span>{' '}
+            <div className='error'>
+              {hasSubmitted && validationErrors.upc && `${validationErrors.upc}`}
+            </div>
+            <input
+              className='sell-upc'
+              type='text'
+              // placeholder='UPC'
+              value={upc}
+              onChange={e => setUpc(e.target.value)}
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>Category *{' '}
             <div className='error'>
               {hasSubmitted && validationErrors.category && `${validationErrors.category}`}
             </div>
             <select
-              className='sell-product-category'
+              className='sell-category'
               value={category}
               onChange={e => setCategory(e.target.value)}
             >
@@ -194,12 +190,12 @@ function SellProductForm({ type }) {
         </div>
 
         <div>
-          <label>Subcategory{' '}
+          <label>Subcategory *{' '}
             <div className='error'>
               {hasSubmitted && validationErrors.subcategory && `${validationErrors.subcategory}`}
             </div>
             <select
-              className='sell-product-subcategory'
+              className='sell-subcategory'
               value={subcategory}
               onChange={e => setSubcategory(e.target.value)}
             >
@@ -211,37 +207,34 @@ function SellProductForm({ type }) {
         </div>
 
         <div>
-          <label>Price{' '}
+          <label>Price (USC ঋ) *{' '}
             <div className='error'>
               {hasSubmitted && validationErrors.price && `${validationErrors.price}`}
             </div>
-            <div className='sell-product-price-container'>
-              <span>ঋ</span>
-              <span>
-                <input
-                  className='sell-product-price'
-                  type='number'
-                  placeholder='Price (USC)'
-                  min={1}
-                  max={9999999999}
-                  value={price}
-                  onChange={
-                    e => e.target.value > 0 && e.target.value <= 9999999999 || e.target.value == '' ?
-                    setPrice(e.target.value) :
-                    ''}
-                />
-              </span>
+            <div className='sell-price-container'>
+              <input
+                className='sell-price'
+                type='number'
+                // placeholder='Price (USC)'
+                min={1}
+                max={9999999999}
+                value={price}
+                onChange={
+                  e => e.target.value > 0 && e.target.value <= 9999999999 || e.target.value == '' ?
+                  setPrice(e.target.value) :
+                  ''}
+              />
             </div>
           </label>
         </div>
 
         <div>
-          <label>Condition{' '}
+          <label>Condition *{' '}
             <div className='error'>
               {hasSubmitted && validationErrors.condition && `${validationErrors.condition}`}
             </div>
             <select
-              className='sell-product-condition'
+              className='sell-condition'
               value={condition}
               onChange={e => setCondition(e.target.value)}
             >
@@ -255,12 +248,12 @@ function SellProductForm({ type }) {
         </div>
 
         <div>
-          <label>Description{' '}
+          <label>Description *{' '}
             <div className='error'>
               {hasSubmitted && validationErrors.description && `${validationErrors.description}`}
             </div>
             <textarea
-              className='sell-product-description'
+              className='sell-description'
               placeholder='Please give a general description of your product'
               maxLength={255}
               value={description}
@@ -275,7 +268,7 @@ function SellProductForm({ type }) {
               {hasSubmitted && validationErrors.details && `${validationErrors.details}`}
             </div>
             <textarea
-              className='sell-product-details'
+              className='sell-details'
               placeholder='Please describe your item in detail'
               maxLength={5000}
               value={details}
@@ -285,14 +278,14 @@ function SellProductForm({ type }) {
         </div>
 
         <div>
-          <label>Stock{' '}
+          <label>Stock *{' '}
             <div className='error'>
               {hasSubmitted && validationErrors.stock && `${validationErrors.stock}`}
             </div>
             <input
-              className='sell-product-stock'
+              className='sell-stock'
               type='number'
-              placeholder='Stock'
+              // placeholder='Stock'
               min={1}
               max={999999}
               value={stock}
@@ -306,62 +299,64 @@ function SellProductForm({ type }) {
 
         {type != 'update' && (
           <div>
-            <input
-              className='sell-product-image'
-              type='text'
-              placeholder='Preview Image URL'
-              value={previewImage}
-              onChange={e => setPreviewImage(e.target.value)}
-            />
-            <div className='error'>
-              {hasSubmitted && validationErrors.previewImage && `${validationErrors.previewImage}`}
-            </div>
-            <input
-              className='sell-product-image'
-              type='text'
-              placeholder='Image URL'
-              value={image2}
-              onChange={e => setImage2(e.target.value)}
-            />
-            <div className='error'>
-              {hasSubmitted && validationErrors.image2 && `${validationErrors.image2}`}
-            </div>
-            <input
-              className='sell-product-image'
-              type='text'
-              placeholder='Image URL'
-              value={image3}
-              onChange={e => setImage3(e.target.value)}
-            />
-            <div className='error'>
-              {hasSubmitted && validationErrors.image3 && `${validationErrors.image3}`}
-            </div>
-            <input
-              className='sell-product-image'
-              type='text'
-              placeholder='Image URL'
-              value={image4}
-              onChange={e => setImage4(e.target.value)}
-            />
-            <div className='error'>
-              {hasSubmitted && validationErrors.image4 && `${validationErrors.image4}`}
-            </div>
-            <input
-              className='sell-product-image'
-              type='text'
-              placeholder='Image URL'
-              value={image5}
-              onChange={e => setImage5(e.target.value)}
+            <label>Images *
+              <input
+                className='sell-image'
+                type='text'
+                placeholder='Preview Image URL'
+                value={previewImage}
+                onChange={e => setPreviewImage(e.target.value)}
               />
-            <div className='error'>
-              {hasSubmitted && validationErrors.image5 && `${validationErrors.image5}`}
-            </div>
+              <div className='error'>
+                {hasSubmitted && validationErrors.previewImage && `${validationErrors.previewImage}`}
+              </div>
+              <input
+                className='sell-image'
+                type='text'
+                placeholder='Image URL'
+                value={image2}
+                onChange={e => setImage2(e.target.value)}
+              />
+              <div className='error'>
+                {hasSubmitted && validationErrors.image2 && `${validationErrors.image2}`}
+              </div>
+              <input
+                className='sell-image'
+                type='text'
+                placeholder='Image URL'
+                value={image3}
+                onChange={e => setImage3(e.target.value)}
+              />
+              <div className='error'>
+                {hasSubmitted && validationErrors.image3 && `${validationErrors.image3}`}
+              </div>
+              <input
+                className='sell-image'
+                type='text'
+                placeholder='Image URL'
+                value={image4}
+                onChange={e => setImage4(e.target.value)}
+              />
+              <div className='error'>
+                {hasSubmitted && validationErrors.image4 && `${validationErrors.image4}`}
+              </div>
+              <input
+                className='sell-image'
+                type='text'
+                placeholder='Image URL'
+                value={image5}
+                onChange={e => setImage5(e.target.value)}
+                />
+              <div className='error'>
+                {hasSubmitted && validationErrors.image5 && `${validationErrors.image5}`}
+              </div>
+            </label>
           </div>
         )}
 
-        <div className='sell-product-submit-container'>
+        <div className='sell-submit-container'>
           <button
-            className={`sell-product-submit ${disabled ? '' : 'enabled'}`}
+            className={`sell-submit ${disabled ? '' : 'enabled'}`}
             type='submit'
             disabled={disabled}
           >

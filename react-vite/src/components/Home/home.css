@@ -20,6 +20,12 @@
   row-gap: 15px;
 }
 
+.temp {
+  margin-top: 15px;
+  margin-left: -30px;
+  color: white;
+}
+
 .home-box1 {
   background-color: cyan;
   grid-area: box1;

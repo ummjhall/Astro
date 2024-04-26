@@ -50,13 +50,15 @@ export const listProductThunk = async (formData) => {
   return productData;
 };
 
-export const updateProductThunk = async (productId, formData) => {
+export const updateProductThunk = (productId, formData) => async dispatch => {
   const res = await csrfFetch(`/api/products/${productId}`, {
     method: 'PATCH',
     body: JSON.stringify(formData)
   });
 
   const productData = await res.json();
+  if (res.ok)
+    dispatch(loadProductDetails(productData));
   return productData;
 };
 

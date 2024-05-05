@@ -6,7 +6,7 @@ import './navigation.css';
 function Navigation() {
   const user = useSelector(state => state.session.user);
   const navigate = useNavigate();
-  const categories = ['Space Travel', 'Tech', 'Decor', 'Food', 'Health', 'Pet', 'Collectibles'];
+  const categories = ['Transport', 'Tech', 'Home Living', 'Media', 'Hobby', 'Grocery', 'Pet'];
 
 
   return (

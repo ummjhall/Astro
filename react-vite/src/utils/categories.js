@@ -1,5 +1,5 @@
 const categories = {
-  'transportation': [
+  'transport': [
     'space-travel',
     'domestic',
     'gear-&-accessories'

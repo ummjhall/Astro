@@ -1,39 +1,53 @@
 const categories = {
-  'space-travel': [
-    'spacecraft-essentials',
-    'navigation',
-    'gear',
-    'hobby'
+  'transportation': [
+    'space-travel',
+    'domestic',
+    'gear-&-accessories'
   ],
   'tech': [
-    'gadgets',
-    'appliances',
+    'robotics',
+    'gadgets-&-wearable',
     'entertainment'
   ],
-  'decor': [
-    'furniture',
-    'art'
+  'home-living': [
+    'furniture-&-decor',
+    'appliances',
+    'kitchen',
+    'garden'
   ],
-  'food': [
+  'apparel': [
+    'clothing',
+    'accessories'
+  ],
+  'media': [
+    'movies-&-tv',
+    'music',
+    'e-books'
+  ],
+  'hobby': [
+    'sports-&-recreation',
+    'games',
+    'art',
+    'collectibles'
+  ],
+  'grocery': [
     'food',
-    'drinks',
-    'cooking'
+    'drinks'
+  ],
+  'hygiene': [
+    'hygiene',
+    'cosmetics'
   ],
   'health': [
     'fitness',
-    'medicine'
+    'medicine-&-supplements'
   ],
   'pet': [
     'pets',
     'pet-care',
     'pet-toys'
-  ],
-  'collectibles': [
-    'artifacts',
-    'memorabilia',
-    'minerals',
-    'hobby'
   ]
 }
+
 
 export default categories;

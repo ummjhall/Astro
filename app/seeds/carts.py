@@ -1,5 +1,5 @@
 from app.models import db, Cart, environment, SCHEMA
-from sqlalchemy.sql import text
+from sqlalchemy.sql import text # type: ignore
 
 
 def seed_carts():

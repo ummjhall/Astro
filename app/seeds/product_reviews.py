@@ -1,5 +1,5 @@
 from app.models import db, ProductReview, environment, SCHEMA
-from sqlalchemy.sql import text
+from sqlalchemy.sql import text # type: ignore
 
 
 def seed_product_reviews():

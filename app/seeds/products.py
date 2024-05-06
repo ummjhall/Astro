@@ -5,7 +5,7 @@ from sqlalchemy.sql import text # type: ignore
 def seed_products():
     seeds = [
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F01',
             name='Quantum Warp Drive Engine',
             category='transport',
@@ -17,7 +17,7 @@ def seed_products():
             stock=3
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F02',
             name='Neutrino Vessel Shielding Module',
             category='transport',
@@ -29,7 +29,7 @@ def seed_products():
             stock=50
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F03',
             name='HoverBike X2000',
             category='transport',
@@ -41,7 +41,7 @@ def seed_products():
             stock=10
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F04',
             name='UniWheel GX',
             category='transport',
@@ -53,7 +53,7 @@ def seed_products():
             stock=15
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F05',
             name='StellarMap GPS Navigator',
             category='transport',
@@ -65,7 +65,7 @@ def seed_products():
             stock=150
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F06',
             name='Personal Plasma Shield Generator',
             category='transport',
@@ -77,7 +77,7 @@ def seed_products():
             stock=30
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F07',
             name='Quantum-Weave Spacesuit',
             category='transport',
@@ -89,7 +89,7 @@ def seed_products():
             stock=20
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F08',
             name='Graviton Boots',
             category='transport',
@@ -101,7 +101,7 @@ def seed_products():
             stock=80
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F09',
             name='Space-Time Tent',
             category='transport',
@@ -113,7 +113,7 @@ def seed_products():
             stock=120
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F10',
             name='Quantum Entanglement Communicator',
             category='tech',
@@ -125,7 +125,7 @@ def seed_products():
             stock=80
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F11',
             name='Universal Translator',
             category='tech',
@@ -137,7 +137,7 @@ def seed_products():
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F12',
             name='AR Goggles',
             category='tech',
@@ -149,7 +149,7 @@ def seed_products():
             stock=20
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F13',
             name='HoloLens Projector',
             category='tech',
@@ -161,7 +161,7 @@ def seed_products():
             stock=150
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F14',
             name='Nuclear Battery Pack',
             category='tech',
@@ -173,7 +173,7 @@ def seed_products():
             stock=30
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F15',
             name='Crystal Harmonizer',
             category='tech',
@@ -185,7 +185,7 @@ def seed_products():
             stock=200
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F16',
             name='RoboChef Personal Cook',
             category='tech',
@@ -197,7 +197,7 @@ def seed_products():
             stock=50
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F17',
             name='Ro-Bob',
             category='tech',
@@ -209,7 +209,7 @@ def seed_products():
             stock=30
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F18',
             name='Holographic Memory Projector',
             category='tech',
@@ -221,7 +221,7 @@ def seed_products():
             stock=150
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F19',
             name='VR Gaming Suit',
             category='tech',
@@ -233,7 +233,7 @@ def seed_products():
             stock=120
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F20',
             name='4D Immersive Sound System',
             category='tech',
@@ -245,7 +245,7 @@ def seed_products():
             stock=80
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F21',
             name='Orbital Lounge Chair',
             category='home-living',
@@ -257,7 +257,7 @@ def seed_products():
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F22',
             name='Asteroid Bean Bag',
             category='home-living',
@@ -269,7 +269,7 @@ def seed_products():
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F23',
             name='GalaxyGlass Table',
             category='home-living',
@@ -281,19 +281,19 @@ def seed_products():
             stock=30
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F24',
-            name='Cosmic Ray Lights',
+            name='Cosmic Ray Light',
             category='home-living',
             subcategory='furniture-&-decor',
             price=59,
             condition='New',
             description='Illuminate your habitat with cosmic rays.',
-            details="The Cosmic Ray Shower Lights system offers a unique lighting experience, simulating the mesmerizing beauty of cosmic rays in your own living space. It's energy-efficient and comes with customizable settings.",
+            details="The Cosmic Ray Light offers a unique lighting experience, simulating the mesmerizing beauty of cosmic rays in your own living space. It's energy-efficient and comes with customizable settings.",
             stock=120
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F25',
             name='Cosmic Vortex Statue',
             category='home-living',
@@ -305,7 +305,7 @@ def seed_products():
             stock=40
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F26',
             name='SmartFridge GX',
             category='home-living',
@@ -317,7 +317,7 @@ def seed_products():
             stock=50
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F27',
             name='Solar Oven',
             category='home-living',
@@ -325,11 +325,11 @@ def seed_products():
             price=999,
             condition='New',
             description='Bake with the power of the sun.',
-            details="The Solar Oven harnesses solar energy to cook your meals. It's efficient, eco-friendly, and perfect for off-planet excursions where traditional energy sources are scarce.",
+            details="The Solar Oven harnesses solar energy to cook your meals. It's efficient, eco-friendly, and perfect for deserted planets where traditional energy sources are scarce.",
             stock=75
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F28',
             name='AtomClean Washing Machine',
             category='home-living',
@@ -341,7 +341,7 @@ def seed_products():
             stock=20
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F29',
             name='ChefMate Galactic Utensil Set',
             category='home-living',
@@ -353,7 +353,7 @@ def seed_products():
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F30',
             name='Molecular Gastronomy Kit',
             category='home-living',
@@ -365,7 +365,7 @@ def seed_products():
             stock=75
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F31',
             name='Zero-G Coffee Maker',
             category='home-living',
@@ -377,7 +377,7 @@ def seed_products():
             stock=200
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F32',
             name='Orbiting Garden Decor',
             category='home-living',
@@ -389,7 +389,7 @@ def seed_products():
             stock=30
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F33',
             name='EcoGrow Smart Greenhouse',
             category='home-living',
@@ -401,7 +401,7 @@ def seed_products():
             stock=8
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F34',
             name='Gravity Jeans',
             category='apparel',
@@ -413,7 +413,7 @@ def seed_products():
             stock=25
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F35',
             name='ThermalTech Jacket',
             category='apparel',
@@ -421,11 +421,11 @@ def seed_products():
             price=70,
             condition='New',
             description='A jacket with integrated heating technology for extreme climates.',
-            details="The ThermalTech Jacket is a must-have for adventurers, featuring built-in heating elements powered by body heat. It's lightweight, water-resistant, and comes with a detachable hood. The jacket also has solar-receptive fibers to enhance warmth retention.",
+            details="The ThermalTech Jacket is a must-have for adventurers, featuring built-in heating elements. It's lightweight, water-resistant, and comes with a detachable hood. The jacket also has solar-receptive fibers to enhance warmth retention.",
             stock=15
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F36',
             name='Cosmo Tunic',
             category='apparel',
@@ -437,7 +437,7 @@ def seed_products():
             stock=30
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F37',
             name='AstroBelt',
             category='apparel',
@@ -449,7 +449,7 @@ def seed_products():
             stock=50
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F38',
             name='AstroGlasses',
             category='apparel',
@@ -461,7 +461,7 @@ def seed_products():
             stock=150
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F39',
             name='Eclipse (2186)',
             category='media',
@@ -473,7 +473,7 @@ def seed_products():
             stock=50
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F40',
             name='Frazorks! - Season 1',
             category='media',
@@ -485,7 +485,7 @@ def seed_products():
             stock=75
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F41',
             name='Mars Colony',
             category='media',
@@ -497,7 +497,7 @@ def seed_products():
             stock=200
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F42',
             name='Microbe - Super Nova',
             category='media',
@@ -509,7 +509,7 @@ def seed_products():
             stock=1000
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F43',
             name='The Void - Starset Horizon',
             category='media',
@@ -517,11 +517,11 @@ def seed_products():
             price=29,
             condition='New',
             description='A dark rock odyssey by The Void, filled with brooding anthems and interstellar riffs.',
-            details="Starset Horizon is the The Void's explosive entry into the rock scene, featuring powerful vocals and guitar solos that mimic the raw energy of supernovae. The album’s haunting melodies reflect the isolation and awe of drifting through the vastness of space. Each track is a deep cut with lyrics diving into the existential and unknown. Starset Horizon isn’t just an album, it’s a sonic journey to the edge of darkness and back.",
+            details="Starset Horizon is the The Void's explosive entry into the rock scene, featuring powerful vocals and guitar solos that mimic the raw energy of supernovae. The album’s haunting melodies reflect the isolation and awe of drifting through the vastness of space. Each track is a deep cut with lyrics diving into the existential and unknown. Starset Horizon is a sonic journey to the edge of darkness and back.",
             stock=450
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F44',
             name='Alien Jazz Experience',
             category='media',
@@ -533,19 +533,19 @@ def seed_products():
             stock=35
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F45',
-            name='Celestial Soundscapes',
+            name='Zeb - Bars Beyond Mars',
             category='media',
             subcategory='music',
-            price=14,
+            price=27,
             condition='New',
-            description='Music from the cosmic symphony.',
-            details="Celestial Soundscapes features ambient compositions inspired by pulsars, quasars, and cosmic microwave background radiation. Let the universe serenade you.",
+            description='The groundbreaking debut album by the undisputed king of rap.',
+            details="Zeb's Bars Beyond Mars transcends beats and rhymes, offering biting social commentary on AI overlords, cybernetic inequality, and the hollow glow of digital connections. This album isn't just music, it's a wake-up call from the past.",
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F46',
             name='Intergalactic Botany Illustrated',
             category='media',
@@ -557,7 +557,7 @@ def seed_products():
             stock=60
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F47',
             name='The Quantum Chef',
             category='media',
@@ -569,7 +569,7 @@ def seed_products():
             stock=45
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F48',
             name='Starship Engineering for Dummies',
             category='media',
@@ -581,7 +581,7 @@ def seed_products():
             stock=300
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F49',
             name='Vector Tennis Racket',
             category='hobby',
@@ -593,7 +593,7 @@ def seed_products():
             stock=80
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F50',
             name='P79 Galactic Golf Clubs',
             category='hobby',
@@ -605,7 +605,7 @@ def seed_products():
             stock=20
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F51',
             name='Interstellar Fishing Rod',
             category='hobby',
@@ -617,7 +617,7 @@ def seed_products():
             stock=15
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F52',
             name='AstroChess Set',
             category='hobby',
@@ -629,7 +629,7 @@ def seed_products():
             stock=30
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F53',
             name='Quantum Card Deck',
             category='hobby',
@@ -641,7 +641,7 @@ def seed_products():
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F54',
             name='Cosmic Puzzle Collection',
             category='hobby',
@@ -653,7 +653,7 @@ def seed_products():
             stock=40
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F55',
             name='AstroCanvas Art Kit',
             category='hobby',
@@ -665,7 +665,7 @@ def seed_products():
             stock=150
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F56',
             name='AstroPhotography Kit',
             category='hobby',
@@ -677,7 +677,7 @@ def seed_products():
             stock=60
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F57',
             name='Interstellar Canvas Print',
             category='hobby',
@@ -689,7 +689,7 @@ def seed_products():
             stock=50
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F58',
             name='Cosmic Relic Detector',
             category='hobby',
@@ -701,7 +701,7 @@ def seed_products():
             stock=50
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F59',
             name='Starship Enterprise Miniature',
             category='hobby',
@@ -713,7 +713,7 @@ def seed_products():
             stock=200
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F60',
             name='Star Crystal',
             category='hobby',
@@ -725,7 +725,7 @@ def seed_products():
             stock=20
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F61',
             name='First Mars Landing Commemorative Coin',
             category='hobby',
@@ -737,7 +737,7 @@ def seed_products():
             stock=50
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F62',
             name='AstroMeal Pack (20)',
             category='grocery',
@@ -749,7 +749,7 @@ def seed_products():
             stock=500
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F63',
             name='Meteorite Meal Kit',
             category='grocery',
@@ -761,7 +761,7 @@ def seed_products():
             stock=250
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F64',
             name='Galactic Granola Bars',
             category='grocery',
@@ -773,7 +773,7 @@ def seed_products():
             stock=500
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F65',
             name='Zero-G Freeze-Dried Ice Cream',
             category='grocery',
@@ -785,7 +785,7 @@ def seed_products():
             stock=300
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F66',
             name='AstroBrew Coffee Beans',
             category='grocery',
@@ -797,7 +797,7 @@ def seed_products():
             stock=400
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F67',
             name='Quantum Quench Sports Drink (12-Pack)',
             category='grocery',
@@ -809,7 +809,7 @@ def seed_products():
             stock=500
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F68',
             name='AstroAde Vitamin Drink (10-Pack)',
             category='grocery',
@@ -821,7 +821,7 @@ def seed_products():
             stock=300
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F69',
             name='NanoBristle Toothbrush',
             category='hygiene',
@@ -833,7 +833,7 @@ def seed_products():
             stock=1000
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F70',
             name='LunarHydrate Facial Lotion',
             category='hygiene',
@@ -845,7 +845,7 @@ def seed_products():
             stock=250
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F71',
             name='StellarShade Foundation',
             category='hygiene',
@@ -857,7 +857,7 @@ def seed_products():
             stock=150
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F72',
             name='GalaxyGlow Lip Tint',
             category='hygiene',
@@ -869,7 +869,7 @@ def seed_products():
             stock=200
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F73',
             name='Stardust Perfume',
             category='hygiene',
@@ -881,7 +881,7 @@ def seed_products():
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F74',
             name='Photon Health Scanner',
             category='health',
@@ -893,7 +893,7 @@ def seed_products():
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F75',
             name='Simulation Treadmill',
             category='health',
@@ -905,7 +905,7 @@ def seed_products():
             stock=75
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F76',
             name='Variable-Gravity Yoga Mat',
             category='health',
@@ -917,7 +917,7 @@ def seed_products():
             stock=90
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F77',
             name='Galactic Antiviral Kit',
             category='health',
@@ -929,7 +929,7 @@ def seed_products():
             stock=120
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F78',
             name='Stellar Elixir',
             category='health',
@@ -941,7 +941,7 @@ def seed_products():
             stock=300
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F79',
             name='Nanite Healing Spray',
             category='health',
@@ -953,19 +953,19 @@ def seed_products():
             stock=200
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F80',
-            name='Nanobot Health Kit',
+            name='Nanobot Tissue Repair Kit',
             category='health',
             subcategory='medicine-&-supplements',
             price=2999,
             condition='New',
             description='Advanced healing at a microscopic level.',
-            details="The Nanobot Health Kit contains millions of medical nanobots programmed to repair tissue damage and fight infections, making it an essential item for any spacefarer's medical kit.",
+            details="The Nanobot Tissue Repair Kit contains millions of medical nanobots programmed to repair human and human-like tissue damage, making it an essential item for any carbon-based spacefarer's medical kit.",
             stock=75
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F81',
             name='Fluff',
             category='pet',
@@ -977,7 +977,7 @@ def seed_products():
             stock=20
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F82',
             name='NebulaFish',
             category='pet',
@@ -989,19 +989,19 @@ def seed_products():
             stock=300
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F83',
-            name='AstroPet Nebula Collar',
+            name='AstroPet Holo Collar',
             category='pet',
             subcategory='pet-care',
             price=65,
             condition='New',
             description='Adorn your space pet.',
-            details="The AstroPet Nebula Collar features a holographic design that shimmers like a distant nebula. Adjustable and comfortable, it's perfect for your furry or scaled companion.",
+            details="The AstroPet Holo Collar features a holographic design that shimmers like a distant nebula. Adjustable and comfortable, it's perfect for your furry or scaled companion.",
             stock=300
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F84',
             name='Cosmic Pet Grooming Kit',
             category='pet',
@@ -1013,7 +1013,7 @@ def seed_products():
             stock=200
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F85',
             name='AstroFish Aquarium',
             category='pet',
@@ -1025,7 +1025,7 @@ def seed_products():
             stock=80
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F86',
             name='Exo-Flora Terrarium',
             category='pet',
@@ -1037,7 +1037,7 @@ def seed_products():
             stock=80
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F87',
             name='Cosmic Chew Ring',
             category='pet',
@@ -1049,19 +1049,19 @@ def seed_products():
             stock=200
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F88',
-            name='Orbiting Orb',
+            name='Orbit-Ball',
             category='pet',
             subcategory='pet-toys',
             price=65,
             condition='New',
             description='A gravity-defying ball that hovers and bounces in unpredictable patterns.',
-            details="The Orbiting Orb is designed to keep your pet engaged with its erratic movements and colorful LED lights. It's made from durable, pet-safe materials and is rechargeable for hours of play. Perfect for pets who love a good chase!",
+            details="The Orbit-Ball is designed to keep your pet engaged with its erratic movements and colorful LED lights. It's made from durable, pet-safe materials and is rechargeable for hours of play. Perfect for pets who love a good chase!",
             stock=100
         ),
         Product(
-            seller_id=1,
+            seller_id=3,
             upc='9F3D5A7C4B1E8F89',
             name='Quantum Laser Pointer',
             category='pet',
@@ -1071,7 +1071,7 @@ def seed_products():
             description='Entertain your space cat with precision.',
             details="The Quantum Laser Pointer emits a pinpoint laser beam that can be redirected across dimensions. Perfect for interdimensional playtime.",
             stock=200
-        ),
+        )
     ]
 
     for product in seeds:

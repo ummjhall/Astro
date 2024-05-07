@@ -30,13 +30,13 @@ function Navigation() {
       </div>
       <div className='nav-lower-wrapper'>
         <div className='nav-link' onClick={() => navigate('/products')}>
-          All
+          [ All ]
         </div>
         {categories.map((category, i) => (
           <div
             key={i}
             className='nav-link'
-            onClick={() => navigate(`/products/${category.toLowerCase().replace(' ', '-')}`)}
+            onClick={() => navigate(`/products/${category.toLowerCase()}`)}
           >
             {category}
           </div>

@@ -3,7 +3,9 @@ import './products.css';
 
 function ProductTile({ product }) {
   const navigate = useNavigate();
-  const trimmedName = product.name.length > 42 ? product.name.slice(0,41)+' ...' : product.name;
+  const fName = product.name.length > 42 ? product.name.slice(0,41)+' ...' : product.name;
+  const fCategory = product.category[0].toUpperCase() + product.category.slice(1);
+  const fSubcategory = product.subcategory.split('-').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
 
 
   const handleClick = () => {
@@ -15,10 +17,10 @@ function ProductTile({ product }) {
     <div className='producttile-wrapper' onClick={handleClick}>
       <img className='producttile-image' src={product.previewImage} />
       <div className='producttile-info-container'>
-        <div className='producttile-name'>{trimmedName}</div>
+        <div className='producttile-name'>{fName}</div>
         <div>
-          <div>{product.category}</div>
-          <div>{product.subcategory}</div>
+          <div>{fCategory}</div>
+          <div>{fSubcategory}</div>
         </div>
         <div>
           <div className='producttile-soldby'>Sold by:{' '}

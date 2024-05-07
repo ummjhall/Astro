@@ -17,6 +17,10 @@ function ProductTile({ product }) {
       <div className='producttile-info-container'>
         <div className='producttile-name'>{trimmedName}</div>
         <div>
+          <div>{product.category}</div>
+          <div>{product.subcategory}</div>
+        </div>
+        <div>
           <div className='producttile-soldby'>Sold by:{' '}
             <span className='producttile-seller'>{product.seller}</span>
           </div>

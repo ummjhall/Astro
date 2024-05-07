@@ -7,11 +7,13 @@ import ProductTile from './ProductTile';
 import './products.css';
 
 function ProductCategory() {
-  const { category, subcategory } = useParams();
+  let { category, subcategory } = useParams();
   const allProducts = useSelector(state => state.products);
   const dispatch = useDispatch();
 
   let productsArray;
+  if (category && category == 'home')
+    category = 'home-living';
   if (subcategory)
     productsArray = Object.values(allProducts)
       .filter(product => product.category == category && product.subcategory == subcategory);

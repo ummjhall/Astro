@@ -38,7 +38,7 @@ function Cart() {
 
   return (
     <div className='cart-wrapper'>
-      <h1>Cart</h1>
+      <h1>{(user.username + "'s ")}Cart</h1>
       <div className='cart-tiles'>
         {cartItemsArray.map(item => (
           <CartTile key={item.product_id} item={item} />

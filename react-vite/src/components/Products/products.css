@@ -30,7 +30,7 @@
   border-radius: 5px;
   margin: 20px;
   width: 20%;
-  height: 250px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -45,11 +45,12 @@
 }
 
 .producttile-info-container {
-  padding: 5px 0 5px 10px;
-  height: 90px;
+  padding: 5px 10px;
+  height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .producttile-name,

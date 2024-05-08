@@ -39,6 +39,14 @@ function Cart() {
   return (
     <div className='cart-wrapper'>
       <h1>{(user.username + "'s ")}Cart</h1>
+      {cartItemsArray.length >= 4 &&
+        <div>
+          <div className='cart-total'>Total: ঋ{total}</div>
+          <button className='cart-checkout' onClick={handleCheckout}>
+            Complete Checkout
+          </button>
+        </div>
+      }
       <div className='cart-tiles'>
         {cartItemsArray.map(item => (
           <CartTile key={item.product_id} item={item} />

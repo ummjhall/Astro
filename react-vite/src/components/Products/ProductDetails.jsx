@@ -84,7 +84,9 @@ function ProductDetails() {
                 }
               />
               <div className='pd-images-count'>
-                1/{product.Images?.length}
+                {product.Images?.length == 1 && ('1 image')}
+                {product.Images?.length > 1 && `1 of ${product.Images?.length} images`}
+                {/* 1/{product.Images?.length} */}
               </div>
             </div>
           </div>

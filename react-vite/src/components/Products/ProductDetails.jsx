@@ -4,6 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { deleteProductThunk, getProductDetailsThunk } from '../../redux/products';
 import { addToCartThunk, getCartThunk } from '../../redux/cart';
 import SideNav from '../Navigation/SideNav';
+import OpenModalMenuItem from '../Navigation/OpenModalMenuItem';
+import ImageModal from './ImageModal';
 import './product-details.css';
 
 function ProductDetails() {
@@ -71,10 +73,15 @@ function ProductDetails() {
               </div>
             </div>
             <div className='pd-images'>
-              <img
-                className='pd-images-preview'
-                style={{width: '300px', height: '300px'}}
-                src={previewImage?.url}
+              <OpenModalMenuItem
+                modalComponent={<ImageModal images={product.Images} />}
+                itemText={
+                  <img
+                    className='pd-images-preview'
+                    style={{width: '300px', height: '300px'}}
+                    src={previewImage?.url}
+                  />
+                }
               />
               <div className='pd-images-count'>
                 1/{product.Images?.length}

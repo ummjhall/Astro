@@ -63,20 +63,19 @@ function ProductDetails() {
             <div className='pd-top-info'>
               <div className='pd-name'>{product.name}</div>
               <div>Sold by: <span className='pd-seller'>{product.seller}</span></div>
-              <div>{product.condition}</div>
-              <div className='pd-price'>ঋ{product.price}</div>
+              <div>Condition: {product.condition}</div>
+              <div className='pd-price'>ঋ {product.price}</div>
+              <div className='pd-description'>
+                <div className='pd-heading'>Description:</div>
+                <div>{product.description}</div>
+              </div>
             </div>
             <div className='pd-images'>
               <img
                 className='pd-images-current'
-                style={{width: '200px', height: '200px'}}
+                style={{width: '300px', height: '300px'}}
                 src={previewImage?.url} />
             </div>
-          </div>
-
-          <div className='pd-description'>
-            <div className='pd-heading'>Description:</div>
-            <div>{product.description}</div>
           </div>
 
           <div className='pd-details'>

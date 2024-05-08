@@ -30,13 +30,17 @@
   color: var(--color-gold);
 }
 
+.pd-seller {
+  color: var(--color-cyan)
+}
+
 .pd-price {
   color: var(--color-green);
 }
 
 .pd-images {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
 }
 
 .pd-images-current {

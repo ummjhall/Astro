@@ -14,8 +14,8 @@ function ProductDetails() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const previewImage = product?.Images?.filter(img => img.thumbnail)[0];
-  const category = product?.category.split('-').join(' ');
-  const subcategory = product?.subcategory.split('-').join(' ');
+  const category = product?.category[0].toUpperCase() + product?.category.slice(1);
+  const subcategory = product?.subcategory.split('-').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
   const [ disabled, setDisabled ] = useState(true);
 
 
@@ -72,18 +72,32 @@ function ProductDetails() {
             </div>
             <div className='pd-images'>
               <img
-                className='pd-images-current'
+                className='pd-images-preview'
                 style={{width: '300px', height: '300px'}}
-                src={previewImage?.url} />
+                src={previewImage?.url}
+              />
+              <div className='pd-images-count'>
+                1/{product.Images?.length}
+              </div>
             </div>
           </div>
 
           <div className='pd-details'>
             <div className='pd-heading'>Details:</div>
-            <div>Category: {category} {'>'} {subcategory}</div>
-            <div>UPC: {product.upc}</div>
-            <div>Condition: {product.condition}</div>
-            <div>Stock: {product.stock}</div>
+            <div className='pd-details-flex'>
+              <div className='pd-details-flex-left'>
+                <div>Category:</div>
+                <div>UPC:</div>
+                <div>Condition:</div>
+                <div>Stock:</div>
+              </div>
+              <div>
+                <div>{category} {'>'} {subcategory}</div>
+                <div>{product.upc ? product.upc : 'N/A'}</div>
+                <div>{product.condition}</div>
+                <div>{product.stock}</div>
+              </div>
+            </div>
             <div>{product.details}</div>
           </div>
 

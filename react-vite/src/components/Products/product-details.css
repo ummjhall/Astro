@@ -31,7 +31,7 @@
 }
 
 .pd-seller {
-  color: var(--color-cyan)
+  color: var(--color-cyan);
 }
 
 .pd-price {
@@ -43,10 +43,14 @@
   height: 300px;
 }
 
-.pd-images-current {
+.pd-images-preview {
   border-radius: 5px;
   width: 300px;
   object-fit: cover;
+}
+
+.pd-images-count {
+  text-align: right;
 }
 
 .pd-heading {
@@ -60,6 +64,18 @@
 
 .pd-details {
   margin: 15px 0 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.pd-details-flex {
+  display: flex;
+}
+
+.pd-details-flex-left {
+  margin-right: 30px;
+  color: var(--color-cyan);
 }
 
 .pd-submit {

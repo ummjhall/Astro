@@ -26,7 +26,7 @@ function ProductTile({ product }) {
           <div className='producttile-soldby'>Sold by:{' '}
             <span className='producttile-seller'>{product.seller}</span>
           </div>
-          <div className='producttile-price'>ঋ{product.price.toLocaleString()}</div>
+          <div className='producttile-price'>ঋ {product.price.toLocaleString()}</div>
         </div>
       </div>
     </div>

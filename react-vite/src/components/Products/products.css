@@ -30,7 +30,7 @@
   border-radius: 5px;
   margin: 20px;
   width: 20%;
-  height: 350px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -51,6 +51,10 @@
   flex-direction: column;
   justify-content: space-between;
   font-size: 14px;
+}
+
+.producttile-name {
+  height: 2em;
 }
 
 .producttile-name,

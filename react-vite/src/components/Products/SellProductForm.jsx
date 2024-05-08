@@ -12,13 +12,6 @@ function SellProductForm({ type }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
-  // useEffect(() => {
-  //   if (productId)
-  //     dispatch(getProductDetailsThunk(productId));
-  // }, [dispatch, productId]);
-
-
   const [ upc, setUpc ] = useState(product?.upc || '');
   const [ name, setName ] = useState(product?.name || '');
   const [ category, setCategory ] = useState(product?.category || Object.keys(categories)[0]);
@@ -37,6 +30,14 @@ function SellProductForm({ type }) {
   const [ validationErrors, setValidationErrors ] = useState({});
   const [ hasSubmitted, setHasSubmitted ] = useState(false);
   const [ disabled, setDisabled ] = useState(false);
+
+
+  // Update subcategory value when category is changed
+  // But allow product updates to keep original initial value
+  useEffect(() => {
+    if (!(categories[category].includes(subcategory)))
+      setSubcategory(categories[category][0]);
+  }, [categories, category, subcategory]);
 
 
   // Run form validations
@@ -119,6 +120,7 @@ function SellProductForm({ type }) {
   };
 
 
+  // Helper function to add images after making product instance
   const addImages = async (productId) => {
     const imageData = {
       url: previewImage,

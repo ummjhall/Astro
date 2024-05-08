@@ -11,9 +11,8 @@ function ProductCategory() {
   const allProducts = useSelector(state => state.products);
   const dispatch = useDispatch();
 
+  // Filter products by category unless viewing all products
   let productsArray;
-  if (category && category == 'home')
-    category = 'home-living';
   if (subcategory)
     productsArray = Object.values(allProducts)
       .filter(product => product.category == category && product.subcategory == subcategory);

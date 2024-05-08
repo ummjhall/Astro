@@ -17,7 +17,7 @@ categories = {
         'gadgets-&-wearable',
         'entertainment'
     ],
-    'home-living': [
+    'home': [
         'furniture-&-decor',
         'appliances',
         'kitchen',
@@ -42,7 +42,7 @@ categories = {
         'food',
         'drinks'
     ],
-    'hygiene': [
+    'cosmetic': [
         'hygiene',
         'cosmetics'
     ],

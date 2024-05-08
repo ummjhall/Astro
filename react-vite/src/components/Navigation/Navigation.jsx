@@ -7,7 +7,7 @@ function Navigation() {
   const user = useSelector(state => state.session.user);
   const navigate = useNavigate();
   const categories = ['Transport', 'Tech', 'Home', 'Apparel', 'Media',
-      'Hobby', 'Grocery', 'Hygiene', 'Health', 'Pet'];
+      'Hobby', 'Grocery', 'Cosmetic', 'Health', 'Pet'];
 
 
   return (

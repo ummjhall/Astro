@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ProfileButton from './ProfileButton';
-import Search from './Search';
+import Search from '../Search/Search';
 import './navigation.css';
 
 function Navigation() {

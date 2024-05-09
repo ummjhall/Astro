@@ -13,7 +13,7 @@ class Product(db.Model):
     name = db.Column(db.String(100), nullable=False)
     category = db.Column(db.String(30), nullable=False)
     subcategory = db.Column(db.String(30), nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.BigInteger, nullable=False)
     condition = db.Column(db.String(20), nullable=False)
     description = db.Column(db.String(255), nullable=False)
     details = db.Column(db.Text)

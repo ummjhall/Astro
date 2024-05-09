@@ -1,27 +1,37 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProductsThunk } from '../../redux/products';
+import FeaturedProduct from './FeaturedProduct';
 import './home.css';
 
 function Home() {
+  const allProducts = useSelector(state => state.products);
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(getAllProductsThunk());
+  }, [dispatch]);
 
 
   return (
     <div className='home-wrapper'>
-      {/* <div className='temp'>New Home page coming soon</div>
-      <div className='temp'>Click a link in the NavBar above</div> */}
       <div className='home-container'>
         <div className='home-box home-box1'>
-          <div>Astro Sales</div>
+          <div className='home-heading'>ASTRO SALES</div>
         </div>
         <div className='home-box home-box2'>
-          <div>Get the latest in tech</div>
+          <div className='home-heading'>GET THE LATEST IN TECH</div>
         </div>
         <div className='home-box home-box3'>
-          <div>Win a Gift Card</div>
+          <div className='home-heading'>WIN A GIFT CARD</div>
         </div>
         <div className='home-box home-box4'>
-          <div>Featured Item</div>
+          <div className='home-heading'>FEATURED ITEM</div>
+          <FeaturedProduct product={allProducts[19]} />
         </div>
         <div className='home-box home-box5'>
-          <div>Currency exchange rates</div>
+          <div className='home-heading'>CURRENCY EXCHANGE RATES</div>
         </div>
       </div>
     </div>

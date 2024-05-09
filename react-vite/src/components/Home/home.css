@@ -1,9 +1,9 @@
 .home-wrapper {
   padding: 0 50px;
   height: calc(100vh - 55px - 25px - 2px); /* - navbars */
-  /* background-color: black; */
   background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1713450743/Astro/kai-pilger-Ef6iL87-vOA-unsplash_hp1fhj.jpg');
   background-size: contain;
+  color: white;
 }
 
 .home-container {
@@ -20,35 +20,29 @@
   row-gap: 15px;
 }
 
+.home-heading {
+  margin-top: 4px;
+}
+
 .home-box1 {
-  background-color: cyan;
   grid-area: box1;
 }
 .home-box2 {
-  background-color: yellow;
   grid-area: box2;
 }
 .home-box3 {
-  background-color: pink;
   grid-area: box3;
 }
 .home-box4 {
-  background-color: red;
   grid-area: box4;
 }
 .home-box5 {
-  background-color: lawngreen;
   grid-area: box5;
 }
 
 .home-box {
   border-radius: 5px;
   background-color: cyan;
+  background-color: var(--color-silverdark);
   text-align: center;
 }
-
-/* .temp {
-  margin-top: 15px;
-  margin-left: -30px;
-  color: white;
-} */

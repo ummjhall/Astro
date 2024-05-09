@@ -19,7 +19,7 @@ function Products() {
   return (
     <div className='products-wrapper'>
       <SideNav />
-      <div className='products-tiles'>
+      <div className='products-tile-container'>
         {allProductsArray.map(product => (
           <ProductTile key={product.product_id} product={product} />
         ))}

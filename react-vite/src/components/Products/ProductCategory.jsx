@@ -28,7 +28,7 @@ function ProductCategory() {
   return (
     <div className='products-wrapper'>
       <SideNav />
-      <div className='products-tiles'>
+      <div className='products-tile-container'>
         {productsArray.map(product => (
           <ProductTile key={product.product_id} product={product} />
         ))}

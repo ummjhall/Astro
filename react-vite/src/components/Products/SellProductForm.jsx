@@ -37,7 +37,7 @@ function SellProductForm({ type }) {
   useEffect(() => {
     if (!(categories[category].includes(subcategory)))
       setSubcategory(categories[category][0]);
-  }, [categories, category, subcategory]);
+  }, [category, subcategory]);
 
 
   // Run form validations

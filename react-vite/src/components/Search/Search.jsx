@@ -1,12 +1,17 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './search.css';
 
 function Search() {
+  const navigate = useNavigate();
   const [ searchTerms, setSearchTerms ] = useState('');
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (searchTerms == '') return;
+    setSearchTerms('');
+    navigate(`/search-results?${searchTerms}`);
   };
 
 

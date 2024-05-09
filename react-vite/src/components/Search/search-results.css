@@ -1,0 +1,19 @@
+.searchresults-wrapper {
+  display: flex;
+  color: white;
+}
+
+.searchresults-container {
+  /* width: 100%; */
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sr-searching {
+  margin: 15px 0 0 20px;
+}
+
+.sr-query {
+  color: var(--color-cyan);
+}

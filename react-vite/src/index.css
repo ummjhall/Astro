@@ -4,6 +4,9 @@
 body {
   margin: 0;
   background-color: black;
+  /* background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1713450743/Astro/kai-pilger-Ef6iL87-vOA-unsplash_hp1fhj.jpg');
+  background-size: contain;
+  background-attachment: fixed; */
 }
 
 :root {

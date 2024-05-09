@@ -10,7 +10,7 @@ function FeaturedProduct({ product }) {
   };
 
 
-  return (
+  return product && (
     <div className='featured-wrapper' onClick={handleClick}>
       <img className='featured-image' src={product.previewImage} style={{width: '100px', height: '100px'}} />
       <div className='featured-info-container'>

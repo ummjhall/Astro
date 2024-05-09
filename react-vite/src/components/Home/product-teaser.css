@@ -1,0 +1,11 @@
+.product-teaser-wrapper {
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.pt-image {
+  border-radius: 5px;
+}

@@ -1,18 +1,21 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ProfileButton from './ProfileButton';
+import Search from '../Search/Search';
 import './navigation.css';
 
 function Navigation() {
   const user = useSelector(state => state.session.user);
   const navigate = useNavigate();
-  const categories = ['Space Travel', 'Tech', 'Decor', 'Food', 'Health', 'Pet', 'Collectibles'];
+  const categories = ['Transport', 'Tech', 'Home', 'Apparel', 'Media',
+      'Hobby', 'Grocery', 'Cosmetic', 'Health', 'Pet'];
 
 
   return (
     <div className='nav-wrapper'>
       <div className='nav-upper-wrapper'>
         <div className='nav-astro' onClick={() => navigate('/')}>Astro</div>
+        <Search />
         <div className='nav-user-menu'>
           {user &&
             <div className='nav-user-menu_button' onClick={() => navigate('/sell')}>
@@ -29,13 +32,13 @@ function Navigation() {
       </div>
       <div className='nav-lower-wrapper'>
         <div className='nav-link' onClick={() => navigate('/products')}>
-          All
+          [ All ]
         </div>
         {categories.map((category, i) => (
           <div
             key={i}
             className='nav-link'
-            onClick={() => navigate(`/products/${category.toLowerCase().replace(' ', '-')}`)}
+            onClick={() => navigate(`/products/${category.toLowerCase()}`)}
           >
             {category}
           </div>

@@ -8,6 +8,7 @@ import Products from '../components/Products/Products';
 import ProductCategory from '../components/Products/ProductCategory';
 import ProductDetails from '../components/Products/ProductDetails';
 import SellProductForm from '../components/Products/SellProductForm';
+import SearchResults from '../components/Search/SearchResults';
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path: 'sell/:productId/update',
         element: <SellProductForm type={'update'} />
+      },
+      {
+        path: 'search-results',
+        element: <SearchResults />
       },
       {
         path: '*',

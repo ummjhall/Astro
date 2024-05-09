@@ -18,19 +18,20 @@ form > div {
   margin-bottom: 10px;
 }
 
+.sell-asterisk,
 form label {
   color: var(--color-lightblue);
 }
 
 .sell-name {
-  width: 60%;
+  width: calc(100% - 6px);
 }
 
 .sell-upc {
-  width: 60%;
+  width: 35%;
 }
 
-.sell-upc-small {
+.sell-small-text {
   font-size: 12px;
 }
 

@@ -7,10 +7,11 @@ import ProductTile from './ProductTile';
 import './products.css';
 
 function ProductCategory() {
-  const { category, subcategory } = useParams();
+  let { category, subcategory } = useParams();
   const allProducts = useSelector(state => state.products);
   const dispatch = useDispatch();
 
+  // Filter products by category unless viewing all products
   let productsArray;
   if (subcategory)
     productsArray = Object.values(allProducts)
@@ -27,7 +28,7 @@ function ProductCategory() {
   return (
     <div className='products-wrapper'>
       <SideNav />
-      <div className='products-tiles'>
+      <div className='products-tile-container'>
         {productsArray.map(product => (
           <ProductTile key={product.product_id} product={product} />
         ))}

@@ -4,10 +4,15 @@
 body {
   margin: 0;
   background-color: black;
+  /* background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1713450743/Astro/kai-pilger-Ef6iL87-vOA-unsplash_hp1fhj.jpg');
+  background-size: contain;
+  background-attachment: fixed; */
 }
 
 :root {
   --color-indigo: rgb(75,0,130);
+  --color-indigo: rgb(54,8,86);
+  --color-indigo: rgb(45,10,70);
   --color-darkpurple: rgb(38,28,113);
   --color-gold: rgb(255, 213, 0);
   --color-greenblue: rgb(13,83,119);

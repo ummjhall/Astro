@@ -12,13 +12,6 @@ function SellProductForm({ type }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
-  // useEffect(() => {
-  //   if (productId)
-  //     dispatch(getProductDetailsThunk(productId));
-  // }, [dispatch, productId]);
-
-
   const [ upc, setUpc ] = useState(product?.upc || '');
   const [ name, setName ] = useState(product?.name || '');
   const [ category, setCategory ] = useState(product?.category || Object.keys(categories)[0]);
@@ -37,6 +30,14 @@ function SellProductForm({ type }) {
   const [ validationErrors, setValidationErrors ] = useState({});
   const [ hasSubmitted, setHasSubmitted ] = useState(false);
   const [ disabled, setDisabled ] = useState(false);
+
+
+  // Update subcategory value when category is changed
+  // But allow product updates to keep original initial value
+  useEffect(() => {
+    if (!(categories[category].includes(subcategory)))
+      setSubcategory(categories[category][0]);
+  }, [category, subcategory]);
 
 
   // Run form validations
@@ -119,6 +120,7 @@ function SellProductForm({ type }) {
   };
 
 
+  // Helper function to add images after making product instance
   const addImages = async (productId) => {
     const imageData = {
       url: previewImage,
@@ -140,6 +142,7 @@ function SellProductForm({ type }) {
   return (
     <div className='sell-product-wrapper'>
       <div className='sell-title'>{type == 'update' ? 'Edit Your Item' : 'Sell Your Item'}</div>
+      <p><span className='sell-asterisk'>*</span> Required field</p>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name *{' '}
@@ -158,7 +161,7 @@ function SellProductForm({ type }) {
         </div>
 
         <div>
-          <label>UPC <span className='sell-upc-small'>(if ITF-registered item)</span>{' '}
+          <label>UPC <span className='sell-small-text'>(if ITF-registered item)</span>{' '}
             <div className='error'>
               {hasSubmitted && validationErrors.upc && `${validationErrors.upc}`}
             </div>
@@ -166,6 +169,7 @@ function SellProductForm({ type }) {
               className='sell-upc'
               type='text'
               // placeholder='UPC'
+              maxLength={16}
               value={upc}
               onChange={e => setUpc(e.target.value)}
             />
@@ -183,7 +187,9 @@ function SellProductForm({ type }) {
               onChange={e => setCategory(e.target.value)}
             >
               {Object.keys(categories).map((category, i) => (
-                <option key={i} value={category}>{category}</option>
+                <option key={i} value={category}>
+                  {category[0].toUpperCase() + category.slice(1)}
+                </option>
               ))}
             </select>
           </label>
@@ -200,7 +206,9 @@ function SellProductForm({ type }) {
               onChange={e => setSubcategory(e.target.value)}
             >
               {categories[category].map((subcategory, i) => (
-                <option key={i} value={subcategory}>{subcategory}</option>
+                <option key={i} value={subcategory}>
+                  {subcategory.split('-').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')}
+                </option>
               ))}
             </select>
           </label>
@@ -299,7 +307,7 @@ function SellProductForm({ type }) {
 
         {type != 'update' && (
           <div>
-            <label>Images *
+            <label>Images * <span className='sell-small-text'>(minimum 1)</span>
               <input
                 className='sell-image'
                 type='text'

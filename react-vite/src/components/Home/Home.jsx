@@ -1,34 +1,38 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProductsThunk } from '../../redux/products';
+import FeaturedProduct from './FeaturedProduct';
 import './home.css';
 
 function Home() {
+  const allProducts = useSelector(state => state.products);
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(getAllProductsThunk());
+  }, [dispatch]);
 
 
   return (
     <div className='home-wrapper'>
-      <div className='temp'>New Home page coming soon</div>
-      <div className='temp'>Click a link in the NavBar above</div>
       <div className='home-container'>
-        {/* <div className='home-box home-box1'>
-          Featured Item
+        <div className='home-box home-box1'>
+          <div className='home-heading'>ASTRO SALES</div>
         </div>
         <div className='home-box home-box2'>
-          Get the latest in tech
+          <div className='home-heading'>GET THE LATEST IN TECH</div>
         </div>
         <div className='home-box home-box3'>
-          Currency exchange rates
+          <div className='home-heading'>WIN A GIFT CARD</div>
         </div>
         <div className='home-box home-box4'>
-          Astro Sales
+          <div className='home-heading'>FEATURED ITEM</div>
+          <FeaturedProduct product={allProducts[19]} />
         </div>
         <div className='home-box home-box5'>
-          Check out this gear
+          <div className='home-heading'>CURRENCY EXCHANGE RATES</div>
         </div>
-        <div className='home-box home-box6'>
-          Win a Gift Card
-        </div>
-        <div className='home-box home-box7'>
-          Best Sellers
-        </div> */}
       </div>
     </div>
   );

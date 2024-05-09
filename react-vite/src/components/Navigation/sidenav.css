@@ -1,6 +1,6 @@
 .sidenav {
   border-right: 3px solid white;
-  width: 20%;
+  min-width: 18vw;
   height: calc(100vh - 55px - 25px - 2px);
   position: sticky;
   top: calc(55px + 25px + 2px);

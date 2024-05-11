@@ -1,6 +1,9 @@
 .exchange-wrapper {
-  margin: 15px auto 0;
-  width: 40%;
+  margin: 0 auto;
+  padding-top: 15px;
+  background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1713450743/Astro/kai-pilger-Ef6iL87-vOA-unsplash_hp1fhj.jpg');
+  background-size: contain;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,10 +13,14 @@
 .exchange-title {
   margin-bottom: 15px;
   font-size: 24px;
+  color: var(--color-gold);
 }
 
 .exchange-rates-container {
   border: 1px solid white;
   border-radius: 5px;
+  margin-bottom: 30px;
   padding: 5px;
+  width: 30%;
+  background-color: black;
 }

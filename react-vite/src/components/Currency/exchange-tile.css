@@ -15,10 +15,9 @@
 
 .exchange-tile-value {
   border-radius: 5px;
-  min-width: 115px;
+  min-width: 105px;
   padding: 0 5px;
   background-color: black;
-  color: rgb(129, 16, 16);
-  font-weight: bold;
+  color: var(--color-redcurrency);
   text-align: right;
 }

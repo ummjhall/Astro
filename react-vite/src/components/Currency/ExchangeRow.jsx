@@ -4,8 +4,8 @@ function ExchangeRow({ cName, cValue }) {
 
   return (
     <div className='exchange-row-wrapper'>
-      <span>{cName}</span>
-      <span>{cValue}</span>
+      <span className='exchange-row-currency'>{cName}</span>
+      <span className='exchange-row-value'>{cValue}</span>
     </div>
   );
 }

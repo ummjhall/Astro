@@ -1,0 +1,4 @@
+.exchange-row-wrapper {
+  display: flex;
+  column-gap: 25px;
+}

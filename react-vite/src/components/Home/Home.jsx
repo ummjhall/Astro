@@ -31,12 +31,6 @@ function Home() {
   }, []);
 
 
-  // useEffect(() => {
-  //   console.log('$$$$$$$$$$$$$$$$$$$$$$$$');
-  //   console.log(currencyData);
-  // });
-
-
   return (
     <div className='home-wrapper'>
       <div className='home-container'>

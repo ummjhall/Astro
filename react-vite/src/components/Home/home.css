@@ -11,33 +11,18 @@
   height: calc(100vh - 55px - 25px - 2px - 40px);
   display: grid;
   grid-template-areas:
-    'box1 box2 box2'
-    'box1 box3 box4'
-    'box1 box5 box4';
+    'sales latest latest'
+    'sales card featured'
+    'sales curr featured';
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   column-gap: 15px;
   row-gap: 15px;
 }
 
-.home-heading {
-  margin-top: 4px;
-}
-
-.home-box1 {
-  grid-area: box1;
-}
-.home-box2 {
-  grid-area: box2;
-}
-.home-box3 {
-  grid-area: box3;
-}
-.home-box4 {
-  grid-area: box4;
-}
-.home-box5 {
-  grid-area: box5;
+.home-teaser-container {
+  display: flex;
+  justify-content: space-around;
 }
 
 .home-box {
@@ -45,4 +30,28 @@
   background-color: cyan;
   background-color: var(--color-silverdark);
   text-align: center;
+}
+.home-box:hover {
+  color: var(--color-gold);
+}
+
+.home-heading {
+  margin: 4px 0 10px;
+}
+
+.home-sales {
+  grid-area: sales;
+}
+.home-latest {
+  grid-area: latest;
+  cursor: pointer;
+}
+.home-gift-card {
+  grid-area: card;
+}
+.home-featured {
+  grid-area: featured;
+}
+.home-currencies {
+  grid-area: curr;
 }

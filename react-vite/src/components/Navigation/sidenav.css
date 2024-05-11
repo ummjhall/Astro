@@ -4,6 +4,7 @@
   height: calc(100vh - 55px - 25px - 2px);
   position: sticky;
   top: calc(55px + 25px + 2px);
+  background-color: black;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: var(--color-indigo) black;

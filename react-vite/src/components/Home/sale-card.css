@@ -1,0 +1,48 @@
+.salecard-wrapper {
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 80%;
+  height: 15%;
+  background-color: black;
+  display: flex;
+  cursor: pointer;
+}
+.salecard-wrapper:hover {
+  border-color: var(--color-gold);
+}
+
+.salecard-image {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-right: 10px;
+}
+
+.salecard-name {
+  margin-top: 3px;
+  color: var(--color-gold);
+  font-size: 13px;
+  text-align: left;
+}
+
+.salecard-price-container {
+  display: flex;
+  column-gap: 10px;
+  font-size: 13px;
+}
+
+.salecard-price-original {
+  min-width: 50px;
+  color: var(--color-green);
+  text-align: left;
+  text-decoration: line-through;
+}
+
+.salecard-price-arrows {
+  color: white;
+}
+
+.salecard-price-reduced {
+  min-width: 50px;
+  color: red;
+  text-align: right;
+}

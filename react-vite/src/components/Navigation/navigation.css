@@ -19,10 +19,20 @@
 }
 
 .nav-astro {
+  border-radius: 10px;
+  padding: 5px;
   font-size: 40px;
   font-weight: 500;
   color: var(--color-gold);
+  display: flex;
+  align-items: center;
   cursor: pointer;
+}
+.nav-astro:hover {
+  height: 40px;
+  background-color: var(--color-greenblue);
+  background-color: var(--color-gold);
+  color: black;
 }
 
 .nav-user-menu {
@@ -43,6 +53,7 @@
 }
 .nav-user-menu_button:hover {
   background-color: var(--color-silverdark);
+  background-color: var(--color-greenblue);
 }
 
 .nav-lower-wrapper {
@@ -64,5 +75,6 @@
   cursor: pointer;
 }
 .nav-link:hover {
-  background-color: var(--color-darkdarkblue);
+  /* background-color: var(--color-darkdarkblue); */
+  background-color: var(--color-greenblue);
 }

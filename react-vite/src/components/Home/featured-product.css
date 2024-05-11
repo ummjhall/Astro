@@ -8,6 +8,9 @@
   color: white;
   cursor: pointer;
 }
+.featured-wrapper:hover {
+  border-color: var(--color-gold);
+}
 
 .featured-image {
   border-top-left-radius: 5px;

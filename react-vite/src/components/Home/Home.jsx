@@ -1,23 +1,40 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProductsThunk } from '../../redux/products';
 import { useNavigate } from 'react-router-dom';
 import SaleCard from './SaleCard';
 import ProductTeaser from './ProductTeaser';
 import FeaturedProduct from './FeaturedProduct';
+import ExchangeRate from './ExchangeRate';
 import './home.css';
 
 function Home() {
   const allProducts = useSelector(state => state.products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [ currencyData, setCurrencyData ] = useState({});
+
   const saleItems = [50, 34, 22, 48, 67];
   const techTeasers = [10, 12, 13, 14, 16];
+  const currencies = ['aergo', 'bdx', 'jpy', 'mkd', 'zil'];
 
 
   useEffect(() => {
     dispatch(getAllProductsThunk());
   }, [dispatch]);
+
+
+  useEffect(() => {
+    fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json`)
+    .then(res => res.json())
+    .then(data => setCurrencyData(data));
+  }, []);
+
+
+  // useEffect(() => {
+  //   console.log('$$$$$$$$$$$$$$$$$$$$$$$$');
+  //   console.log(currencyData);
+  // });
 
 
   return (
@@ -48,6 +65,11 @@ function Home() {
         </div>
         <div className='home-box home-currencies'>
           <div className='home-heading'>CURRENCY EXCHANGE RATES</div>
+          <div className='home-currency-container'>
+            {currencyData?.usd && currencies.map(currency => (
+              <ExchangeRate key={currency} cName={currency} cValue={currencyData.usd[currency]} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

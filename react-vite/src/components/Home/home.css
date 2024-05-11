@@ -32,6 +32,11 @@
   justify-content: space-around;
 }
 
+.home-currency-container {
+  margin: 0 auto;
+  width: 80%;
+}
+
 .home-box {
   border-radius: 5px;
   background-color: cyan;

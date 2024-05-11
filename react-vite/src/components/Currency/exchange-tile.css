@@ -1,19 +1,19 @@
-.exchange-wrapper {
+.exchange-tile-wrapper {
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
 }
 
-.exchange-currency,
-.exchange-value {
+.exchange-tile-currency,
+.exchange-tile-value {
   font-family: var(--font-currencies);
+  font-size: 14.5px;
 }
 
-.exchange-currency {
+.exchange-tile-currency {
   color: var(--color-gold);
 }
 
-.exchange-value {
+.exchange-tile-value {
   border-radius: 5px;
   min-width: 115px;
   padding: 0 5px;

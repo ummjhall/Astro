@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import SaleCard from './SaleCard';
 import ProductTeaser from './ProductTeaser';
 import FeaturedProduct from './FeaturedProduct';
-import ExchangeRate from './ExchangeRate';
+import ExchangeTile from '../Currency/ExchangeTile';
 import './home.css';
 
 function Home() {
@@ -63,11 +63,11 @@ function Home() {
           <div className='home-heading'>FEATURED ITEM</div>
           <FeaturedProduct product={allProducts[19]} />
         </div>
-        <div className='home-box home-currencies'>
+        <div className='home-box home-currencies' onClick={() => navigate('/exchange-rates')}>
           <div className='home-heading'>CURRENCY EXCHANGE RATES</div>
           <div className='home-currency-container'>
             {currencyData?.usd && currencies.map(currency => (
-              <ExchangeRate key={currency} cName={currency} cValue={currencyData.usd[currency]} />
+              <ExchangeTile key={currency} cName={currency} cValue={currencyData.usd[currency]} />
             ))}
           </div>
         </div>

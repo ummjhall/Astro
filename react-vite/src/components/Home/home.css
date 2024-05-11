@@ -67,4 +67,5 @@
 }
 .home-currencies {
   grid-area: curr;
+  cursor: pointer;
 }

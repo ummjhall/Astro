@@ -22,6 +22,7 @@ function ExchangeRates() {
   return (
     <div className='exchange-wrapper'>
       <div className='exchange-title'>Latest Exchange Rates</div>
+      <div className='exchange-subheading'>ঋ 1 USC = ......</div>
       <div className='exchange-rates-container'>
         {currencyData.usd && currencies.map(currency => (
           <ExchangeRow cName={currency} cValue={currencyData.usd[currency]} />

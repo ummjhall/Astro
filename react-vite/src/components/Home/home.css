@@ -18,7 +18,7 @@
     'sales card featured'
     'sales card featured'
     'sales card featured'
-    'sales curr featured'
+    'sales card featured'
     'sales curr featured'
     'sales curr featured'
     'sales curr featured'
@@ -40,6 +40,20 @@
 .home-teaser-container {
   display: flex;
   justify-content: space-around;
+}
+
+.home-gift-card {
+  cursor: pointer;
+}
+
+.home-gift-card-image {
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 310px;
+  height: 90px;
+  object-fit: cover;
+  object-position: 40% 60%;
 }
 
 .home-currency-container {

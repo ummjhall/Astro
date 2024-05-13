@@ -54,6 +54,11 @@ function Home() {
         </div>
         <div className='home-box home-gift-card'>
           <div className='home-heading'>WIN A GIFT CARD</div>
+          <img
+            className='home-gift-card-image'
+            src={'https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715451803/Astro/astro-giftcard_nymjxs.jpg'}
+            alt='giftcard-giveaway'
+          />
         </div>
         <div className='home-box home-featured'>
           <div className='home-heading'>FEATURED ITEM</div>
@@ -61,7 +66,7 @@ function Home() {
         </div>
         <div className='home-box home-currencies' onClick={() => navigate('/exchange-rates')}>
           <div className='home-heading'>CURRENCY EXCHANGE RATES</div>
-          <div className='home-subheading'>( ঋ 1 USC = ...... )</div>
+          {/* <div className='home-subheading'>ঋ 1 USC = ......</div> */}
           <div className='home-currency-container'>
             {currencyData?.usd && currencies.map(currency => (
               <ExchangeTile key={currency} cName={currency} cValue={currencyData.usd[currency]} />

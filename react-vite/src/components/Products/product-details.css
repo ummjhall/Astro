@@ -51,6 +51,9 @@
   object-fit: cover;
   cursor: pointer;
 }
+.pd-images-preview:hover {
+  border-color: var(--color-gold);
+}
 
 .pd-images-count {
   text-align: right;

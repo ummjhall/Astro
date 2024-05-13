@@ -38,6 +38,9 @@
   flex-direction: column;
   cursor: pointer;
 }
+.producttile-wrapper:hover {
+  border-color: var(--color-gold);
+}
 
 .producttile-image {
   border-top-left-radius: 5px;

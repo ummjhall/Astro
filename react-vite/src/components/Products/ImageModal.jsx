@@ -16,6 +16,7 @@ function ImageModal({ images }) {
             >
               {'<< Prev'}
             </div>
+            <div className='image-number'>{imageNo+1}/{images.length}</div>
             <div
               className='image-button'
               onClick={() => setImageNo(prev => prev == images.length-1 ? 0 : prev+1)}

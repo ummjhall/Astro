@@ -20,7 +20,8 @@
 
 .image-buttons-container {
   display: flex;
-  column-gap: 50px;
+  align-items: center;
+  column-gap: 30px;
   font-size: 20px;
 }
 
@@ -29,4 +30,16 @@
   border-radius: 5px;
   padding: 3px 8px;
   cursor: pointer;
+}
+.image-button:hover {
+  border-color: white;
+  color: white;
+}
+
+.image-number {
+  width: 50px;
+  /* font-family: var(--font-currencies); */
+  font-size: 18px;
+  text-align: center;
+  /* color: white; */
 }

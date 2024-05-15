@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import productsReducer from './products';
 import cartReducer from './cart';
+import filtersReducer from './filters';
 
 const rootReducer = (state, action) => {
   if (action.type == 'USER_LOGOUT')
@@ -13,7 +14,8 @@ const rootReducer = (state, action) => {
 const appReducer = combineReducers({
   session: sessionReducer,
   products: productsReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  filters: filtersReducer
 });
 
 let enhancer;

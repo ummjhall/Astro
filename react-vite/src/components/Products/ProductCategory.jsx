@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getAllProductsThunk } from '../../redux/products';
+import { filterProducts } from '../../utils/functions';
+// import { setFiltersThunk } from '../../redux/filters';
 import SideNav from '../Navigation/SideNav';
 import ProductTile from './ProductTile';
 import './products.css';
@@ -9,6 +11,7 @@ import './products.css';
 function ProductCategory() {
   let { category, subcategory } = useParams();
   const allProducts = useSelector(state => state.products);
+  const filters = useSelector(state => state.filters);
   const dispatch = useDispatch();
 
   // Filter products by category unless viewing all products
@@ -18,6 +21,9 @@ function ProductCategory() {
       .filter(product => product.category == category && product.subcategory == subcategory);
   else
     productsArray = Object.values(allProducts).filter(product => product.category == category);
+
+  // Filter products from user-specified filter
+  const filteredProducts = filterProducts(productsArray, filters);
 
 
   useEffect(() => {
@@ -29,7 +35,7 @@ function ProductCategory() {
     <div className='products-wrapper'>
       <SideNav />
       <div className='products-tile-container'>
-        {productsArray.map(product => (
+        {filteredProducts.map(product => (
           <ProductTile key={product.product_id} product={product} />
         ))}
       </div>

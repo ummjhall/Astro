@@ -10,6 +10,19 @@
   scrollbar-color: var(--color-indigo) black;
 }
 
+.sidenav-toggle {
+  padding: 15px 0 15px 5px;
+  cursor: pointer;
+  user-select: none;
+}
+.sidenav-toggle:hover {
+  background-color: var(--color-gold);
+}
+
+.sidenav-categories-container {
+  margin-top: -5px;
+}
+
 .sidenav-category,
 .sidenav-subcategory {
   cursor: pointer;
@@ -33,4 +46,23 @@
 }
 .sidenav-subcategory:hover {
   background-color: white;
+}
+
+.sidenav-filters-container {
+  border: 1px solid red;
+  padding-left: 5px;
+}
+
+.sf-price-min,
+.sf-price-max {
+  display: inline-block;
+  width: 50px;
+}
+
+.sf-price-min-input {
+  width: 50%;
+}
+
+.sf-price-max-input {
+  width: 50%;
 }

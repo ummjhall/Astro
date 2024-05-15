@@ -25,7 +25,7 @@ function ExchangeRates() {
       <div className='exchange-subheading'>ঋ 1 USC = ......</div>
       <div className='exchange-rates-container'>
         {currencyData.usd && currencies.map(currency => (
-          <ExchangeRow cName={currency} cValue={currencyData.usd[currency]} />
+          <ExchangeRow key={currency} cName={currency} cValue={currencyData.usd[currency]} />
         ))}
       </div>
     </div>

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getAllProductsThunk } from '../../redux/products';
 import { filterProducts } from '../../utils/functions';
-// import { setFiltersThunk } from '../../redux/filters';
 import SideNav from '../Navigation/SideNav';
 import ProductTile from './ProductTile';
 import './products.css';
@@ -22,7 +21,7 @@ function ProductCategory() {
   else
     productsArray = Object.values(allProducts).filter(product => product.category == category);
 
-  // Filter products from user-specified filter
+  // Filter products from user-specified filters
   const filteredProducts = filterProducts(productsArray, filters);
 
 
@@ -38,6 +37,9 @@ function ProductCategory() {
         {filteredProducts.map(product => (
           <ProductTile key={product.product_id} product={product} />
         ))}
+        {!filteredProducts.length &&
+          <div className='products-no-products'>No products to display</div>
+        }
       </div>
     </div>
   );

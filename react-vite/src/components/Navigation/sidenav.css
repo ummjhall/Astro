@@ -1,3 +1,5 @@
+/* ***** SIDENAV ******************************************************************************* */
+
 .sidenav-wrapper {
   border-right: 3px solid white;
   min-width: 18vw;
@@ -8,6 +10,7 @@
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: var(--color-indigo) black;
+  /* Uncomment these for alternate SideNav */
   /* scrollbar-width: none;
   -ms-overflow-style: none; */
 }
@@ -54,8 +57,38 @@
   background-color: white;
 }
 
+
+/* ***** FILTERS ******************************************************************************* */
+
 .sidenav-filters-container {
-  padding-left: 5px;
+  padding-left: 10px;
+  user-select: none;
+}
+
+.sf-reset {
+  margin-bottom: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.sf-heading {
+  margin-top: 3px;
+  font-size: 15px;
+  color: var(--color-gold);
+}
+
+.sf-indent {
+  padding-left: 10px;
+}
+
+.sf-text,
+.sf-price-min,
+.sf-price-max {
+  font-size: 14px;
+}
+
+.sidenav-filters-container select {
+  width: 85%;
 }
 
 .sf-price-min,

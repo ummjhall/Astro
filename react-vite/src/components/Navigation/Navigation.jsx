@@ -1,14 +1,25 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { resetFiltersThunk } from '../../redux/filters';
 import ProfileButton from './ProfileButton';
 import Search from '../Search/Search';
 import './navigation.css';
 
 function Navigation() {
   const user = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const categories = ['Transport', 'Tech', 'Home', 'Apparel', 'Media',
       'Hobby', 'Grocery', 'Cosmetic', 'Health', 'Pet'];
+
+
+  const handleClick = (category) => {
+    dispatch(resetFiltersThunk());
+    if (category)
+      navigate(`/products/${category.toLowerCase()}`);
+    else
+      navigate('/products');
+  };
 
 
   return (
@@ -31,14 +42,14 @@ function Navigation() {
         </div>
       </div>
       <div className='nav-lower-wrapper'>
-        <div className='nav-link' onClick={() => navigate('/products')}>
+        <div className='nav-link' onClick={() => handleClick()}>
           [ All ]
         </div>
         {categories.map((category, i) => (
           <div
             key={i}
             className='nav-link'
-            onClick={() => navigate(`/products/${category.toLowerCase()}`)}
+            onClick={() => handleClick(category)}
           >
             {category}
           </div>

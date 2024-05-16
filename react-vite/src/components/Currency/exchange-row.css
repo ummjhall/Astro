@@ -1,0 +1,23 @@
+.exchange-row-wrapper {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.427);
+  border-radius: 3px;
+  padding: 0 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.exchange-row-wrapper:hover {
+  background-color: var(--color-darkdarkdarkblue);
+}
+
+.exchange-row-currency,
+.exchange-row-value {
+  font-family: var(--font-currencies);
+}
+
+.exchange-row-currency {
+  color: var(--color-gold);
+}
+
+.exchange-row-value {
+  color: var(--color-redcurrency);
+}

@@ -1,0 +1,29 @@
+.exchange-wrapper {
+  margin: 0 auto;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.exchange-title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: var(--color-gold);
+}
+
+.exchange-subheading {
+  margin: -5px 0 15px;
+  font-size: 20px;
+  color: var(--color-gold);
+}
+
+.exchange-rates-container {
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding: 5px;
+  width: 30%;
+  background-color: black;
+}

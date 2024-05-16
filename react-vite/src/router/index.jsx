@@ -5,10 +5,10 @@ import Layout from './Layout';
 import Home from '../components/Home/Home';
 import Cart from '../components/Cart/Cart';
 import Products from '../components/Products/Products';
-import ProductCategory from '../components/Products/ProductCategory';
 import ProductDetails from '../components/Products/ProductDetails';
 import SellProductForm from '../components/Products/SellProductForm';
 import SearchResults from '../components/Search/SearchResults';
+import ExchangeRates from '../components/Currency/ExchangeRates';
 
 export const router = createBrowserRouter([
   {
@@ -36,11 +36,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'products/:category',
-        element: <ProductCategory />
+        element: <Products />
       },
       {
         path: 'products/:category/:subcategory',
-        element: <ProductCategory />
+        element: <Products />
       },
       {
         path: 'products/:category/:subcategory/:productId',
@@ -57,6 +57,10 @@ export const router = createBrowserRouter([
       {
         path: 'search-results',
         element: <SearchResults />
+      },
+      {
+        path: 'exchange-rates',
+        element: <ExchangeRates />
       },
       {
         path: '*',

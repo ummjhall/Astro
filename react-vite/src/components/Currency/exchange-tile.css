@@ -1,0 +1,23 @@
+.exchange-tile-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exchange-tile-currency,
+.exchange-tile-value {
+  font-family: var(--font-currencies);
+  font-size: 14.5px;
+}
+
+.exchange-tile-currency {
+  color: var(--color-gold);
+}
+
+.exchange-tile-value {
+  border-radius: 5px;
+  min-width: 105px;
+  padding: 0 5px;
+  background-color: black;
+  color: var(--color-redcurrency);
+  text-align: right;
+}

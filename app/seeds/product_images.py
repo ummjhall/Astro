@@ -631,7 +631,12 @@ def seed_product_images():
         ),
         ProductImage(
             product_id=82,
-            url='https://res.cloudinary.com/dt2uyzpbn/image/upload/v1714999644/Astro/082-03-nebulafish_pydbhu.jpg',
+            url='https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715620974/Astro/082-03-nebulafish_anelok.jpg',
+            thumbnail=False
+        ),
+        ProductImage(
+            product_id=82,
+            url='https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715620978/Astro/082-04-nebulafish_o6powq.jpg',
             thumbnail=False
         ),
         ProductImage(

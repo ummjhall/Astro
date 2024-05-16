@@ -1,32 +1,37 @@
 /* Sitewide styles */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
 body {
   margin: 0;
   background-color: black;
-  /* background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1713450743/Astro/kai-pilger-Ef6iL87-vOA-unsplash_hp1fhj.jpg');
+  background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1713450743/Astro/kai-pilger-Ef6iL87-vOA-unsplash_hp1fhj.jpg');
   background-size: contain;
-  background-attachment: fixed; */
+  background-attachment: fixed;
 }
 
 :root {
-  --color-indigo: rgb(75,0,130);
-  --color-indigo: rgb(54,8,86);
-  --color-indigo: rgb(45,10,70);
-  --color-darkpurple: rgb(38,28,113);
+  --color-indigo: rgb(75, 0, 130);
+  --color-indigo: rgb(54, 8, 86);
+  --color-indigo: rgb(45, 10, 70);
+  --color-darkpurple: rgb(38, 28, 113);
   --color-gold: rgb(255, 213, 0);
-  --color-greenblue: rgb(13,83,119);
-  --color-lightblue: rgb(4,149,212);
-  --color-cyan: rgb(0,255,255);
-  --color-blue: rgb(13,75,162);
-  --color-darkblue: rgb(25,46,125);
-  --color-darkdarkblue: rgb(14,29,84);
-  --color-silver: rgb(165,172,190);
-  --color-silverdark: rgb(47,79,79);
+  --color-greenblue: rgb(13, 83, 119);
+  --color-lightblue: rgb(4, 149, 212);
+  --color-cyan: rgb(0, 255, 255);
+  --color-blue: rgb(13, 75, 162);
+  --color-darkblue: rgb(25, 46, 125);
+  --color-darkdarkblue: rgb(14, 29, 84);
+  --color-darkdarkdarkblue: rgb(10, 20, 60);
+  --color-silver: rgb(165, 172, 190);
+  --color-silverdark: rgb(47, 79, 79);
   --color-red: rgb(162, 17, 44);
-  --color-green: rgb(0,255,0);
+  --color-redcurrency: rgb(175, 5, 5);
+  --color-green: rgb(0, 255, 0);
 
   --font-main: 'Audiowide', sans-serif;
+  --font-currencies: 'Kode Mono', monospace;
+  /* --font-main: 'Kode Mono', monospace; */
 }
 
 .error {

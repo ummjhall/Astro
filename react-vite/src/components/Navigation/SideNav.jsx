@@ -6,7 +6,7 @@ import categories from '../../utils/categories';
 import './sidenav.css';
 
 function SideNav() {
-  const { category, subcategory } = useParams();
+  const { category, subcategory, productId } = useParams();
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
@@ -29,7 +29,14 @@ function SideNav() {
   const [ unregistered, setUnregistered ] = useState(true);
 
 
-  // Reset filters when user navigates to category with NavBar
+  // Toggle SideNav off of filters if user is on a ProductDetail page
+  useEffect(() => {
+    if (productId)
+      setGoToFilters(false);
+  }, [productId]);
+
+
+  // Reset filters when user navigates to a category with NavBar
   useEffect(() => {
     cachedReset();
   }, [cachedReset, location]);
@@ -79,6 +86,7 @@ function SideNav() {
   }, [filterCategory, filterSubcategory]);
 
 
+  // Navigate to selected category/subcategory
   const handleClick = (category, subcategory) => {
     dispatch(resetFiltersThunk());
     if (subcategory)
@@ -108,12 +116,14 @@ function SideNav() {
 
   return (
     <div className='sidenav-wrapper'>
-      <div
-        className='sidenav-toggle'
-        onClick={() => setGoToFilters(prev => !prev)}
-      >
-        {goToFilters ? 'BACK TO CATEGORIES' : 'FILTER RESULTS'}
-      </div>
+      {!productId &&
+        <div
+          className='sidenav-toggle'
+          onClick={() => setGoToFilters(prev => !prev)}
+        >
+          {goToFilters ? 'BACK TO CATEGORIES' : 'FILTER RESULTS'}
+        </div>
+      }
 
       {!goToFilters &&
         <div className='sidenav-categories-container'>

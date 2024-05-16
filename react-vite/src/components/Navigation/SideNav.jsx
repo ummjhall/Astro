@@ -156,7 +156,7 @@ function SideNav() {
                 onChange={e => setFilterSubcategory(e.target.value)}
               >
                 <option value='all'>All</option>
-                {categories[category].map((filterSubcategory, i) => (
+                {category && categories[category].map((filterSubcategory, i) => (
                   <option key={i} value={filterSubcategory}>
                     {filterSubcategory.split('-').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')}
                   </option>

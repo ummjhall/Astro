@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import './products.css';
+import './product-tile.css';
 
 function ProductTile({ product }) {
   const navigate = useNavigate();

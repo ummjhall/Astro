@@ -27,6 +27,7 @@ function ProductDetails() {
 
 
   useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     dispatch(getCartThunk());
   }, [dispatch]);
 

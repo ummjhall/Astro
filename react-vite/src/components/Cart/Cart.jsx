@@ -41,7 +41,7 @@ function Cart() {
       <h1>{(user.username + "'s ")}Cart</h1>
       {cartItemsArray.length >= 3 &&
         <div>
-          <div className='cart-total'>Total: ঋ{total}</div>
+          <div className='cart-total'>Total: ঋ{total.toLocaleString()}</div>
           <button className='cart-checkout' onClick={handleCheckout}>
             Complete Checkout
           </button>
@@ -54,7 +54,7 @@ function Cart() {
       </div>
       {cartItemsArray.length ?
         <div>
-          <div className='cart-total'>Total: ঋ{total}</div>
+          <div className='cart-total'>Total: ঋ{total.toLocaleString()}</div>
           <button className='cart-checkout' onClick={handleCheckout}>
             Complete Checkout
           </button>

@@ -17,3 +17,7 @@
 .sr-query {
   color: var(--color-cyan);
 }
+
+.sr-no-products {
+  padding: 20px;
+}

@@ -25,8 +25,6 @@ function Products() {
   productsArray.sort((a, b) => {
     if (Object.keys(categories).indexOf(a.category) < Object.keys(categories).indexOf(b.category)) return -1;
     else if (Object.keys(categories).indexOf(a.category) > Object.keys(categories).indexOf(b.category)) return 1;
-    // if (a.subcategory < b.subcategory) return -1;
-    // else if (a.subcategory > b.subcategory) return 1;
     if (categories[a.category].indexOf(a.subcategory) < categories[b.category].indexOf(b.subcategory)) return -1;
     else if (categories[a.category].indexOf(a.subcategory) > categories[b.category].indexOf(b.subcategory)) return 1;
     if (a.price < b.price) return -1;

@@ -69,11 +69,11 @@
   background-color: white;
 }
 
-.s-sub-alt {
+.sn-sub-alt {
   color: var(--color-gold);
 }
 
-.secret-button {
+.sn-secret-button {
   height: 1em;
 }
 

@@ -37,15 +37,34 @@
 
 .nav-astro-img {
   border-radius: 5px;
+  margin-top: 6.5px;
   width: 40px;
   height: 40px;
   background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715877289/Astro/astro-logo-rocket-v2_ib5exd.png');
   background-size: 100%;
   background-position: 0%;
   background-repeat: no-repeat;
+  transition: margin-top .3s;
+  /* transition: margin-top 1s cubic-bezier(.99, 0, 1.0, 1.0); */
 }
 .nav-astro:hover .nav-astro-img {
+  margin-top: -6px;
+  /* margin-top: -100px; */
   background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715878319/Astro/astro-logo-rocket-v2-alt_jwsdxr.png');
+}
+
+.nav-astro-alt {
+  transition: margin-top 1s cubic-bezier(.99, 0, 1.0, 1.0);
+}
+.nav-astro:hover .nav-astro-alt {
+  margin-top: -100px;
+}
+
+.nav-secret-button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 230px;
 }
 
 .nav-user-menu {

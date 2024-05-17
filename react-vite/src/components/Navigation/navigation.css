@@ -35,6 +35,19 @@
   color: black;
 }
 
+.nav-astro-img {
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715877289/Astro/astro-logo-rocket-v2_ib5exd.png');
+  background-size: 100%;
+  background-position: 0%;
+  background-repeat: no-repeat;
+}
+.nav-astro:hover .nav-astro-img {
+  background-image: url('https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715878319/Astro/astro-logo-rocket-v2-alt_jwsdxr.png');
+}
+
 .nav-user-menu {
   display: flex;
   justify-content: space-between;

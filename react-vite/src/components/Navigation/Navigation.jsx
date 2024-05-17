@@ -25,7 +25,16 @@ function Navigation() {
   return (
     <div className='nav-wrapper'>
       <div className='nav-upper-wrapper'>
-        <div className='nav-astro' onClick={() => navigate('/')}>Astro</div>
+        <div className='nav-astro' onClick={() => navigate('/')}>
+          {/* <img
+            className='nav-astro-img'
+            src='https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715877289/Astro/astro-logo-rocket-v2_ib5exd.png'
+            alt='Astro rocket'
+            style={{width: '40px'}}
+          /> */}
+          <div className='nav-astro-img'></div>
+          stro
+        </div>
         <Search />
         <div className='nav-user-menu'>
           {user &&

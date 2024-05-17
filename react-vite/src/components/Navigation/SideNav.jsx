@@ -11,6 +11,7 @@ function SideNav() {
   const location = useLocation();
   const navigate = useNavigate();
   const cachedReset = useCallback(handleResetFilters, [dispatch]);
+  const [ altStyle, setAltStyle ] = useState(false);
 
   // Track user filters to be sent to filter thunk
   const [ goToFilters, setGoToFilters ] = useState(false);
@@ -115,7 +116,7 @@ function SideNav() {
 
 
   return (
-    <div className='sidenav-wrapper'>
+    <div className={`sidenav-wrapper ${altStyle ? 'sidenav-alt' : ''}`}>
       {!productId &&
         <div
           className='sidenav-toggle'
@@ -138,7 +139,7 @@ function SideNav() {
               {categories[category].map((subcategory, i) => (
                 <div
                   key={i}
-                  className='sidenav-subcategory'
+                  className={`sidenav-subcategory ${altStyle ? 's-sub-alt' : ''}`}
                   onClick={() => handleClick(category, subcategory)}
                 >
                   {subcategory.split('-').join(' ')}
@@ -146,6 +147,7 @@ function SideNav() {
               ))}
             </div>
           ))}
+          <div className='secret-button' onClick={() => setAltStyle(prev => !prev)}></div>
         </div>
       }
 

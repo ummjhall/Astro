@@ -6,15 +6,15 @@ def seed_products():
     seeds = [
         Product(
             seller_id=3,
-            upc='9F3D5A7C4B1E8F01',
+            upc=None, #1
             name='Quantum Warp Drive Engine',
             category='transport',
             subcategory='space-travel',
             price=9999999999,
             condition='New',
             description='Revolutionize your space travel experience.',
-            details="Harness the power of quantum entanglement to fold spacetime, allowing you to traverse vast distances in the blink of an eye. Say goodbye to tedious light-years and hello to instant jumps across the galaxy! The Quantum Warp Drive Engine features an elegant design, intuitive controls, and built-in safety protocols. It’s compatible with most starships and comes with a lifetime warranty. Get ready to explore the cosmos like never before.",
-            stock=3
+            details="Experimental Prototype. Harness the power of quantum entanglement to fold spacetime, allowing you to traverse vast distances in the blink of an eye. Say goodbye to tedious light-years and hello to instant jumps across the galaxy! The Quantum Warp Drive Engine features an elegant design, intuitive controls, and built-in safety protocols. It’s compatible with most starships and comes with a lifetime warranty. Get ready to explore the cosmos like never before.",
+            stock=1
         ),
         Product(
             seller_id=3,
@@ -62,7 +62,7 @@ def seed_products():
             condition='New',
             description='The ultimate guide to the stars.',
             details="The StellarMap Navigator is an essential tool for any space traveler. This advanced navigation system comes pre-loaded with maps of known galaxies, wormholes, nebulae, and gravitational anomalies, ensuring you can plot a course through the cosmos with ease. Its user-friendly interface allows for seamless operation, making it the perfect companion for explorers and traders alike.",
-            stock=150
+            stock=2000
         ),
         Product(
             seller_id=3,
@@ -74,7 +74,7 @@ def seed_products():
             condition='New',
             description='Personal protection against the unknown.',
             details="The Personal Plasma Shield Generator creates a protective barrier around you, shielding you from various cosmic hazards. It's portable, rechargeable, and essential for any space adventurer.",
-            stock=30
+            stock=100
         ),
         Product(
             seller_id=3,
@@ -98,7 +98,7 @@ def seed_products():
             condition='New',
             description='Walk on walls, ceilings, and asteroids.',
             details="Graviton Boots manipulate local gravity fields. Perfect for extravehicular activities or exploring microgravity environments.",
-            stock=80
+            stock=40
         ),
         Product(
             seller_id=3,
@@ -110,7 +110,7 @@ def seed_products():
             condition='New',
             description='Your portable home in the cosmos.',
             details="The Space-Time Tent is a portable shelter that can be deployed in any environment, providing a safe and comfortable space to rest during your journeys.",
-            stock=120
+            stock=600
         ),
         Product(
             seller_id=3,
@@ -122,7 +122,7 @@ def seed_products():
             condition='New',
             description='Stay connected across light-years.',
             details="The Quantum Entanglement Communicator allows instantaneous communication with other devices entangled in the quantum realm. No lag, no delays — just crystal-clear conversations across the vastness of space.",
-            stock=80
+            stock=300
         ),
         Product(
             seller_id=3,
@@ -134,7 +134,7 @@ def seed_products():
             condition='New',
             description='Speak and understand any galactic language.',
             details="This Alien Language Translator comes pre-loaded with over 10,000,000 languages from across the universe. Its intuitive interface and voice recognition make it easy to communicate with any species.",
-            stock=100
+            stock=5000
         ),
         Product(
             seller_id=3,
@@ -146,7 +146,7 @@ def seed_products():
             condition='New',
             description='Smart goggles with augmented reality capabilities.',
             details="AR Goggles offer a seamless AR experience, overlaying useful information onto your natural field of view. They feature an intuitive interface, voice control, and are compatible with most intergalactic communication devices. Perfect for explorers and tech enthusiasts alike.",
-            stock=20
+            stock=300
         ),
         Product(
             seller_id=3,
@@ -182,7 +182,7 @@ def seed_products():
             condition='New',
             description='Balance your cosmic energies.',
             details="The Crystal Harmonizer emits harmonious vibrations that align your chakras and enhance your psychic abilities. Perfect for meditation or enhancing your spacefaring journey.",
-            stock=200
+            stock=1500
         ),
         Product(
             seller_id=3,
@@ -230,7 +230,7 @@ def seed_products():
             condition='New',
             description='Immerse yourself in other worlds.',
             details="The Virtual Reality Gaming Suit provides a full-body gaming experience. Feel every movement and sensation as if you're truly inside the game.",
-            stock=120
+            stock=2000
         ),
         Product(
             seller_id=3,
@@ -242,7 +242,7 @@ def seed_products():
             condition='New',
             description='Sound that surrounds you.',
             details="The 4D Immersive Sound System uses advanced acoustics to create a sound environment that completely envelops you, transforming how you experience music and movies.",
-            stock=80
+            stock=2000
         ),
         Product(
             seller_id=3,
@@ -254,7 +254,7 @@ def seed_products():
             condition='New',
             description='Float in comfort with low-gravity design.',
             details="The Orbital Lounge Chair offers a weightless seating experience, perfect for relaxing after a long day of space travel. Its ergonomic design provides unparalleled comfort and support.",
-            stock=100
+            stock=400
         ),
         Product(
             seller_id=3,
@@ -266,7 +266,7 @@ def seed_products():
             condition='New',
             description='Cosmic comfort in your living space.',
             details="Crafted from memory foam that molds to your shape, the Asteroid Bean Bag is covered in a fabric that resembles the rugged surface of an asteroid, providing a unique tactile experience.",
-            stock=100
+            stock=900
         ),
         Product(
             seller_id=3,
@@ -278,7 +278,7 @@ def seed_products():
             condition='New',
             description='Dine among the stars every night.',
             details="The GalaxyGlass Table features a stunning holographic display of the cosmos beneath its surface, making every meal a celestial event.",
-            stock=30
+            stock=200
         ),
         Product(
             seller_id=3,
@@ -290,7 +290,7 @@ def seed_products():
             condition='New',
             description='Illuminate your habitat with cosmic rays.',
             details="The Cosmic Ray Light offers a unique lighting experience, simulating the mesmerizing beauty of cosmic rays in your own living space. It's energy-efficient and comes with customizable settings.",
-            stock=120
+            stock=1000
         ),
         Product(
             seller_id=3,
@@ -302,7 +302,7 @@ def seed_products():
             condition='New',
             description='An artistic rendition of a black hole.',
             details="The Cosmic Vortex Statue is a mesmerizing piece that represents the power and mystery of black holes. Its swirling design draws the eye and sparks the imagination.",
-            stock=40
+            stock=30
         ),
         Product(
             seller_id=3,
@@ -350,7 +350,7 @@ def seed_products():
             condition='New',
             description='A versatile set of kitchen utensils for the aspiring intergalactic chef.',
             details="The ChefMate Galactic Utensil Set includes everything needed to prepare exotic dishes from across the universe. Made from durable, food-grade materials, these utensils are designed to withstand extreme temperatures. The set comes with a smart storage solution that saves space and keeps your kitchen organized.",
-            stock=100
+            stock=1000
         ),
         Product(
             seller_id=3,
@@ -362,7 +362,7 @@ def seed_products():
             condition='New',
             description='Cook like a chef from the future.',
             details="This Molecular Gastronomy Kit includes everything you need to experiment with the culinary arts. Create dishes that defy gravity and explode with flavor.",
-            stock=75
+            stock=350
         ),
         Product(
             seller_id=3,
@@ -386,7 +386,7 @@ def seed_products():
             condition='New',
             description='Add a cosmic touch to your space.',
             details="The Orbiting Garden Decor features a miniature ecosystem that gracefully rotates, creating a serene and ever-changing piece of living art.",
-            stock=30
+            stock=20
         ),
         Product(
             seller_id=3,
@@ -410,7 +410,7 @@ def seed_products():
             condition='New',
             description='Stylish jeans designed for comfort in varying gravity conditions.',
             details="Crafted with a blend of cotton and adaptive synthetic fibers, these Gravity Jeans adjust to different gravitational forces, ensuring comfort and flexibility. The material is tear-resistant and features a self-repairing fabric technology.",
-            stock=25
+            stock=250
         ),
         Product(
             seller_id=3,
@@ -422,7 +422,7 @@ def seed_products():
             condition='New',
             description='A jacket with integrated heating technology for extreme climates.',
             details="The ThermalTech Jacket is a must-have for adventurers, featuring built-in heating elements. It's lightweight, water-resistant, and comes with a detachable hood. The jacket also has solar-receptive fibers to enhance warmth retention.",
-            stock=15
+            stock=450
         ),
         Product(
             seller_id=3,
@@ -434,7 +434,7 @@ def seed_products():
             condition='New',
             description='A versatile tunic suitable for various social events.',
             details="The Cosmo Tunic combines elegance with practicality, featuring a wrinkle-free fabric that adapts to different body shapes. It's available in a range of cosmic-inspired patterns and includes discreet pockets for essentials.",
-            stock=30
+            stock=4000
         ),
         Product(
             seller_id=3,
@@ -446,7 +446,7 @@ def seed_products():
             condition='New',
             description='A durable belt with a holographic buckle.',
             details="The AstroBelt is not just a fashion statement; it's a utility accessory. The holographic buckle doubles as a display for notifications and directions. Made from asteroid-mined metals, it's incredibly tough and comes with a lifetime guarantee.",
-            stock=50
+            stock=150
         ),
         Product(
             seller_id=3,
@@ -470,7 +470,7 @@ def seed_products():
             condition='New',
             description='An epic drama set against the backdrop of a galaxy on the brink of war.',
             details="Eclipse tells the tale of two fated souls from rival planets who struggle to find peace amidst political turmoil. The film features stunning interstellar visuals and a compelling narrative that explores themes of destiny, love, and sacrifice.",
-            stock=50
+            stock=10000
         ),
         Product(
             seller_id=3,
@@ -482,7 +482,7 @@ def seed_products():
             condition='New',
             description='A sitcom about a quirky crew of space traders traveling the cosmos.',
             details="'Frazorks!' follows the misadventures of a ragtag group of space traders as they deal with bizarre alien customs, intergalactic market haggling, and the challenges of spaceship maintenance. The show is praised for its witty humor and lighthearted take on life in space.",
-            stock=75
+            stock=2000
         ),
         Product(
             seller_id=3,
@@ -494,7 +494,7 @@ def seed_products():
             condition='New',
             description='An in-depth documentary on the first human colony on Mars.',
             details="This documentary provides an exclusive look at the challenges and triumphs of establishing a human presence on Mars. Featuring interviews with colonists and stunning Martian landscapes, it's an inspirational story of human perseverance and ingenuity.",
-            stock=200
+            stock=300
         ),
         Product(
             seller_id=3,
@@ -506,7 +506,7 @@ def seed_products():
             condition='New',
             description='The latest pop album from Microbe, featuring the hit single "Super Nova Girl."',
             details="The brainchild of frontman Proto Zoa, Super Nova captures the essence of post-post-post-post-modern pop. The album includes chart-topping singles that explore the theme of love across the universe. Its catchy melodies and cosmic soundscapes have won over fans galaxy-wide.",
-            stock=1000
+            stock=100000
         ),
         Product(
             seller_id=3,
@@ -518,7 +518,7 @@ def seed_products():
             condition='New',
             description='A dark rock odyssey by The Void, filled with brooding anthems and interstellar riffs.',
             details="Starset Horizon is the The Void's explosive entry into the rock scene, featuring powerful vocals and guitar solos that mimic the raw energy of supernovae. The album’s haunting melodies reflect the isolation and awe of drifting through the vastness of space. Each track is a deep cut with lyrics diving into the existential and unknown. Starset Horizon is a sonic journey to the edge of darkness and back.",
-            stock=450
+            stock=3500
         ),
         Product(
             seller_id=3,
@@ -530,7 +530,7 @@ def seed_products():
             condition='New',
             description='A fusion of jazz with exotic musical scales.',
             details="Feel jazz like never before with the Alien Jazz Experience album. It combines Earth's jazz elements with alien musical concepts, resulting in a truly unique sound. The album features collaborations with renowned musicians from various planets.",
-            stock=35
+            stock=250
         ),
         Product(
             seller_id=3,
@@ -542,7 +542,7 @@ def seed_products():
             condition='New',
             description='The groundbreaking debut album by the undisputed king of rap.',
             details="Zeb's Bars Beyond Mars transcends beats and rhymes, offering biting social commentary on AI overlords, cybernetic inequality, and the hollow glow of digital connections. This album isn't just music, it's a wake-up call from the past.",
-            stock=100
+            stock=120000
         ),
         Product(
             seller_id=3,
@@ -554,7 +554,7 @@ def seed_products():
             condition='New',
             description='An e-book detailing the flora of the known universe.',
             details="Intergalactic Botany Illustrated is an e-book for those interested in the diverse plant life across the cosmos. It includes high-definition illustrations and interactive features that allow readers to explore the ecosystems of different planets.",
-            stock=60
+            stock=35
         ),
         Product(
             seller_id=3,
@@ -566,7 +566,7 @@ def seed_products():
             condition='New',
             description='A cookbook for the modern, tech-savvy chef.',
             details="The Quantum Chef is filled with recipes that utilize quantum cooking techniques. It's designed for chefs who want to push the boundaries of culinary science. The e-book includes step-by-step guides and tips for using quantum kitchen appliances.",
-            stock=45
+            stock=80
         ),
         Product(
             seller_id=3,
@@ -578,7 +578,7 @@ def seed_products():
             condition='New',
             description='Simplifying the complexities of starship design and maintenance.',
             details="Starship Engineering for Dummies demystifies the principles behind starship construction and upkeep. It's written in easy-to-understand language and includes interactive diagrams and troubleshooting tips for common spacecraft issues.",
-            stock=300
+            stock=3000
         ),
         Product(
             seller_id=3,
@@ -602,7 +602,7 @@ def seed_products():
             condition='New',
             description='A set of golf clubs with adjustable mass and balance.',
             details="The P79 Galactic Golf Clubs are engineered for the avid golfer seeking to play on different planets. Each club features adjustable mass and balance settings to compensate for varying gravitational forces. The set includes a smart caddy bag that suggests the best club based on terrain data.",
-            stock=20
+            stock=30
         ),
         Product(
             seller_id=3,
@@ -626,7 +626,7 @@ def seed_products():
             condition='New',
             description='A modern chess set with holographic pieces.',
             details="The AstroChess Set takes chess to a whole new dimension. Each piece is a work of digital art, representing celestial bodies and cosmic phenomena. The board features an interactive display for move suggestions and historical chess matches.",
-            stock=30
+            stock=200
         ),
         Product(
             seller_id=3,
@@ -638,7 +638,7 @@ def seed_products():
             condition='New',
             description='A deck of cards with unpredictable quantum effects.',
             details="The Quantum Card Deck defies probability, creating unexpected outcomes during card games. It's perfect for poker nights or fortune-telling sessions. Beware of the entangled cards — they may change your fate!",
-            stock=100
+            stock=400
         ),
         Product(
             seller_id=3,
@@ -650,7 +650,7 @@ def seed_products():
             condition='New',
             description='A set of jigsaw puzzles featuring cosmic landscapes.',
             details="The Cosmic Puzzle Collection includes breathtaking images of nebulae, galaxies, and alien worlds. Each puzzle has varying levels of difficulty, from beginner to expert. Assemble the universe piece by piece!",
-            stock=40
+            stock=1000
         ),
         Product(
             seller_id=3,
@@ -698,7 +698,7 @@ def seed_products():
             condition='New',
             description='Unearth ancient artifacts.',
             details="The Cosmic Relic Detector scans planetary surfaces for buried treasures — alien artifacts, lost civilizations, and forgotten technologies. A must-have for galactic archaeologists.",
-            stock=50
+            stock=40
         ),
         Product(
             seller_id=3,
@@ -714,7 +714,7 @@ def seed_products():
         ),
         Product(
             seller_id=3,
-            upc='9F3D5A7C4B1E8F60',
+            upc=None, #60
             name='Star Crystal',
             category='hobby',
             subcategory='collectibles',
@@ -722,7 +722,7 @@ def seed_products():
             condition='New',
             description='A gem from a dying star.',
             details="Star Crystals contain trace elements from a supernova explosion. Their iridescent glows shift with the angle of light, captivating collectors and astronomers alike.",
-            stock=20
+            stock=10
         ),
         Product(
             seller_id=3,
@@ -734,7 +734,7 @@ def seed_products():
             condition='New',
             description='Own a piece of Martian history.',
             details="This coin celebrates humanity's first steps on the Red Planet. Minted with Martian regolith particles, it's a tangible link to the Apollo 27 mission.",
-            stock=50
+            stock=100
         ),
         Product(
             seller_id=3,
@@ -746,7 +746,7 @@ def seed_products():
             condition='New',
             description='Nutrition tailored for the stars.',
             details="AstroMeal Packs are designed for space travelers, providing balanced nutrition with a long shelf life. Each pack contains a variety of flavors to suit any palate.",
-            stock=500
+            stock=50000
         ),
         Product(
             seller_id=3,
@@ -758,7 +758,7 @@ def seed_products():
             condition='New',
             description='Dine on the rarest ingredients.',
             details="Our Meteorite Meal Kit includes a selection of the finest space-grown ingredients, offering a dining experience that is truly out of this world.",
-            stock=250
+            stock=2500
         ),
         Product(
             seller_id=3,
@@ -770,7 +770,7 @@ def seed_products():
             condition='New',
             description='Energy bars with a cosmic twist.',
             details="Packed with nutrients and flavored with exotic fruits from across the galaxy, these Galactic Granola Bars are perfect for a quick snack during space expeditions.",
-            stock=500
+            stock=25000
         ),
         Product(
             seller_id=3,
@@ -782,7 +782,7 @@ def seed_products():
             condition='New',
             description='Enjoy ice cream in outer space.',
             details="This classic astronaut treat has been reimagined with new flavors. Zero-G Freeze-Dried Ice Cream melts in your mouth, offering a taste of home while among the stars.",
-            stock=300
+            stock=35000
         ),
         Product(
             seller_id=3,
@@ -794,7 +794,7 @@ def seed_products():
             condition='New',
             description='Brew the taste of the cosmos.',
             details="AstroBrew Coffee Beans are sourced from distant asteroid fields. Each cup transports you to celestial realms, awakening your senses and expanding your mind.",
-            stock=400
+            stock=4000
         ),
         Product(
             seller_id=3,
@@ -806,7 +806,7 @@ def seed_products():
             condition='New',
             description='Hydrate faster than the speed of light.',
             details="Infused with electrolytes and a hint of stardust, Quantum Quench sports drink rapidly replenishes your body's hydration levels, keeping you energized during your workouts and activities.",
-            stock=500
+            stock=100000
         ),
         Product(
             seller_id=3,
@@ -818,7 +818,7 @@ def seed_products():
             condition='New',
             description='Vitamins and minerals in a delicious beverage.',
             details="AstroAde Vitamin Drink is formulated to meet your everyday nutritional needs. It's a tasty way to get your daily dose of vitamins and minerals.",
-            stock=300
+            stock=80000
         ),
         Product(
             seller_id=3,
@@ -842,7 +842,7 @@ def seed_products():
             condition='New',
             description='A hydrating face lotion infused with lunar minerals for all skin types.',
             details="LunarHydrate Facial Lotion is enriched with minerals sourced from Ganymede's surface, known for their hydrating properties. It's designed to provide deep moisture without leaving a greasy residue. Suitable for all skin types, it helps to maintain a healthy skin barrier and offers protection against cosmic radiation.",
-            stock=250
+            stock=3000
         ),
         Product(
             seller_id=3,
@@ -854,7 +854,7 @@ def seed_products():
             condition='New',
             description='A lightweight foundation with adaptive pigments for all skin types.',
             details="StellarShade Foundation offers a flawless finish with its adaptive pigments that match any skin tone. It's formulated with nourishing ingredients to hydrate and protect the skin. The foundation provides full coverage while feeling weightless and breathable.",
-            stock=150
+            stock=3000
         ),
         Product(
             seller_id=3,
@@ -866,7 +866,7 @@ def seed_products():
             condition='New',
             description='A long-lasting lip tint with a natural, cosmic-inspired hue.',
             details="GalaxyGlow Lip Tint brings the beauty of the cosmos to your makeup routine. The tint is infused with moisturizing ingredients to keep lips soft and hydrated. Its color lasts all day and can be layered for a more intense look.",
-            stock=200
+            stock=3000
         ),
         Product(
             seller_id=3,
@@ -878,7 +878,7 @@ def seed_products():
             condition='New',
             description='Capture the essence of celestial bodies.',
             details="Stardust Perfume is a limited-edition fragrance crafted from the remnants of exploded stars. Its ethereal scent evokes memories of cosmic events and whispers of distant galaxies.",
-            stock=100
+            stock=1000
         ),
         Product(
             seller_id=3,
@@ -902,7 +902,7 @@ def seed_products():
             condition='New',
             description='Run through the cosmos without leaving your ship.',
             details="The Simulation Treadmill comes with a virtual reality interface that simulates running on different planets and star systems, making your workout an adventure.",
-            stock=75
+            stock=60
         ),
         Product(
             seller_id=3,
@@ -914,7 +914,7 @@ def seed_products():
             condition='New',
             description='Align your chakras in weightlessness.',
             details="The Variable-Gravity Yoga Mat provides cushioning without gravitational strain. Ideal for meditative poses and cosmic mindfulness.",
-            stock=90
+            stock=70
         ),
         Product(
             seller_id=3,
@@ -926,7 +926,7 @@ def seed_products():
             condition='New',
             description='Protect against extraterrestrial pathogens.',
             details="The Galactic Antiviral Kit includes a range of broad-spectrum antivirals that are effective against a variety of spaceborne viruses.",
-            stock=120
+            stock=200
         ),
         Product(
             seller_id=3,
@@ -962,11 +962,11 @@ def seed_products():
             condition='New',
             description='Advanced healing at a microscopic level.',
             details="The Nanobot Tissue Repair Kit contains millions of medical nanobots programmed to repair human and human-like tissue damage, making it an essential item for any carbon-based spacefarer's medical kit.",
-            stock=75
+            stock=20
         ),
         Product(
             seller_id=3,
-            upc='9F3D5A7C4B1E8F81',
+            upc=None, #81
             name='Fluff',
             category='pet',
             subcategory='pets',
@@ -974,11 +974,11 @@ def seed_products():
             condition='New',
             description='A celestial furball with iridescent fur that shimmers like distant stars.',
             details="The StellarFluff is a low-maintenance companion, perfect for those who enjoy a quiet and calming presence. It requires minimal grooming and thrives in a serene environment. Its gentle purring is known to have a soothing effect, making it an ideal pet for relaxation.",
-            stock=20
+            stock=200
         ),
         Product(
             seller_id=3,
-            upc='9F3D5A7C4B1E8F82',
+            upc=None, #82
             name='NebulaFish',
             category='pet',
             subcategory='pets',
@@ -986,7 +986,7 @@ def seed_products():
             condition='New',
             description='An aquatic companion that swims through cosmic currents, creating a dazzling display.',
             details="The NebulaFish is an enchanting addition to any cosmic aquarium. It's known for its vibrant colors and peaceful demeanor. Providing a habitat with bioluminescent flora and miniature asteroid caves will ensure this pet thrives and brings joy to its owner.",
-            stock=300
+            stock=4000
         ),
         Product(
             seller_id=3,
@@ -1046,7 +1046,7 @@ def seed_products():
             condition='New',
             description='A chewable ring that emits gentle vibrations for teething pets.',
             details="The Cosmic Chew Ring helps soothe your pet's gums with soft cosmic vibrations. It's flavored with natural space kelp, and its textured surface helps clean teeth and freshen breath. Ideal for growing pets who need to chew!",
-            stock=200
+            stock=2000
         ),
         Product(
             seller_id=3,
@@ -1058,7 +1058,7 @@ def seed_products():
             condition='New',
             description='A gravity-defying ball that hovers and bounces in unpredictable patterns.',
             details="The Orbit-Ball is designed to keep your pet engaged with its erratic movements and colorful LED lights. It's made from durable, pet-safe materials and is rechargeable for hours of play. Perfect for pets who love a good chase!",
-            stock=100
+            stock=1000
         ),
         Product(
             seller_id=3,
@@ -1071,6 +1071,282 @@ def seed_products():
             description='Entertain your space cat with precision.',
             details="The Quantum Laser Pointer emits a pinpoint laser beam that can be redirected across dimensions. Perfect for interdimensional playtime.",
             stock=200
+        ),
+        Product(
+            seller_id=5,
+            upc=None, #90
+            name='Custom Arwing',
+            category='transport',
+            subcategory='space-travel',
+            price=3400000,
+            condition='Good',
+            description='A starfighter with unmatched agility and firepower.',
+            details="I am a veteran pilot of the Star Fox team. My Arwing has been with me through thick and thin, dodging asteroids and blasting enemies with its twin blasters. It's equipped with G-Diffuser technology for smooth handling in the most intense dogfights and a Smart Bomb launcher for when you need a little extra boom. The reinforced hull has seen better days, but it's got character and a few stories to tell. If you're looking to make your mark in the Lylat System, there's no better ship. Just remember: Do a barrel roll!",
+            stock=1
+        ),
+        Product(
+            seller_id=6,
+            upc=None, #91
+            name='DeLorean DMC-12',
+            category='transport',
+            subcategory='domestic',
+            price=70000,
+            condition='Good',
+            description='Own a piece of automotive history.',
+            details="The DeLorean DMC-12 is a classic stainless steel sports car, complete with gull-wing doors and a sleek design that turns heads. Whether you're cruising down the highway or contemplating temporal paradoxes, this DeLorean is a conversation starter. Flux capacitor sold separately. (I don't recommend any 'reputable' plutonium dealers or waiting for the perfect lightning storm. Great Scott!)",
+            stock=1
+        ),
+        Product(
+            seller_id=7,
+            upc=None, #92
+            name='Blue Falcon',
+            category='transport',
+            subcategory='domestic',
+            price=250000,
+            condition='Like New',
+            description='The pinnacle of high-speed racing.',
+            details="It's time for me to hang up my helmet and pass on the torch — or should I say, the steering wheel. The Blue Falcon has been my trusty steed in the F-Zero Grand Prix, a machine that's as fast as it is iconic. With its advanced G-Diffuser system and unmatched acceleration, it has broken records and left competitors in the dust. The cockpit's been my second home, decked out with the latest tech to keep you one step ahead of the pack. She's more than just a racer; she's a legacy. And now, she can be yours. Just promise me one thing: you'll drive her like you stole her.",
+            stock=1
+        ),
+        Product(
+            seller_id=8,
+            upc=None, #93
+            name='Covenant Banshee',
+            category='transport',
+            subcategory='domestic',
+            price=60000,
+            condition='Acceptable',
+            description="Dominate the skies with the Covenant's agile and deadly aerial assault craft, the Banshee.",
+            details="I've commandeered these swift vehicles to turn the tide of many battles. The Banshee is renowned for its speed and maneuverability, capable of executing acrobatic flips and sharp turns with ease. Equipped with powerful plasma cannons and a fuel rod cannon, it's a formidable force against both ground and air targets. Its sleek design is not just for show; it's engineered for precision strikes. Ideal for any aspiring pilot looking to make a statement on the battlefield. Note: Flight training recommended before use.",
+            stock=20
+        ),
+        Product(
+            seller_id=9,
+            upc=None, #94
+            name='Power Suit',
+            category='transport',
+            subcategory='gear-&-accessories',
+            price=400000,
+            condition='Like New',
+            description='Unleash your inner warrior with the Power Suit — a fusion of cutting-edge technology and battle-hardened resilience.',
+            details="Greetings, fellow adventurer! I've worn this Power Suit through countless battles across the galaxy. It's not just armor, it's an extension of your will. The suit's modular design allows for customization, whether you prefer the Varia, Gravity, or Fusion variant. Its Chozo-enhanced shielding can withstand plasma blasts, acid rain, and even the vacuum of space. The visor? It's not just for show. It provides real-time data analysis, thermal vision, and enemy targeting. And let's not forget the arm cannon, a versatile tool for offense, defense, and puzzle-solving. Whether you're exploring alien ruins or facing down space pirates, the Power Suit has your back. Warning: May attract Metroids.",
+            stock=1
+        ),
+        Product(
+            seller_id=10,
+            upc='9F3D5A7C4B1E8F95',
+            name='WALL-E Waste Allocation Robot',
+            category='tech',
+            subcategory='robotics',
+            price=100,
+            condition='Acceptable',
+            description='Your eco-friendly companion, Wall-E, is here to turn waste management into a journey of friendship.',
+            details="WALL-E, the last Waste Allocation Load Lifter - Earth class robot, has been tirelessly cleaning his planet, one cube of trash at a time. His solar-powered design makes him a sustainable choice for tackling today's environmental challenges. Despite his primary function as a waste collector, Wall-E's curious nature and capacity for emotion make him an endearing companion. He's fully equipped with a compacting system, all-terrain treads, and a knack for finding treasure in trash. Adopt Wall-E and join his mission to make Earth habitable once again.",
+            stock=1
+        ),
+        Product(
+            seller_id=11,
+            upc='9F3D5A7C4B1E8F96',
+            name='R2-D2 Astromech Droid',
+            category='tech',
+            subcategory='robotics',
+            price=5,
+            condition='Good',
+            description="This is the droid you're looking for, unless you're tired of its constant beeping.",
+            details="I'm finally selling this R2 unit. Sure, it's saved our skins more times than I care to admit, but if I have to listen to one more beep or whistle, I might just jettison it into space myself. It's got a holographic projector, secret compartments, and a stubborn streak wider than the Kessel Run. If you need a droid that's been everywhere from Tatooine to the Death Star, R2's your droid. Just keep it away from me.",
+            stock=1
+        ),
+        Product(
+            seller_id=12,
+            upc='9F3D5A7C4B1E8F97',
+            name='CL4P-TP Personal Robot',
+            category='tech',
+            subcategory='robotics',
+            price=400,
+            condition='Acceptable',
+            description='Affectionately known as Clap-Trap, this quirky, pint-sized robot is your all-in-one companion for mayhem, adventure, and existential crises.',
+            details="The CL4P-TP model boasts a unique blend of sass, incompetence, and unwavering loyalty. Its wheel-based locomotion system allows it to waddle around Pandora (and beyond) with endearing clumsiness. Clap-Trap's primary functions include opening doors, dispensing questionable advice, and dancing like nobody's watching. Its eye, a single glowing orb, conveys a wide range of emotions — mostly panic. Whether you need a sidekick for vault hunting or just someone to share existential dread with, Clap-Trap is your go-to choice. Warning: May spontaneously break into dubstep.",
+            stock=1
+        ),
+        Product(
+            seller_id=13,
+            upc=None, #98
+            name='Eva-15 Prototype',
+            category='tech',
+            subcategory='robotics',
+            price=800000000,
+            condition='New',
+            description="Unlock the power of humanity's last hope with this biomechanical marvel designed to combat existential threats.",
+            details="NERV proudly presents the Eva-15, the pinnacle of bioengineering and cybernetics. This towering mecha is a fusion of human will and alien technology. Its neural interface allows a skilled pilot to synchronize with the Eva, channeling their emotions and instincts into battle. The Eva-15's armor is reinforced with an experimental alloy that can withstand the fury of angels and the harsh realities of the apocalypse. Equipped with a progressive knife, positron rifle, and AT field generator, it's ready to face any threat. Whether you're defending humanity or unraveling cosmic mysteries, the Eva-15 is your salvation. Warning: May cause existential crises.",
+            stock=1
+        ),
+        Product(
+            seller_id=14,
+            upc='9F3D5A7C4B1E8F99',
+            name='Starfleet Standard Issue Tricorder',
+            category='tech',
+            subcategory='gadgets-&-wearable',
+            price=499,
+            condition='New',
+            description='Explore new worlds with the quintessential tool for all Starfleet officers, the Tricorder.',
+            details="The Starfleet Standard Issue Tricorder is an indispensable piece of equipment for any member of a starship crew. This compact, multifunctional device is capable of scanning and analyzing a wide array of data types, from biological life signs to geological formations. Its user-friendly interface and holographic display provide instant access to vital information during away missions. Durable and reliable, it's engineered to withstand the rigors of space travel and the unknowns of uncharted planets.",
+            stock=100
+        ),
+        Product(
+            seller_id=15,
+            upc=None, #100
+            name='MIB Standard Issue Neuralyzer',
+            category='tech',
+            subcategory='gadgets-&-wearable',
+            price=300000,
+            condition='Like New',
+            description='A discreet memory erasure tool, safeguarding the secrets of the universe.',
+            details="The MIB Standard Issue Neuralyzer is the cornerstone of field agent operations, designed to precisely erase specific memories of an encounter. This sleek, pen-like device is engineered with adjustable settings to target memory spans from mere seconds to several years. Its user-friendly interface is coupled with a retina-protective mechanism, ensuring the safety of the operator. Ideal for maintaining cosmic confidentiality, the Neuralyzer is an essential asset for any interstellar law enforcement officer.",
+            stock=2
+        ),
+        Product(
+            seller_id=16,
+            upc=None, #101
+            name='Dual-Bladed Lightsaber',
+            category='tech',
+            subcategory='gadgets-&-wearable',
+            price=13000,
+            condition='Very Good',
+            description="A weapon of vengeance and power, now seeking a new master to wield the dark side's fury.",
+            details="Once the Sith's most formidable assassin, I am now a warrior halved. My lightsaber, with its distinctive dual-bladed design, has been a harbinger of doom across the galaxy. Crafted with precision, it channels the dark side to emit twin crimson blades, capable of cutting through any obstacle. Its balanced hilt allows for fluid, acrobatic combat, a style I perfected over many battles. Though I've been severed, my lightsaber remains whole, a testament to the Sith's indomitable will. It awaits one worthy of its power, one who can carry on the legacy of the Sith.",
+            stock=1
+        ),
+        Product(
+            seller_id=17,
+            upc=None, #102
+            name='Portal Gun',
+            category='tech',
+            subcategory='gadgets-&-wearable',
+            price=50000000,
+            condition='Acceptable',
+            description='A revolutionary device capable of creating inter-spatial portals.',
+            details="The Portal Gun allows its user to create linked portals on flat surfaces, enabling instant travel between otherwise unconnected locations. This device is not only a testament to human ingenuity in theoretical physics but also serves as a practical means of transportation and puzzle-solving. Its sleek design and intuitive controls make it a must-have for any aspiring intergalactic traveler.",
+            stock=1
+        ),
+        Product(
+            seller_id=6,
+            upc=None, #103
+            name='Flux Capacitor',
+            category='tech',
+            subcategory='gadgets-&-wearable',
+            price=99000,
+            condition='Good',
+            description='Unlock the fabric of time itself with this marvel of temporal engineering.',
+            details="Greetings, fellow time-traveler! The Flux Capacitor is my magnum opus, a device that defies the laws of physics and propels us into the fourth dimension. Picture a stainless-steel chamber, nestled within the DeLorean time machine, humming with electric potential. Its core — a crystalline matrix infused with 1.21 gigawatts of raw energy — creates a temporal vortex when activated. With the right speed (88 miles per hour, to be precise), the Flux Capacitor bridges past, present, and future. Imagine the possibilities: correcting historical blunders, witnessing ancient civilizations, or simply grabbing tomorrow's newspaper today. But heed my warning: tampering with the timeline has consequences. Handle the Flux Capacitor with care, and remember: Your future is what you make of it!",
+            stock=1
+        ),
+        Product(
+            seller_id=18,
+            upc='9F3D5A7C4B1E8104',
+            name='Pip-Boy 2000 Mark VI',
+            category='tech',
+            subcategory='gadgets-&-wearable',
+            price=1299,
+            condition='Good',
+            description='Your indispensable survival companion in the wasteland, now available for every aspiring vault dweller.',
+            details="As a seasoned vault dweller, I can attest to the lifesaving features of the Pip-Boy 2000 Mark VI. This robust personal computing device, strapped to your wrist, is the ultimate tool for navigation, health monitoring, and data storage in the post-nuclear world. With a built-in radio, holotape player, and geiger counter, it's designed to withstand the harsh conditions of the wasteland. Its intuitive interface and real-time mapping ensure you're never lost, and its inventory management system keeps your essentials at your fingertips. The Pip-Boy is not just a gadget; it's your ticket to survival and a beacon of hope in the desolate expanse.",
+            stock=1
+        ),
+        Product(
+            seller_id=14,
+            upc='9F3D5A7C4B1E8105',
+            name='Starfleet Operations Division Uniform',
+            category='apparel',
+            subcategory='clothing',
+            price=129,
+            condition='New',
+            description="Don the iconic red-shirt uniform of Starfleet's bravest, the Operations Division.",
+            details="This authentic Starfleet Operations Division Uniform is a symbol of dedication and courage. Made from advanced materials, it offers protection and comfort in various environmental conditions. The vibrant red color signifies your role in engineering, security, or support services aboard a starship. Each uniform comes with a combadge, ready to connect you with your crew at a moment's notice. Wear it with pride, knowing you're part of a legacy of exploration and discovery.",
+            stock=100
+        ),
+        Product(
+            seller_id=4,
+            upc=None, #106
+            name='Custom Blue Suit and Shoes Combo',
+            category='apparel',
+            subcategory='clothing',
+            price=399,
+            condition='Like New',
+            description='Dress like a space cowboy with my signature blue suit and shoes, tailored for the modern bounty hunter.',
+            details="If you want to walk the walk, you gotta dress the part. This is my own blue suit and shoes combo, the same style I wear when I'm out chasing the big bounties. It's got style, it's got class, and it's got a hidden holster for when things get dicey. The shoes? They're not just for show — they're comfortable enough for a high-speed chase or a casual stroll on Mars. Make a statement without saying a word.",
+            stock=1
+        ),
+        Product(
+            seller_id=19,
+            upc=None, #107
+            name='Authentic Wakandan Vibranium',
+            category='hobby',
+            subcategory='collectibles',
+            price=5000000,
+            condition='Like New',
+            description='Acquire the most sought-after metal on Earth, guaranteed authentic Wakandan vibranium.',
+            details="The Ten Rings organization presents an exclusive opportunity to own what is absolutely, undeniably, 100% genuine Wakandan Vibranium. This is not your everyday metal; this is the stuff of legends. 5kg of pure, unadulterated power. Our vibranium is sourced from the deepest mines of a place that is definitely Wakanda. It's so real, it practically screams authenticity. Perfect for creating indestructible shields, advanced technology, or just impressing your friends. And remember, when we say it's not counterfeit, we mean it. Seriously. It's not.",
+            stock=50
+        ),
+        Product(
+            seller_id=20,
+            upc=None, #108
+            name='Refined Kyber Crystal',
+            category='hobby',
+            subcategory='collectibles',
+            price=1000000,
+            condition='Like New',
+            description='Harness the power of the Force with a Kyber crystal, direct from my personal collection.',
+            details="I've got a deal for you that's smoother than a Bespin cloud. This Kyber crystal is more than a gem, it's the heart of a lightsaber and a beacon for the Force. Sourced from the sacred worlds, it's been refined to a gleam that rivals the stars themselves. Whether you're building your own saber or seeking a connection to the Force, this crystal's got potential only limited by your own. And remember, it's not just a purchase, it's an investment in your destiny.",
+            stock=3
+        ),
+        Product(
+            seller_id=21,
+            upc=None, #109
+            name='Four-Star Dragon Ball',
+            category='hobby',
+            subcategory='collectibles',
+            price=1,
+            condition='Like New',
+            description='The legendary four-star Dragon Ball, a treasure that holds the key to summoning the eternal dragon.',
+            details="This four-star Dragon Ball has been with me since my grandpa gave it to me. It's not just a keepsake — it's one of the seven magical orbs that, when gathered, can summon the mighty Shenron. This Dragon Ball has the power to grant any wish, from bringing back a lost friend to saving the world. It's seen many adventures and helped me make some of the best friends I could ask for. If you're looking for adventure or have a wish of your own, this Dragon Ball could be the start of something amazing. ঋ 1, but it will only be delivered if you have a pure heart.",
+            stock=1
+        ),
+        Product(
+            seller_id=22,
+            upc=None, #110
+            name='The Aether - Reality Stone',
+            category='hobby',
+            subcategory='collectibles',
+            price=17000000,
+            condition='Like New',
+            description='Behold the Aether, the ancient and powerful Reality Stone, capable of reshaping the very fabric of existence to your will.',
+            details="I present to you the Aether, also known as the Reality Stone, one of the six Infinity Stones. This crimson gem holds the essence of reality itself, allowing its bearer to alter matter and create or destroy worlds with a mere thought. Its power is unrivaled, its beauty, otherworldly. Once wielded by gods and feared by mortals, the Aether now awaits a new master. Will you be bold enough to claim it? Handle with utmost care, for its power is not for the faint of heart.",
+            stock=1
+        ),
+        Product(
+            seller_id=23,
+            upc=None, #111
+            name='Tribble',
+            category='pet',
+            subcategory='pets',
+            price=5,
+            condition='Very Good',
+            description='These fluffy, cooing creatures from the Alpha Quadrant make excellent companions.',
+            details="Adopt your own adorable tribble! They’re hypoallergenic, low-maintenance, and emit soothing vibrations. The tribble’s fur comes in various colors. Perfect for snuggling or as a conversation starter at interstellar parties.",
+            stock=1000000
+        ),
+        Product(
+            seller_id=24,
+            upc=None, #112
+            name='Domesticated Xenomorph',
+            category='pet',
+            subcategory='pets',
+            price=599,
+            condition='New',
+            description='Experience the thrill of the unknown with your very own domesticated xenomorph, the ultimate pet!',
+            details="Allow us to introduce the latest in exotic pet ownership: the Domesticated Xenomorph. This remarkable creature is a testament to the wonders of bioengineering, offering a unique companionship experience. While it may possess certain... distinctive traits, rest assured that it has been conditioned for a domestic setting. Its dietary needs are quite simple, and it requires minimal grooming. With proper care and a specialized habitat, your new xenomorph will be a fascinating addition to your home. Embrace the extraordinary; after all, life is more exciting with a touch of the unknown. Note: The Weyland-Yutani Corporation is not responsible for any potential loss of life or property. Handle with extreme caution and at your own risk.",
+            stock=300
         )
     ]
 

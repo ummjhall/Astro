@@ -41,6 +41,7 @@ function ProfileButton() {
     dispatch(thunkLogout());
     navigate('/');
     closeMenu();
+    location.reload();
   };
 
 

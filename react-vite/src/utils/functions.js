@@ -1,3 +1,5 @@
+import categories from "./categories";
+
 export const filterProducts = (productsArray, filterData) => {
   if (filterData.seller == 'astroOnly')
     productsArray = productsArray.filter(product => product.seller == 'Astro');
@@ -45,4 +47,23 @@ export const filterProducts = (productsArray, filterData) => {
     productsArray = productsArray.filter(product => !product.upc)
 
   return productsArray;
-}
+};
+
+
+export const sortProducts = (productsArray) => {
+  return productsArray.sort((a, b) => {
+    // Sort by category order in SideNav
+    if (Object.keys(categories).indexOf(a.category) < Object.keys(categories).indexOf(b.category)) return -1;
+    else if (Object.keys(categories).indexOf(a.category) > Object.keys(categories).indexOf(b.category)) return 1;
+
+    // Sort by subcategory order in SideNav
+    if (categories[a.category].indexOf(a.subcategory) < categories[b.category].indexOf(b.subcategory)) return -1;
+    else if (categories[a.category].indexOf(a.subcategory) > categories[b.category].indexOf(b.subcategory)) return 1;
+
+    // Sort by cheapest
+    if (a.price < b.price) return -1;
+    else if (a.price > b.price) return 1;
+
+    return 0;
+  });
+};

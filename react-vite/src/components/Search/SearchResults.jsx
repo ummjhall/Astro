@@ -2,10 +2,9 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { getAllProductsThunk } from '../../redux/products';
-import { filterProducts } from '../../utils/functions';
+import { filterProducts, sortProducts } from '../../utils/functions';
 import SideNav from '../Navigation/SideNav';
 import ProductTile from '../Products/ProductTile';
-import categories from '../../utils/categories';
 import './search-results.css';
 
 function SearchResults() {
@@ -20,16 +19,9 @@ function SearchResults() {
   // Filter products by user filters, then sort
   let productsArray = Object.values(allProducts);
   productsArray = filterProducts(productsArray, filters);
-  productsArray.sort((a, b) => {
-    if (Object.keys(categories).indexOf(a.category) < Object.keys(categories).indexOf(b.category)) return -1;
-    else if (Object.keys(categories).indexOf(a.category) > Object.keys(categories).indexOf(b.category)) return 1;
-    if (categories[a.category].indexOf(a.subcategory) < categories[b.category].indexOf(b.subcategory)) return -1;
-    else if (categories[a.category].indexOf(a.subcategory) > categories[b.category].indexOf(b.subcategory)) return 1;
-    if (a.price < b.price) return -1;
-    else if (a.price > b.price) return 1;
-    return 0;
-  });
+  productsArray = sortProducts(productsArray);
 
+  // Check for search term in product's attributes
   const results = productsArray.filter(product => {
     return product.name.toLowerCase().includes(query) ||
       product.description.toLowerCase().includes(query) ||

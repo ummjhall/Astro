@@ -1,0 +1,28 @@
+.cartcallout-wrapper {
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-right: 30px;
+  padding: 10px 15px;
+  height: fit-content;
+  background-color: black;
+  position: sticky;
+  top: 170px; /* find how to calculate */
+  color: white;
+}
+
+.cc-heading {
+  font-size: 30px;
+}
+
+.cc-total {
+  margin-top: 20px;
+  font-size: 22px;
+  color: red;
+}
+
+.cc-checkout {
+  margin: 15px 0;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}

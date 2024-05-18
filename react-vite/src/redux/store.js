@@ -4,6 +4,7 @@ import sessionReducer from './session';
 import productsReducer from './products';
 import cartReducer from './cart';
 import filtersReducer from './filters';
+import sellersReducer from './sellers';
 
 const rootReducer = (state, action) => {
   if (action.type == 'USER_LOGOUT')
@@ -15,7 +16,8 @@ const appReducer = combineReducers({
   session: sessionReducer,
   products: productsReducer,
   cart: cartReducer,
-  filters: filtersReducer
+  filters: filtersReducer,
+  sellers: sellersReducer
 });
 
 let enhancer;

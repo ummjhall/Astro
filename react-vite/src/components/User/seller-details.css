@@ -1,0 +1,12 @@
+.seller-details-wrapper {
+  display: flex;
+  color: white;
+}
+
+.sd-heading {
+  margin: 15px 0 0 20px;
+}
+
+.sd-seller {
+  color: var(--color-gold);
+}

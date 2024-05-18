@@ -28,7 +28,7 @@ function MyListings() {
     <div className='mylistings-wrapper'>
       <SideNav />
       <div>
-        <h1 className='mylistings-heading'>{(user.username + "'s ")}Listings</h1>
+        <h1 className='mylistings-heading'>My Listings</h1>
         <div className='products-tile-container'>
           {myListingsArray.map(listing => (
             <ProductTile key={listing.product_id} product={listing} />

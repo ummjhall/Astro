@@ -3,10 +3,32 @@
   color: white;
 }
 
-.sd-heading {
+.sd-callout {
+  border: 1px solid white;
+  border-radius: 5px;
   margin: 15px 0 0 20px;
+  /* margin: 15px auto; */
+  /* width: 60%; */
+  width: fit-content;
+  padding: 10px;
+  background-color: black;
+  /* display: inline-block; */
 }
 
-.sd-seller {
+.sdc-heading {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.sdc-listings {
+  font-size: 18px;
+  color: var(--color-cyan);
+}
+
+.sdc-seller {
   color: var(--color-gold);
+}
+
+.seller-not-found {
+  margin: 15px 0 0 20px;
 }

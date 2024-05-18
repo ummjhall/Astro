@@ -5,6 +5,8 @@ import { loadSellerThunk } from '../../redux/sellers';
 import { getAllProductsThunk } from '../../redux/products';
 import { filterProducts, sortProducts } from '../../utils/functions';
 import SideNav from '../Navigation/SideNav';
+import ProductTile from '../Products/ProductTile';
+import '../Products/products.css';
 import './seller-details.css';
 
 function SellerDetails() {
@@ -26,12 +28,29 @@ function SellerDetails() {
   }, [dispatch, sellerId]);
 
 
-  return (
-    <div className='seller-details-wrapper'>
-      <SideNav />
-      <h1 className='sd-heading'>Seller Details: <span className='sd-seller'>{seller.username}</span></h1>
-    </div>
-  );
+  return seller && seller.isSeller ?
+    (
+      <div className='seller-details-wrapper'>
+        <SideNav />
+        <div>
+          <div className='sd-callout'>
+            <h1 className='sdc-heading'>Seller Details: <span className='sdc-seller'>{seller.username}</span></h1>
+            <div className='sdc-listings'>Listings: {sellerProductsArray.length}</div>
+          </div>
+          <div className='products-tile-container'>
+            {sellerProductsArray.map(listing => (
+              <ProductTile key={listing.product_id} product={listing} />
+            ))}
+          </div>
+        </div>
+      </div>
+    ) :
+    (
+      <div className='seller-details-wrapper'>
+        <SideNav />
+        <div className='seller-not-found'>Seller Not Found</div>
+      </div>
+    );
 }
 
 export default SellerDetails;

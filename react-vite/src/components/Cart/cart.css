@@ -5,20 +5,11 @@
   color: white;
 }
 
-.cart-checkout {
-  margin: 15px 0 20px;
-  height: 30px;
-  font-size: 20px;
-  cursor: pointer;
+.cart-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.cart-total {
-  border-radius: 8px;
-  margin-top: 30px;
-  padding: 3px;
-  width: fit-content;
-  background-color: black;
-  font-size: 22px;
-  color: var(--color-red);
-  color: red;
+.cart-tile-container {
+  width: 50%;
 }

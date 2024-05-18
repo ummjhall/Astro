@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { getCartThunk, removeFromCartThunk } from '../../redux/cart';
 import CartTile from './CartTile';
+import CartCallout from './CartCallout';
 import './cart.css';
 
 function Cart() {
@@ -18,6 +19,7 @@ function Cart() {
   }, [dispatch]);
 
 
+  // Calculate cart total
   useEffect(() => {
     let totalPrice = 0;
     cartItemsArray.forEach(item => {
@@ -27,32 +29,36 @@ function Cart() {
   }, [cartItemsArray]);
 
 
-  const handleCheckout = () => {
-    cartItemsArray.forEach(item => {
-      dispatch(removeFromCartThunk(item.product_id));
-    });
-  };
-
-
   if (!user) return <Navigate to='/' replace={true} />;
 
-  return (
+  return user && (
     <div className='cart-wrapper'>
       <h1>{(user.username + "'s ")}Cart</h1>
-      {cartItemsArray.length >= 3 &&
+
+      {/* {cartItemsArray.length >= 3 &&
         <div>
           <div className='cart-total'>Total: ঋ{total.toLocaleString()}</div>
           <button className='cart-checkout' onClick={handleCheckout}>
             Complete Checkout
           </button>
         </div>
-      }
-      <div className='cart-tiles'>
-        {cartItemsArray.map(item => (
-          <CartTile key={item.product_id} item={item} />
-        ))}
+      } */}
+
+      <div className='cart-container'>
+        <div className='cart-tile-container'>
+          {cartItemsArray.map(item => (
+            <CartTile key={item.product_id} item={item} />
+          ))}
+          {!cartItemsArray.length &&
+            <div>Nothing in Cart</div>
+          }
+        </div>
+        {cartItemsArray.length > 0 &&
+          <CartCallout total={total} items={cartItemsArray} />
+        }
       </div>
-      {cartItemsArray.length ?
+
+      {/* {cartItemsArray.length ?
         <div>
           <div className='cart-total'>Total: ঋ{total.toLocaleString()}</div>
           <button className='cart-checkout' onClick={handleCheckout}>
@@ -61,7 +67,7 @@ function Cart() {
         </div>
         :
         <div>Nothing in Cart</div>
-      }
+      } */}
     </div>
   );
 }

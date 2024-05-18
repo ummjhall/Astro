@@ -15,6 +15,15 @@
   margin: 15px 0 0 20px;
 }
 
+.sr-searching {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: black;
+  display: inline-block;
+  font-size: 20px;
+}
+
 .sr-query {
   color: var(--color-cyan);
 }
@@ -23,10 +32,17 @@
   padding: 20px;
 }
 
+.sr-aggregate {
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--color-cyan);
+}
+
 .sr-found-in {
   border-radius: 5px;
   padding: 0 5px;
   background-color: black;
   display: inline-block;
-  color: var(--color-cyan);
+  font-size: 18px;
+  color: white;
 }

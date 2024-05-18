@@ -26,6 +26,7 @@ function SearchResults() {
     return product.name.toLowerCase().includes(query) ||
       product.description.toLowerCase().includes(query) ||
       product.details.toLowerCase().includes(query) ||
+      product.seller.toLowerCase().includes(query) ||
       product.upc?.toLowerCase().includes(query);
   });
 

@@ -13,6 +13,12 @@ function ProductTile({ product }) {
   };
 
 
+  const handleSellerClick = (e) => {
+    e.stopPropagation();
+    navigate(`/seller/${product.seller_id}`);
+  };
+
+
   return (
     <div className='producttile-wrapper' onClick={handleClick}>
       <img className='producttile-image' src={product.previewImage} />
@@ -23,7 +29,7 @@ function ProductTile({ product }) {
           <div>{fSubcategory}</div>
         </div>
         <div>
-          <div className='producttile-soldby'>Sold by:{' '}
+          <div className='producttile-soldby' onClick={handleSellerClick}>Sold by:{' '}
             <span className='producttile-seller'>{product.seller}</span>
           </div>
           <div className='producttile-price'>ঋ {product.price.toLocaleString()}</div>

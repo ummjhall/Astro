@@ -65,7 +65,9 @@ function ProductDetails() {
           <div className='pd-top'>
             <div className='pd-top-info'>
               <div className='pd-name'>{product.name}</div>
-              <div>Sold by: <span className='pd-seller'>{product.seller}</span></div>
+              <div className='pd-soldby' onClick={() => navigate(`/seller/${product.seller_id}`)}>
+                Sold by: <span className='pd-seller'>{product.seller}</span>
+              </div>
               <div>Condition: {product.condition}</div>
               <div className='pd-price'>ঋ {product.price}</div>
               <div className='pd-description'>

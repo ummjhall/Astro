@@ -38,6 +38,13 @@
   height: 2em;
 }
 
+.producttile-soldby {
+  border-radius: 5px;
+}
+.producttile-soldby:hover {
+  background-color: var(--color-greenblue);
+}
+
 .producttile-name,
 .producttile-seller {
   color: var(--color-gold);

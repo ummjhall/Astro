@@ -1,0 +1,11 @@
+.mylistings-wrapper {
+  color: white;
+  display: flex;
+}
+
+.test {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

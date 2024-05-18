@@ -9,6 +9,7 @@ import ProductDetails from '../components/Products/ProductDetails';
 import SellProductForm from '../components/Products/SellProductForm';
 import SearchResults from '../components/Search/SearchResults';
 import ExchangeRates from '../components/Currency/ExchangeRates';
+import MyListings from '../components/User/MyListings';
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: 'exchange-rates',
         element: <ExchangeRates />
+      },
+      {
+        path: 'mylistings',
+        element: <MyListings />
       },
       {
         path: '*',

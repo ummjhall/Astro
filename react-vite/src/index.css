@@ -33,6 +33,8 @@ body {
   --font-main: 'Audiowide', sans-serif;
   --font-currencies: 'Kode Mono', monospace;
   /* --font-main: 'Kode Mono', monospace; */
+
+  scrollbar-color: var(--color-indigo) black;
 }
 
 .error {

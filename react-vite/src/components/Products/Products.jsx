@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getAllProductsThunk } from '../../redux/products';
-import { filterProducts } from '../../utils/functions';
+import { filterProducts, sortProducts } from '../../utils/functions';
 import SideNav from '../Navigation/SideNav';
 import ProductTile from './ProductTile';
 import './products.css';
@@ -14,12 +14,14 @@ function Products() {
   const dispatch = useDispatch();
 
   // Filter products by category, subcategory, and user filters (if not all)
+  // Then sort
   let productsArray = Object.values(allProducts);
   if (category)
     productsArray = productsArray.filter(product => product.category == category);
   if (subcategory)
     productsArray = productsArray.filter(product => product.subcategory == subcategory);
   productsArray = filterProducts(productsArray, filters);
+  productsArray = sortProducts(productsArray);
 
 
   useEffect(() => {

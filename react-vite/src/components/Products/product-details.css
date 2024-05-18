@@ -31,6 +31,15 @@
   color: var(--color-gold);
 }
 
+.pd-soldby {
+  border-radius: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+.pd-soldby:hover {
+  background-color: var(--color-greenblue);
+}
+
 .pd-seller {
   color: var(--color-cyan);
 }

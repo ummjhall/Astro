@@ -1,18 +1,18 @@
 const categories = {
   'transport': [
-    'space-travel',
+    'gear-&-accessories',
     'domestic',
-    'gear-&-accessories'
+    'space-travel'
   ],
   'tech': [
-    'robotics',
     'gadgets-&-wearable',
-    'entertainment'
+    'entertainment',
+    'robotics'
   ],
   'home': [
+    'kitchen',
     'furniture-&-decor',
     'appliances',
-    'kitchen',
     'garden'
   ],
   'apparel': [
@@ -20,13 +20,13 @@ const categories = {
     'accessories'
   ],
   'media': [
-    'movies-&-tv',
+    'e-books',
     'music',
-    'e-books'
+    'movies-&-tv'
   ],
   'hobby': [
-    'sports-&-recreation',
     'games',
+    'sports-&-recreation',
     'art',
     'collectibles'
   ],
@@ -43,11 +43,10 @@ const categories = {
     'medicine-&-supplements'
   ],
   'pet': [
-    'pets',
     'pet-care',
-    'pet-toys'
+    'pet-toys',
+    'pets'
   ]
 }
-
 
 export default categories;

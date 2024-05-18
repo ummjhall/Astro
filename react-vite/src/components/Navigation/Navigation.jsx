@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { resetFiltersThunk } from '../../redux/filters';
@@ -9,6 +10,7 @@ function Navigation() {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [ altStyle, setAltStyle ] = useState(false);
   const categories = ['Transport', 'Tech', 'Home', 'Apparel', 'Media',
       'Hobby', 'Grocery', 'Cosmetic', 'Health', 'Pet'];
 
@@ -32,9 +34,10 @@ function Navigation() {
             alt='Astro rocket'
             style={{width: '40px'}}
           /> */}
-          <div className='nav-astro-img'></div>
+          <div className={`nav-astro-img ${altStyle ? 'nav-astro-alt' : ''}`}></div>
           stro
         </div>
+        <div className='nav-secret-button' onClick={() => setAltStyle(prev => !prev)}></div>
         <Search />
         <div className='nav-user-menu'>
           {user &&

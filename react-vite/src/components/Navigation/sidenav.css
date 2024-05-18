@@ -3,20 +3,24 @@
 .sidenav-wrapper {
   border-right: 3px solid white;
   min-width: 18vw;
+  width: 18vw;
   height: calc(100vh - 55px - 25px - 2px);
   position: sticky;
   top: calc(55px + 25px + 2px);
   background-color: black;
   overflow-y: scroll;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-indigo) black;
-  /* Uncomment these for alternate SideNav */
-  /* scrollbar-width: none;
-  -ms-overflow-style: none; */
 }
-/* .sidenav-wrapper::-webkit-scrollbar {
+
+.sidenav-alt {
+  border: none;
+  background-color: unset;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.sidenav-alt::-webkit-scrollbar {
   display: none;
-} */
+}
 
 .sidenav-toggle {
   padding: 15px 0 15px 5px;
@@ -55,6 +59,14 @@
 }
 .sidenav-subcategory:hover {
   background-color: white;
+}
+
+.sn-sub-alt {
+  color: var(--color-gold);
+}
+
+.sn-secret-button {
+  height: 1em;
 }
 
 

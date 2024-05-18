@@ -31,19 +31,22 @@ function MyListings() {
 
   useEffect(() => {
     dispatch(getAllProductsThunk());
-  });
+  }, [dispatch]);
 
 
   return (
     <div className='mylistings-wrapper'>
       <SideNav />
-      <div className='products-tile-container'>
-        {myListingsArray.map(listing => (
-          <ProductTile key={listing.product_id} product={listing} />
-        ))}
-        {!myListingsArray.length &&
-          <div className='products-no-products'>No products to display</div>
-        }
+      <div>
+        <h1 className='mylistings-heading'>{(user.username + "'s ")}Listings</h1>
+        <div className='products-tile-container'>
+          {myListingsArray.map(listing => (
+            <ProductTile key={listing.product_id} product={listing} />
+          ))}
+          {!myListingsArray.length &&
+            <div className='products-no-products'>No products to display</div>
+          }
+        </div>
       </div>
     </div>
   );

@@ -22,6 +22,7 @@ function ProfileButton() {
   };
 
 
+  // Handle dropdown menu display
   useEffect(() => {
     if (!showMenu) return;
     const closeMenu = (e) => {
@@ -34,6 +35,12 @@ function ProfileButton() {
 
 
   const closeMenu = () => setShowMenu(false);
+
+
+  const handleClick = () => {
+    closeMenu();
+    navigate('/mylistings')
+  };
 
 
   const logout = (e) => {
@@ -54,9 +61,8 @@ function ProfileButton() {
             <div>
               <div className='profile-dropdown_username'>{user.username}</div>
               <div className='profile-dropdown_email'>{user.email}</div>
-              <div>
-                <div className='profile-dropdown_button' onClick={logout}>Log Out</div>
-              </div>
+              <div className='profile-dropdown_button' onClick={handleClick}>My Listings</div>
+              <div className='profile-dropdown_button' onClick={logout}>Log Out</div>
             </div>
           ) : (
             <div>

@@ -1,11 +1,9 @@
 .mylistings-wrapper {
-  color: white;
   display: flex;
+  color: white;
 }
 
-.test {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.mylistings-heading {
+  margin: 15px 0 0 20px;
+  /* font-size: 24px; */
 }

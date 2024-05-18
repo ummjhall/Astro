@@ -10,16 +10,7 @@
   background-color: black;
   overflow-y: scroll;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-indigo) black;
-  /* Uncomment these for alternate SideNav */
-  /* border: none;
-  background-color: unset;
-  scrollbar-width: none;
-  -ms-overflow-style: none; */
 }
-/* .sidenav-wrapper::-webkit-scrollbar {
-  display: none;
-} */
 
 .sidenav-alt {
   border: none;

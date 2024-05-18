@@ -10,7 +10,8 @@
   flex-wrap: wrap;
 }
 
-.sr-searching {
+.sr-searching,
+.sr-found-in {
   margin: 15px 0 0 20px;
 }
 
@@ -20,4 +21,12 @@
 
 .sr-no-products {
   padding: 20px;
+}
+
+.sr-found-in {
+  border-radius: 5px;
+  padding: 0 5px;
+  background-color: black;
+  display: inline-block;
+  color: var(--color-cyan);
 }

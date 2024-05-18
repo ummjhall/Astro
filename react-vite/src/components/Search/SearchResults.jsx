@@ -22,13 +22,22 @@ function SearchResults() {
   productsArray = sortProducts(productsArray);
 
   // Check for search term in product's attributes
-  const results = productsArray.filter(product => {
+  const allResults = productsArray.filter(product => {
     return product.name.toLowerCase().includes(query) ||
+      product.seller.toLowerCase().includes(query) ||
       product.description.toLowerCase().includes(query) ||
       product.details.toLowerCase().includes(query) ||
-      product.seller.toLowerCase().includes(query) ||
       product.upc?.toLowerCase().includes(query);
   });
+
+  // Separate into groups for UX
+  const nameResults = allResults.filter(product => product.name.toLowerCase().includes(query));
+  const sellerResults = allResults.filter(product => product.seller.toLowerCase().includes(query));
+  const descriptionResults = allResults.filter(product => {
+    return product.description.toLowerCase().includes(query) ||
+        product.details.toLowerCase().includes(query);
+  });
+  const upcResults = allResults.filter(product => product.upc?.toLowerCase().includes(query));
 
 
   useEffect(() => {
@@ -41,14 +50,54 @@ function SearchResults() {
       <SideNav />
       <div>
         <div className='sr-searching'>Searching for &apos;<span className='sr-query'>{query}</span>&apos;</div>
-        <div className='searchresults-container'>
-          {results.map(product => (
+        {!allResults.length &&
+          <div className='sr-no-products'>No products to display</div>
+        }
+        {/* <div className='searchresults-container'>
+          {allResults.map(product => (
             <ProductTile key={product.product_id} product={product} />
           ))}
-          {!results.length &&
-            <div className='sr-no-products'>No products to display</div>
-          }
-        </div>
+        </div> */}
+        {nameResults.length > 0 &&
+          <>
+            <div className='sr-found-in'>Found in: Product Name</div>
+            <div className='searchresults-container'>
+              {nameResults.map(product => (
+                <ProductTile key={product.product_id} product={product} />
+              ))}
+            </div>
+          </>
+        }
+        {sellerResults.length > 0 &&
+          <>
+            <div className='sr-found-in'>Found in: Seller Name</div>
+            <div className='searchresults-container'>
+              {sellerResults.map(product => (
+                <ProductTile key={product.product_id} product={product} />
+              ))}
+            </div>
+          </>
+        }
+        {descriptionResults.length > 0 &&
+          <>
+            <div className='sr-found-in'>Found in: Product Description/Details</div>
+            <div className='searchresults-container'>
+              {descriptionResults.map(product => (
+                <ProductTile key={product.product_id} product={product} />
+              ))}
+            </div>
+          </>
+        }
+        {upcResults.length > 0 &&
+          <>
+            <div className='sr-found-in'>Found in: Product UPC</div>
+            <div className='searchresults-container'>
+              {upcResults.map(product => (
+                <ProductTile key={product.product_id} product={product} />
+              ))}
+            </div>
+          </>
+        }
       </div>
     </div>
   );

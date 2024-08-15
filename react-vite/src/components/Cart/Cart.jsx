@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { getCartThunk, removeFromCartThunk } from '../../redux/cart';
+import { getCartThunk, /*removeFromCartThunk*/ } from '../../redux/cart';
 import CartTile from './CartTile';
 import CartCallout from './CartCallout';
 import './cart.css';

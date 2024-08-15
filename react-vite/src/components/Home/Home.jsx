@@ -4,6 +4,8 @@ import { getAllProductsThunk } from '../../redux/products';
 import { useNavigate } from 'react-router-dom';
 import SaleCard from './SaleCard';
 import ProductTeaser from './ProductTeaser';
+import OpenModalMenuItem from '../Navigation/OpenModalMenuItem';
+import ComingSoonModal from '../Navigation/ComingSoonModal';
 import FeaturedProduct from './FeaturedProduct';
 import ExchangeTile from '../Currency/ExchangeTile';
 import './home.css';
@@ -54,10 +56,15 @@ function Home() {
         </div>
         <div className='home-box home-gift-card'>
           <div className='home-heading'>WIN A GIFT CARD</div>
-          <img
-            className='home-gift-card-image'
-            src={'https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715451803/Astro/astro-giftcard_nymjxs.jpg'}
-            alt='giftcard-giveaway'
+          <OpenModalMenuItem
+            modalComponent={<ComingSoonModal />}
+            itemText={
+              <img
+                className='home-gift-card-image'
+                src={'https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715451803/Astro/astro-giftcard_nymjxs.jpg'}
+                alt='giftcard-giveaway'
+              />
+            }
           />
         </div>
         <div className='home-box home-featured'>

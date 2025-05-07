@@ -18,7 +18,7 @@ function Home() {
 
   const saleItems = [50, 34, 22, 48, 67];
   const techTeasers = [10, 12, 13, 14, 16];
-  const currencies = ['agix', 'cfx', 'jpy', 'mkd', 'zil'];
+  const currencies = ['algo', 'cfx', 'jpy', 'mkd', 'zil'];
 
 
   useEffect(() => {

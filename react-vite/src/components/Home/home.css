@@ -4,6 +4,7 @@
   color: white;
 }
 
+/* The main homepage tiles are displayed using grid template areas */
 .home-container {
   padding: 20px 0 0;
   height: calc(100vh - 55px - 25px - 2px - 40px);
@@ -29,6 +30,44 @@
   column-gap: 15px;
   row-gap: 15px;
 }
+.home-sales {
+  grid-area: sales;
+}
+.home-latest {
+  grid-area: latest;
+  cursor: pointer;
+  min-height: 150px;
+}
+.home-gift-card {
+  grid-area: card;
+  cursor: pointer;
+  min-height: 150px;
+}
+.home-featured {
+  grid-area: featured;
+}
+.home-currencies {
+  grid-area: curr;
+  cursor: pointer;
+}
+
+.home-box {
+  border-radius: 5px;
+  background-color: cyan;
+  background-color: var(--color-silverdark);
+  text-align: center;
+}
+.home-box:hover {
+  background-color: var(--color-greenblue);
+  color: var(--color-gold);
+}
+.home-heading {
+  margin: 4px 0 10px;
+}
+.home-subheading {
+  margin: -6px 0 18px;
+  font-size: 14px;
+}
 
 .home-salecard-container {
   display: flex;
@@ -42,8 +81,9 @@
   justify-content: space-around;
 }
 
-.home-gift-card {
-  cursor: pointer;
+.home-currency-container {
+  margin: 0 auto;
+  width: 80%;
 }
 
 .home-gift-card-image {
@@ -54,47 +94,4 @@
   height: 90px;
   object-fit: cover;
   object-position: 40% 60%;
-}
-
-.home-currency-container {
-  margin: 0 auto;
-  width: 80%;
-}
-
-.home-box {
-  border-radius: 5px;
-  background-color: cyan;
-  background-color: var(--color-silverdark);
-  text-align: center;
-}
-.home-box:hover {
-  background-color: var(--color-greenblue);
-  color: var(--color-gold);
-}
-
-.home-heading {
-  margin: 4px 0 10px;
-}
-
-.home-subheading {
-  margin: -6px 0 18px;
-  font-size: 14px;
-}
-
-.home-sales {
-  grid-area: sales;
-}
-.home-latest {
-  grid-area: latest;
-  cursor: pointer;
-}
-.home-gift-card {
-  grid-area: card;
-}
-.home-featured {
-  grid-area: featured;
-}
-.home-currencies {
-  grid-area: curr;
-  cursor: pointer;
 }

@@ -77,8 +77,10 @@
 }
 
 .home-teaser-container {
+  height: calc(100% - 64px); /* Subtracting 24px heading+margin, plus 40ish px unnacounted for*/
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .home-currency-container {

@@ -14,7 +14,9 @@ function ProductTeaser({ product }) {
       <img
         className='pt-image'
         src={product?.previewImage}
-        style={{width: '90px', height: '90px'}}
+        // style={{width: '90px', height: '90px'}}
+        width={90}
+        height={90}
         onClick={handleClick}
       />
     </div>

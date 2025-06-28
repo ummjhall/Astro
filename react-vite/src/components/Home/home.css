@@ -62,7 +62,7 @@
   color: var(--color-gold);
 }
 .home-heading {
-  margin: 4px 0 10px;
+  margin: 4px 5px 10px;
 }
 .home-subheading {
   margin: -6px 0 18px;
@@ -80,7 +80,7 @@
   height: calc(100% - 64px); /* Subtracting 24px heading+margin, plus 40ish px unnacounted for*/
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: flex-start; */
 }
 
 .home-currency-container {

@@ -1,6 +1,7 @@
 .product-teaser-wrapper {
   border: 1px solid white;
   border-radius: 5px;
+  margin-bottom: 10px;
   box-sizing: border-box;
   /* flex: 1 1 15%; */
   /* aspect-ratio: 1/1; */

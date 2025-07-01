@@ -37,6 +37,8 @@
   grid-area: latest;
   cursor: pointer;
   min-height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 .home-gift-card {
   grid-area: card;
@@ -45,6 +47,8 @@
 }
 .home-featured {
   grid-area: featured;
+  display: flex;
+  flex-direction: column;
 }
 .home-currencies {
   grid-area: curr;
@@ -62,7 +66,7 @@
   color: var(--color-gold);
 }
 .home-heading {
-  margin: 4px 5px 10px;
+  margin: 4px 10px 10px;
 }
 .home-subheading {
   margin: -6px 0 18px;
@@ -77,10 +81,9 @@
 }
 
 .home-teaser-container {
-  height: calc(100% - 64px); /* Subtracting 24px heading+margin, plus 40ish px unnacounted for*/
   display: flex;
   justify-content: space-around;
-  /* align-items: flex-start; */
+  overflow-y: hidden;
 }
 
 .home-currency-container {

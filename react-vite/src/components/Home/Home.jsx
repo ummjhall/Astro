@@ -58,10 +58,13 @@ function Home() {
           <div className='home-heading'>WIN A GIFT CARD</div>
           <OpenModalMenuItem
             modalComponent={<ComingSoonModal />}
+            className={'home-gift-card-imgwrapper'}
             itemText={
               <img
                 className='home-gift-card-image'
-                src={'https://res.cloudinary.com/dt2uyzpbn/image/upload/v1715451803/Astro/astro-giftcard_nymjxs.jpg'}
+                src={'https://res.cloudinary.com/dt2uyzpbn/image/upload/v1751366783/astro-giftcard-2_flsbwv.jpg'}
+                width={150}
+                height={75}
                 alt='giftcard-giveaway'
               />
             }

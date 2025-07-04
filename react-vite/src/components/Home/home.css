@@ -1,5 +1,5 @@
 .home-wrapper {
-  padding: 0 50px;
+  padding: 0 35px;
   height: calc(100vh - 55px - 25px - 2px); /* - navbars */
   color: white;
 }
@@ -53,6 +53,9 @@
 
 .home-sales {
   grid-area: sales;
+  padding-bottom: 15px;
+  min-width: 300px;
+  overflow-y: hidden;
 }
 .home-salecard-container {
   display: flex;
@@ -106,6 +109,7 @@
 
 .home-featured {
   grid-area: featured;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -113,6 +117,8 @@
 .home-currencies {
   grid-area: curr;
   padding-bottom: 15px;
+  min-width: 300px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   cursor: pointer;

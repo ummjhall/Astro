@@ -30,36 +30,6 @@
   column-gap: 15px;
   row-gap: 15px;
 }
-.home-sales {
-  grid-area: sales;
-}
-.home-latest {
-  grid-area: latest;
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-.home-gift-card {
-  grid-area: card;
-  box-sizing: border-box;
-  padding-bottom: 15px;
-  height: 100%;
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  cursor: pointer;
-}
-.home-featured {
-  grid-area: featured;
-  display: flex;
-  flex-direction: column;
-}
-.home-currencies {
-  grid-area: curr;
-  cursor: pointer;
-}
 
 .home-box {
   box-sizing: border-box;
@@ -81,6 +51,9 @@
   font-size: 14px;
 }
 
+.home-sales {
+  grid-area: sales;
+}
 .home-salecard-container {
   display: flex;
   flex-direction: column;
@@ -88,17 +61,30 @@
   row-gap: 12px;
 }
 
+.home-latest {
+  grid-area: latest;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
 .home-teaser-container {
   display: flex;
   justify-content: space-around;
   overflow-y: hidden;
 }
 
-.home-currency-container {
-  margin: 0 auto;
-  width: 80%;
+.home-gift-card {
+  grid-area: card;
+  box-sizing: border-box;
+  padding-bottom: 15px;
+  height: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
 }
-
 .home-gift-card-imgwrapper{
   border: 1px solid white;
   border-radius: 5px;
@@ -116,4 +102,23 @@
   object-fit: cover;
   display: block; /* read that this is common for images */
   /* object-position: 40% 60%; */
+}
+
+.home-featured {
+  grid-area: featured;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-currencies {
+  grid-area: curr;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.home-currency-container {
+  margin: 0 auto;
+  width: 85%;
+  overflow: hidden;
 }

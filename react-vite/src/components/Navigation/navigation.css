@@ -109,3 +109,6 @@
   /* background-color: var(--color-darkdarkblue); */
   background-color: var(--color-greenblue);
 }
+.nav-link-all {
+  min-width: 65px;
+}

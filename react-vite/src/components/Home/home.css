@@ -1,9 +1,10 @@
 .home-wrapper {
-  padding: 0 50px;
+  padding: 0 35px;
   height: calc(100vh - 55px - 25px - 2px); /* - navbars */
   color: white;
 }
 
+/* The main homepage tiles are displayed using grid template areas */
 .home-container {
   padding: 20px 0 0;
   height: calc(100vh - 55px - 25px - 2px - 40px);
@@ -30,38 +31,8 @@
   row-gap: 15px;
 }
 
-.home-salecard-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 12px;
-}
-
-.home-teaser-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.home-gift-card {
-  cursor: pointer;
-}
-
-.home-gift-card-image {
-  border: 1px solid white;
-  border-radius: 5px;
-  margin: 0 auto;
-  width: 310px;
-  height: 90px;
-  object-fit: cover;
-  object-position: 40% 60%;
-}
-
-.home-currency-container {
-  margin: 0 auto;
-  width: 80%;
-}
-
 .home-box {
+  box-sizing: border-box;
   border-radius: 5px;
   background-color: cyan;
   background-color: var(--color-silverdark);
@@ -71,11 +42,10 @@
   background-color: var(--color-greenblue);
   color: var(--color-gold);
 }
-
 .home-heading {
-  margin: 4px 0 10px;
+  margin: 4px 10px 10px;
+  flex: 0 0 auto;
 }
-
 .home-subheading {
   margin: -6px 0 18px;
   font-size: 14px;
@@ -83,18 +53,78 @@
 
 .home-sales {
   grid-area: sales;
+  padding-bottom: 15px;
+  min-width: 300px;
+  overflow-y: hidden;
 }
+.home-salecard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+}
+
 .home-latest {
   grid-area: latest;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
+.home-teaser-container {
+  display: flex;
+  justify-content: space-around;
+  overflow-y: hidden;
+}
+
 .home-gift-card {
   grid-area: card;
+  box-sizing: border-box;
+  padding-bottom: 15px;
+  height: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
 }
+.home-gift-card-imgwrapper{
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  min-height: 0; /* need this or overflow: hidden */
+  flex: 1 1 auto; /* doesn't seem to need this */
+  overflow: hidden; /* need this or min-height: 0 */
+}
+.home-gift-card-image {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* read that this is common for images */
+  /* object-position: 40% 60%; */
+}
+
 .home-featured {
   grid-area: featured;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
 }
+
 .home-currencies {
   grid-area: curr;
+  padding-bottom: 15px;
+  min-width: 300px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
+}
+.home-currency-container {
+  margin: 0 auto;
+  width: 85%;
+  overflow: hidden;
 }

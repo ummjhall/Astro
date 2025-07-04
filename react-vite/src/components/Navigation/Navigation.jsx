@@ -54,7 +54,7 @@ function Navigation() {
         </div>
       </div>
       <div className='nav-lower-wrapper'>
-        <div className='nav-link' onClick={() => handleClick()}>
+        <div className='nav-link nav-link-all' onClick={() => handleClick()}>
           [ All ]
         </div>
         {categories.map((category, i) => (

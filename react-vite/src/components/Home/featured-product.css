@@ -1,9 +1,13 @@
 .featured-wrapper {
   border: 1px solid white;
   border-radius: 5px;
-  margin: 0 auto;
-  width: 85%;
-  height: 82%;
+  margin: 0 auto 15px;
+  width: 100%;
+  max-width: 90%;
+  flex: 1 1;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
   background-color: black;
   color: white;
   cursor: pointer;
@@ -16,16 +20,16 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom: 1px solid white;
-  width: 100% !important;
-  height: 84% !important;
+  width: 100%;
+  flex: 1 1 auto;
   object-fit: cover;
 }
 
 .featured-info-container {
-  height: 12%;
+  flex: 0 0 3em;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  row-gap: 5px;
   font-size: 12px;
 }
 
@@ -35,5 +39,6 @@
 }
 
 .featured-price {
+  height: 1em;
   color: var(--color-green);
 }

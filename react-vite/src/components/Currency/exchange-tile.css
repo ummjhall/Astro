@@ -10,12 +10,14 @@
 }
 
 .exchange-tile-currency {
+  min-width: 50px;
+  text-align: left;
   color: var(--color-gold);
 }
 
 .exchange-tile-value {
   border-radius: 5px;
-  min-width: 105px;
+  min-width: 120px;
   padding: 0 5px;
   background-color: black;
   color: var(--color-redcurrency);

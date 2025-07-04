@@ -12,7 +12,7 @@ function SaleCard({ product }) {
         className='salecard-image'
         src={product.previewImage}
         alt={product.name}
-        style={{width: '70px', height: '70px'}}
+        style={{width: '75px', height: '75px'}}
       />
       <div className='salecard-info-container'>
         <div className='salecard-name'>{product.name}</div>

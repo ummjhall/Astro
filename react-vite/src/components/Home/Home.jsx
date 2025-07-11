@@ -9,6 +9,7 @@ import ComingSoonModal from '../Navigation/ComingSoonModal';
 import FeaturedProduct from './FeaturedProduct';
 import ExchangeTile from '../Currency/ExchangeTile';
 import './home.css';
+import './home-responsive.css';
 
 function Home() {
   const allProducts = useSelector(state => state.products);
